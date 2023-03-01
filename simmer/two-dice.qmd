@@ -7,7 +7,9 @@ source("awash-functions.r")
 
 One die is great...but what could be better? Two dice! More than twice as good.
 
-We give you a fresh, blank simmer document below. You can start fresh right there or modify what you did above. Try to make a program like this one:
+We give you a fresh, blank simmer document below. 
+You can start fresh right there or modify what you did above. 
+Try to make a program like this one:
 
 ![](art/two-dice-program.png){width="4in"}
 
@@ -22,8 +24,7 @@ When we were just getting started, we used the default name, `item`. That's a te
 Here are some tips:
 
 -   Use the yellow "plus" button near the top-left of the `simmer` window to make the variables `die1` and `die2`.
--   After you make a block that sets a variable, use the menu in that variable block to change which variable it refers to. You can also use that menu to change the variable's name.
--   Make the whole "line of code" for `die1` first. Then click the `set die1 to` block to select it. **Copy** and then **Paste**. Shazam! You get a copy *of the whole line*. Simply change it to `die2` and position it by dragging that initial block.
+-   After you make a block that sets a variable, you can use the menu in that variable block to change which variable it refers to. You can also use that menu to change the variable's name.
 
 ```{r}
 #| echo: false
