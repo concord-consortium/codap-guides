@@ -19,6 +19,7 @@ Improve the example below.
 ```{r}
 #| echo: false
 #| results: asis
+#| column: page-right
 
 theURL <- "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/#shared=https%3A%2F%2Fcfm-shared.concord.org%2Fs94cqTewcfuowyxzxg0b%2Ffile.json"
 

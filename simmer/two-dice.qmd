@@ -28,6 +28,7 @@ Here are some tips:
 ```{r}
 #| echo: false
 #| results: asis
+#| column: page-right
 
 theURL <- "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/"
 

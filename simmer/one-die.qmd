@@ -20,11 +20,12 @@ In the live example below, try to build that program. Some hints:
 -   Drag blocks from the toolbox into the main workspace and hook them together.
 -   If you get one you don't want, you can drag it to the trash can in the lower right.
 
-See how you do:
+See how you do: 
 
 ```{r}
 #| echo: false
 #| results: asis
+#| column: page-right
 
 theURL <- "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/"
 
