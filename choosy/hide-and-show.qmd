@@ -1,0 +1,33 @@
+```{=html}
+    <script src="src/awash-functions.js"></script>
+```
+
+# Hide and show attributes
+
+Sometimes there are just too many attributes. 
+It would be great to get most of them out of the way.
+
+Here is the plan:
+
+* Launch `choosy` from the **plugins** menu.
+* Click the **Attributes** tab.
+* Use the green and gray slidey buttons on the left 
+to hide and show the attributes you want.
+
+::: {.column-margin}
+![The `choosy` attributes panel](art/choosy-attributes-nhanes-example.png)
+:::
+
+As you do that, 
+watch how the table hides and shows the attributes.
+
+::: {.callout-tip}
+## Notes 
+
+When you hide an attribute, you're only hiding it. 
+It's still there with all of its data.
+
+Also, when you're done adjusting your attributes, go ahead and close `choosy`. 
+You can always open it again by picking it from the **plugins** menu.
+And it will remember which attributes are currently hidden.
+:::

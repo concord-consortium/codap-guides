@@ -1,0 +1,27 @@
+project:
+  type: website
+
+website:
+  title: "trees"
+  sidebar:
+    style: "floating"
+    search: true
+    contents:
+      - section: "Basics"
+        contents:
+          - href: index.qmd
+            text: "Your first tree"
+          - with-graphs.qmd
+      - section: "Advanced"
+        contents:
+          - xeno.qmd
+      - commentary.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+editor: visual
+

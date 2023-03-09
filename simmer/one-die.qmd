@@ -1,0 +1,39 @@
+```{r}
+#| echo: false
+source("awash-functions.r")
+```
+
+
+## One die
+
+We will begin by rolling one die
+
+Make the program you see below. Notice how the *blocks* fit together. We have a block that represents a variable (named `item`), and it "receives" a random number. Then we send that data to CODAP.
+
+![](art/one-die-only.jpg)
+
+In the live example below, try to build that program. Some hints:
+
+-   The gray stripe on the left is called the *toolbox*.
+-   The toolbox contains the names of *categories*. Click on a name to see the blocks in that category.
+-   Find the blocks you need in three different categories.
+-   Drag blocks from the toolbox into the main workspace and hook them together.
+-   If you get one you don't want, you can drag it to the trash can in the lower right.
+
+See how you do: 
+
+```{r}
+#| echo: false
+#| results: asis
+#| column: page-right
+
+theURL <- "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/"
+
+iFrameLink(theURL)
+```
+
+When you have it the way you want, press the *run* button (the green circle). A CODAP table appears with your data in it. Run the program a few more times and see how the value of `item` changes.
+
+Because it's in CODAP, you can make a graph the usual way.
+
+![Does `item` look evenly distributed? (Probably not!)](art/one-die-a-few-results.png)

@@ -1,0 +1,28 @@
+project:
+  type: website
+
+website:
+  title: "choosy"
+  sidebar:
+    style: "floating"
+    search: true
+    contents:
+      - section: "Attributes"
+        contents:
+          - href: hide-and-show.qmd
+            text: "hide and show attributes"
+          - href: batches.qmd
+            text: "making batches"
+      - section: "Cases"
+        contents:
+          - href: tagging.qmd
+            text: "tagging cases"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+editor: visual
+

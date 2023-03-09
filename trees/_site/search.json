@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Your first tree",
+    "section": "",
+    "text": "Tree showing data about passengers on the Titanic. It shows a huge gender difference in survival rates.\n\n\nIn this guide you will learn to make classification trees in CODAP using the Arbor plugin.\nA tree diagram about passengers on the Titanic appears at right.\nBegin a tree by dragging your target variable into the middle of a blank, gray tree panel. The target variable might also be called\n\nthe dependent variable\nthe outcome variable\nthe effect\n\nIt’s the thing you are trying to predict. In the case of the Titanic data, it’s survived: we want to know what makes it more likely to have survived the disaster.\nIn the live example below, start your tree by dropping survived into the blank tree. You should see that 500 of the 1309 people survived, that is, survived = 1.\n\n\n\nNext, drop sex onto the white box with “500 of 139” in it.\nThe tree will branch. You can see how the survival rate was different for males and females.\nNotice that the tree is composed of boxes (called nodes) and lines (links).\n\n\n\n\n\nConfiguring age: setting the cutpoint to 15. It would be smart to change the labels as well!\n\n\nNext, drop age onto the “male” node. It will split, but probably using age 30 as a break point. Click the gear on the age stripe and change that 30 to 15.\nNow your tree should look like the one up at the top of the page… except that you have to assign the terminal nodes — the leaves of the tree — to an outcome. Do that by clicking on the leaf nodes repeatedly until you see what you want. Remember: 1 means you’re predicting survival.\nIt’s easy to lose track of what’s going on in a node. When that happens, just point at the node. Don’t click, just hover for a moment, and text will pop up describing that node in more detail.\n\n\n\n\n\n\n\n\nThe pop-up information for the “male” node"
+  },
+  {
+    "objectID": "with-graphs.html",
+    "href": "with-graphs.html",
+    "title": "Trees and graphs",
+    "section": "",
+    "text": "How should you decide how to build a tree? What attributes should you drag in? How do you pick a cut point?\nYou could just try things, but it often helps to make graphs: graphs that show the relationship between the attribute you’re wondering about and your target variable.\nFor example, here are two graphs of the same data showing the height of 28 professional athletes and what their sport is. In this case, all of these athletes play either rugby or basketball. That attribute, sport, is our target variable. That is, we are trying to use height to predict what sport they play.\n\n\n\n\n\n\nusing the vertical axis\n\n\n\n\n\n\n\nusing a legend\n\n\n\n\n\n\n\nTwo ways to show sport and height. As we might expect, basketball players are generally taller.\nWhich display is best? You will have to decide what works for you. Be sure you remember that you have a choice!\nWe could use either graph to decide on a cut point. It looks as if it’s something like 175 cm.\nIn the live example make a tree…\n\n…that’s predicting sport\n…that branches on height\n…at a number near 175 cm\n…and that predicts that the taller athletes play basketball, and the rest rugby."
+  },
+  {
+    "objectID": "commentary.html",
+    "href": "commentary.html",
+    "title": "trees",
+    "section": "",
+    "text": "Commentary\nOnly God can make a tree."
+  },
+  {
+    "objectID": "xeno.html",
+    "href": "xeno.html",
+    "title": "trees",
+    "section": "",
+    "text": "The Xeno game"
+  }
+]

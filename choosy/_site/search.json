@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "choosy",
+    "section": "",
+    "text": "Choosy is a multi-purpose tool for coping with various problems.\nThe main thing people use choosy for is hiding and showing attributes. If your table has too many columns and you’d like to get some of them out of the way, choosy is for you.\nIf that’s your problem, click Hide and show attributes on the left. That will teach you what you need to know.\nStill here? Choosy has other powers.\n\n\nHiding and showing attributes is about the columns of the table. Choosy can help you organize rows as well by tagging them.\nA “tag” is basically a new attribute that you make with choosy. One common use gows like this: You’re looking at a graph and you see a cluster of points that you think is interesting. You select them. Now you want a way to find them again even after the selection has gone away.\nYou can tell choosy to “tag” them. Choosy makes a new column called Tag (but you can change that) and in that column, every selected case is marked interesting (and you can change that too).\nThere are other uses to this feature; click on Tagging at the left to learn more.\n\n\n\nSometimes, you have a lot of attributes, and it would be helpful to organize them into groups. Choosy calls them “batches.”\nFor example, if you have a bunch of health data, you might have a batch for demographics, which would include age and sex; and another for measurements, which might have height and weight and forearm length; and another for bloodwork, with cholesterols and blood type and such.\nWith attributes in batches, you can hide and show them as group instead of one at a time.\nIf that’s what you want, see the heading for Making batches on the left."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "tagging.html",
+    "href": "tagging.html",
+    "title": "choosy",
+    "section": "",
+    "text": "There are three flavors of tagging. Choose which one using the buttons at the top of choosy.\n\n\nsimple: You tag the selection with some value, and the other cases are blank.\nbinary: You tag the selection with some value, and the other cases get some other value.\nrandom: You tag a random sample of the cases with some value, and the rest get another value.\n\nEach of these is described on the screen. Enter the values you want to tag with, and possibly edit the name of the attribute you want to hold the tags. Then press the green “plus” button to add the tags.\nAdditional notes:\n\nIn the simple case, tagging a new selection adds it to the tagged set. Likewise, un-tagging removes the selection from the tagged set. This is useful for making more complicated selections.\nIn the random case, you can use a fraction, decimal, or percent to specify the proportions. This is great for making a random sample, of course, but also perfect for making a training set and a test set when you’re thinking about machine learning.\n\n\n\nOnce you have your cases tagged, you can use the tag attribute as you would any categorical attribute.\nFor example, you can plop it into a graph to make a legend.\nYou can make a separate graph using that attribute.\nYou can use a legend or a graph to re-select the original selection. Once you have done that, you can hide or set aside cases to focus on that subset of your data.\n\n\n\nSuppose you want to tag all the people with Age between 18 and 25. You could make a graph of Age and select that range, and tag them.\nBut you might mess up your selection. If the precise ages are important, it’s probably better to make a new column yourself and give it a formula.\nHaving said that, some groups of data are just easier to select than to write a formula for. In those cases, by all means, use choosy and tagging.\nFor example, suppose you want to find all of the females between 18 and 25 who are taller than 5 feet 8 (perhaps they are the basketball prospects). The formula will be long and awkward. If you want to grab that group quickly, make the appropriate graph and select the people you want."
+  },
+  {
+    "objectID": "hide-and-show.html",
+    "href": "hide-and-show.html",
+    "title": "choosy",
+    "section": "",
+    "text": "Hide and show attributes\nSometimes there are just too many attributes. It would be great to get most of them out of the way.\nHere is the plan:\n\nLaunch choosy from the plugins menu.\nClick the Attributes tab.\nUse the green and gray slidey buttons on the left to hide and show the attributes you want.\n\n\n\n\n\n\nThe choosy attributes panel\n\n\nAs you do that, watch how the table hides and shows the attributes.\n\n\n\n\n\n\nNotes\n\n\n\nWhen you hide an attribute, you’re only hiding it. It’s still there with all of its data.\nAlso, when you’re done adjusting your attributes, go ahead and close choosy. You can always open it again by picking it from the Plugins menu. And it will remember which attributes are currently hidden."
+  },
+  {
+    "objectID": "batches.html",
+    "href": "batches.html",
+    "title": "choosy",
+    "section": "",
+    "text": "Batches of attributes"
+  },
+  {
+    "objectID": "index.html#batches",
+    "href": "index.html#batches",
+    "title": "choosy",
+    "section": "Batches",
+    "text": "Batches\nSometimes, you have a lot of attributes, and it would be helpful to organize them into groups. Choosy calls them “batches.”\nFor example, if you have a bunch of health data, you might have a batch for demographics, which would include age and sex; and another for measurements, which might have height and weight and forearm length; and another for bloodwork, with cholesterols and blood type and such.\nWith attributes in batches, you can hide and show them as group instead of one at a time.\nIf that’s what you want, see the heading for Making batches on the left."
+  },
+  {
+    "objectID": "index.html#tagging",
+    "href": "index.html#tagging",
+    "title": "choosy",
+    "section": "Tagging",
+    "text": "Tagging"
+  }
+]
