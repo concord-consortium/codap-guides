@@ -35,11 +35,17 @@ when you're thinking about machine learning.
 Once you have your cases tagged, you can use the tag attribute
 as you would any categorical attribute.
 
-For example, you can plop it into a graph to make a legend.
+For example, you can plop it into a graph to make a legend:
+
+![We used the graph on the left to create a tag for all people who are married or separated. Then we plopped that `Tag` into the graph on the right.](art/simple-tag-plop-example.png)
 
 You can make a separate graph using that attribute.
 
-You can use a legend or a graph to re-select the original selection. 
+![We made a new tag (`Triglyc`) that indicates normal triglycerides.
+We put it on the horizontal axis of the graph on the left.
+The `Tag` tag (married or separated) is still there.](art/tag-triglycerides-150.png)
+
+You can also use a legend or a graph to re-select the original selection. 
 Once you have done that, you can hide or set aside cases
 to focus on that subset of your data.
 
