@@ -163,13 +163,25 @@ ul.task-list li input[type="checkbox"] {
 <p>Additional notes:</p>
 <ul>
 <li>In the <strong>simple</strong> case, tagging a new selection adds it to the tagged set. Likewise, un-tagging removes the selection from the tagged set. This is useful for making more complicated selections.</li>
-<li>In the <strong>random</strong> case, you can use a fraction, decimal, or percent to specify the proportions. This is great for making a random sample, of course, but also perfect for making a training set and a test set when you’re thinking about machine learning.</li>
+<li>The <strong>random</strong> case is great for making a random sample, of course, but also perfect for making a training set and a test set when you’re thinking about machine learning.</li>
 </ul>
 <section id="using-the-tags" class="level2">
 <h2 class="anchored" data-anchor-id="using-the-tags">Using the tags</h2>
 <p>Once you have your cases tagged, you can use the tag attribute as you would any categorical attribute.</p>
-<p>For example, you can plop it into a graph to make a legend.</p>
+<p>For example, you can plop it into a graph to make a legend:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/simple-tag-plop-example.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">We used the graph on the left to create a tag for all people who are married or separated. Then we plopped that <code>Tag</code> into the graph on the right.</figcaption><p></p>
+</figure>
+</div>
 <p>You can make a separate graph using that attribute.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/tag-triglycerides-150.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">We made a new tag for normal triglycerides (<code>Triglyc</code>). Now we’re using on the horizontal axis of the graph on the left. The <code>Tag</code> tag (married or separated) is still there.</figcaption><p></p>
+</figure>
+</div>
 <p>You can use a legend or a graph to re-select the original selection. Once you have done that, you can hide or set aside cases to focus on that subset of your data.</p>
 </section>
 <section id="to-tag-or-not-to-tag" class="level2">
@@ -177,7 +189,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Suppose you want to tag all the people with <code>Age</code> between 18 and 25. You could make a graph of <code>Age</code> and select that range, and tag them.</p>
 <p>But you might mess up your selection. If the precise ages are important, it’s probably better to make a new column yourself and give it a formula.</p>
 <p>Having said that, some groups of data are just easier to select than to write a formula for. In those cases, by all means, use <code>choosy</code> and tagging.</p>
-<p>For example, suppose you want to find all of the females between 18 and 25 who are taller than 5 feet 8 (perhaps they are the basketball prospects). The formula will be long and awkward. If you want to grab that group quickly, make the appropriate graph and select the people you want.</p>
+<p>For example, suppose you want to find all of the females between 18 and 25 who are taller than 5 feet 8 (perhaps they are the basketball prospects). The formula will be long and awkward. If you want to grab that group quickly, make the appropriate graph(s) and select the people you want.</p>
 
 
 </section>
