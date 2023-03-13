@@ -9,13 +9,13 @@ It would be great to get most of them out of the way.
 
 Here is the plan:
 
-* Launch `choosy` from the **plugins** menu.
+* Launch `Choosy` from the **Plugins** menu.
 * Click the **Attributes** tab.
 * Use the green and gray slidey buttons on the left 
 to hide and show the attributes you want.
 
 ::: {.column-margin}
-![The `choosy` attributes panel](art/choosy-attributes-nhanes-example.png)
+![The `Choosy` attributes panel](art/choosy-attributes-nhanes-example.png)
 :::
 
 As you do that, 
@@ -27,7 +27,21 @@ watch how the table hides and shows the attributes.
 When you hide an attribute, you're only hiding it. 
 It's still there with all of its data.
 
-Also, when you're done adjusting your attributes, go ahead and close `choosy`. 
-You can always open it again by picking it from the **plugins** menu.
+Also, when you're done adjusting your attributes, 
+go ahead and close `choosy`. 
+You can always open it again by picking it from the **Plugins** menu.
 And it will remember which attributes are currently hidden.
+
+Finally, if you click on the blue "info" circles, 
+`Choosy` will show you the comments about the attribute.
 :::
+
+Try out `Choosy` in the live dem below:
+
+::: {.column-page-right}
+<script>
+    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://concord-consortium.github.io/codap-data-interactives/data-science-worlds/nhanes/nhanes.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FR5x320rCvir0pmMv0wnG%2Ffile.json";
+    awash.liveDemoAt(theURL);
+</script>
+:::
+

@@ -7,7 +7,7 @@
 There are three flavors of tagging.
 Choose which one using the buttons at the top of `choosy`.
 
-![](art/tag-simple-binary-random.png)
+![](art/tag-simple-binary-random.png){width=60%}
 
 * **simple**: You tag the selection with some value, 
 and the other cases are blank.
@@ -23,11 +23,12 @@ Then press the green "plus" button to add the tags.
 
 Additional notes:
 
-* In the **simple** case, tagging a new selection adds it to the tagged set. 
+* In the **simple** case, 
+tagging a new selection adds it to the tagged set. 
 Likewise, un-tagging removes the selection from the tagged set. 
 This is useful for making more complicated selections.
 * The **random** case is great for making a random sample, of course, 
-but also perfect for making a training set and a test set 
+and perfect for making a training set and a test set 
 when you're thinking about machine learning.
 
 ## Using the tags
@@ -38,6 +39,7 @@ as you would any categorical attribute.
 For example, you can plop it into a graph to make a legend:
 
 ![We used the graph on the left to create a tag for all people who are married or separated. Then we plopped that `Tag` into the graph on the right.](art/simple-tag-plop-example.png)
+
 
 You can make a separate graph using that attribute.
 
@@ -68,4 +70,4 @@ it's probably better to make a new column yourself and give it a formula.
  (perhaps they are the basketball prospects).
  The formula will be long and awkward.
  If you want to grab that group quickly,
- make the appropriate graph(s) and select the people you want. 
+ make the appropriate graph(s) and select the people you want, and tag them. 

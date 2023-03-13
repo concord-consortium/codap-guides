@@ -6,8 +6,17 @@
 
 # Learning choosy
 
+
 Choosy is a multi-purpose tool for coping with 
 various problems.
+
+To get `choosy`, 
+pick it from the **Plugins** menu in CODAP. 
+The choosy window will appear. 
+
+::: {.column-margin}
+![The **Plugins** menu, with `Choosy` about to be chosen.](art/choosy-plugins-menu.png)
+:::
 
 The main thing people use choosy for is hiding and showing
 attributes.
@@ -59,5 +68,3 @@ With attributes in batches, you can hide and show them
 as  group instead of one at a time.
 
 If that's what you want, see the heading for **Making batches** on the left.
-
-## Tagging

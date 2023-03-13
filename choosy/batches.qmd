@@ -4,3 +4,26 @@
 
 # Batches of attributes
 
+`Choosy` lets you create and name sets of attributes, called *batches*.
+
+::: {.column-margin}
+![We are just about to create a batch named `demographics`](art/choosy-batch-name.png)
+
+![We have just added `BornIn` to the `demographics` batch. You can also see a `blood` batch, which has been suppressed by pressing the eye icon with the slash. ](art/choosy-batch-demographics.png)
+:::
+
+* Enter the batch name in the box and press `enter`.
+A new batch "stripe" appears at the bottom of the list of variables.
+* Drag an attribute you want to be in that batch and 
+drop it on the stripe. 
+
+::: {.callout-tip}
+
+You may need to drop it on an empty part of the stripe (not the name of the batch). 
+The stripe turns yellow when you're in the right place.
+:::
+
+* Click the eyeball icons to hide or show all attributes in that batch.
+* Click the triangle to collapse or expand 
+the list of attributes in that batch.ftp
+* If you move all of the attributes out of a batch, it disappears.
