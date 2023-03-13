@@ -1,6 +1,5 @@
-```{r}
-#| echo: false
-source("awash-functions.r")
+```{=html}
+    <script src="src/awash-functions.js"></script>
 ```
 
 
@@ -22,15 +21,12 @@ In the live example below, try to build that program. Some hints:
 
 See how you do: 
 
-```{r}
-#| echo: false
-#| results: asis
-#| column: page-right
-
-theURL <- "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/"
-
-iFrameLink(theURL)
-```
+::: {column-page-right}
+<script>
+    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/";
+    awash.liveDemoAt(theURL);
+</script>
+:::
 
 When you have it the way you want, press the *run* button (the green circle). A CODAP table appears with your data in it. Run the program a few more times and see how the value of `item` changes.
 

@@ -1,0 +1,14 @@
+{
+  "hash": "12b61faea457e3ca811b247c8a196649",
+  "result": {
+    "markdown": "---\nformat : html\ntitle: \"Simmer Guide\"\n---\n\n::: {.cell}\n\n:::\n\n\n## Simmer\n\nWith `simmer`, you can use block programming to simulate probability experiments, among other things.\n\nThis guide assumes you have some CODAP skills:\n\n-   You can make graphs.\n-   You can make a new attribute (a new column) and give it a simple formula.\n\nDo the three lessons you can see in the sidebar.\n\n### Simmer in a new tab\n\nIf you want to experiment outside of this guide, click the link below to open a `simmer` document in a new tab. You'll have more space.\n\nBookmark it so you can `simmer` again whenever you want.\n\n\n<a href='https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/' target='_blank'>\n              <img src = 'art/codap_logo_48.png' width='24'>&emsp;a fresh simmer document</a>\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

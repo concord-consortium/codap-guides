@@ -17,6 +17,8 @@ website:
             text: "3) two dice"
       - section: "Advanced"
         contents:
+          - href: examples.qmd
+            text: "examples"
 
 format:
   html:

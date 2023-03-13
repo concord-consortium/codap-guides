@@ -118,7 +118,19 @@ ul.task-list li input[type="checkbox"] {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">Advanced</span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Advanced</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples.html" class="sidebar-item-text sidebar-link">examples</a>
+  </div>
+</li>
+      </ul>
   </li>
     </ul>
     </div>
@@ -137,14 +149,12 @@ ul.task-list li input[type="checkbox"] {
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 
 
-<div class="cell">
-
-</div>
-<section id="two-dice" class="level2 page-columns page-full">
+    <script src="src/awash-functions.js"></script>
+<section id="two-dice" class="level2">
 <h2 class="anchored" data-anchor-id="two-dice">Two dice</h2>
 <p>One die is great…but what could be better? Two dice! More than twice as good.</p>
 <p>We give you a fresh, blank simmer document below. You can start fresh right there or modify what you did above. Try to make a program like this one:</p>
@@ -168,9 +178,11 @@ Names are important
 <li>Use the yellow “plus” button near the top-left of the <code>simmer</code> window to make the variables <code>die1</code> and <code>die2</code>.</li>
 <li>After you make a block that sets a variable, you can use the menu in that variable block to change which variable it refers to. You can also use that menu to change the variable’s name.</li>
 </ul>
-<div class="cell column-page-right">
-<iframe src="https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/" width="888px" height="666px" frameborder="no" scrolling="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true">
-</iframe>
+<div class="{column-page-right}">
+<script>
+    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/";
+    awash.liveDemoAt(theURL);
+</script>
 </div>
 <p>When you run your program, <code>simmer</code> will create a column in your CODAP table for every variable in your program. That means you can calculate the sum of the two dice in CODAP.</p>
 <ul>

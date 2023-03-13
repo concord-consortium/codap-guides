@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>simmer – repeating</title>
+<title>simmer – examples</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./repeating.html" class="sidebar-item-text sidebar-link active">2) repeated actions</a>
+  <a href="./repeating.html" class="sidebar-item-text sidebar-link">2) repeated actions</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -127,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./examples.html" class="sidebar-item-text sidebar-link">examples</a>
+  <a href="./examples.html" class="sidebar-item-text sidebar-link active">examples</a>
   </div>
 </li>
       </ul>
@@ -141,7 +141,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#repeating-many-times" id="toc-repeating-many-times" class="nav-link active" data-scroll-target="#repeating-many-times">Repeating many times</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link active" data-scroll-target="#examples">Examples</a>
+  <ul class="collapse">
+  <li><a href="#simulated-fbola-test-results" id="toc-simulated-fbola-test-results" class="nav-link" data-scroll-target="#simulated-fbola-test-results">Simulated Fbola test results</a></li>
+  <li><a href="#the-game-of-pig" id="toc-the-game-of-pig" class="nav-link" data-scroll-target="#the-game-of-pig">The Game of Pig</a></li>
+  <li><a href="#projectile" id="toc-projectile" class="nav-link" data-scroll-target="#projectile">Projectile</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -151,40 +156,42 @@ ul.task-list li input[type="checkbox"] {
 
 
     <script src="src/awash-functions.js"></script>
-<section id="repeating-many-times" class="level2">
-<h2 class="anchored" data-anchor-id="repeating-many-times">Repeating many times</h2>
-<p>Let’s change the program so that it repeats that process on its own, so that we don’t have to press the button so many times.</p>
-<p>Improve the example below.</p>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<p>Here are links to a number of more sophisticated examples of <code>simmer</code> programming and the data that they can generate.</p>
+<p>These all have a particular form, which you might find useful:</p>
 <ul>
-<li>Find a “repeat” block in one of the categories that will run those blocks 10 times.</li>
-<li>Drag it into the workspace and make it enclose the blocks you want to repeat.</li>
-<li>Run it and see what happens. (It’s probably still not very evenly distributed.)</li>
-<li>Change the number of repeats to a few hundred and run it again.</li>
-<li>See if the graph shows that <code>item</code> has a more even distribution.</li>
+<li>They begin by defining a bunch of variables and giving then initial values.</li>
+<li>Then there is a loop that produces data.</li>
 </ul>
-<div class="{column-page-right}">
+<p>One way to use the program is to change one or more of the initial values and then run it again. What effect did changing those values have on the results? Why is that?</p>
+<p>Of course, you should make a graph—or two or three—to display your results, and change those graphs as necessary as you learn more.</p>
+<section id="simulated-fbola-test-results" class="level3">
+<h3 class="anchored" data-anchor-id="simulated-fbola-test-results">Simulated Fbola test results</h3>
+<p>We often use “Fbola” as the name of a fake disease (like Ebola but Fake). In this simulation, we have a test for the disease, but it’s not perfect.</p>
+<p>You will see parameters for the accuracy of the test in the program. You might even change the program so that these parameters are variables that get output with the other data.</p>
+<p>The key Bayesian question you should answer right away is, “If I test positive, what’s the probability that I have the disease?”</p>
 <script>
-    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/#shared=https%3A%2F%2Fcfm-shared.concord.org%2Fs94cqTewcfuowyxzxg0b%2Ffile.json";
-    awash.liveDemoAt(theURL);
+    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FOMQspDSoJzGmDty6RdNN%2Ffile.json";
+    awash.codapInNewTab(theURL, "Click this to open a new tab with the Fbola test simulation" );
 </script>
-</div>
-<p>The screen is getting crowded. It’s hard to work with the program, the graph, and the table at the same time.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-pro tip: collapsing the code
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In the <code>simmer</code> top bar you’ll see a [currently brown] square showing four arrows pointing inward. Press it to collapse the program so you have more space for data analysis.</p>
-<p>Then, when you want to program again, press the button to give yourself room to code.</p>
-</div>
-</div>
+</section>
+<section id="the-game-of-pig" class="level3">
+<h3 class="anchored" data-anchor-id="the-game-of-pig">The Game of Pig</h3>
+<p>A text box in the document describes this important and venerable game.</p>
+<p>One task is to create an optimal strategy for the game. In this program,a parameter called <code>limit</code> governs when you stop rolling the die. What’s the best value for <code>limit</code>?</p>
+<p>But there are other possible strategies that don;t involve a <code>limit</code>! Implementing those requires altering the program, or creating a new one altogether.</p>
+<p><a href="https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FxsYmnblFlhqFvKgsnAai%2Ffile.json"><img src="art/codap-logo-48.png">  Click this to open a new tab with the game of Pig!</a></p>
+</section>
+<section id="projectile" class="level3">
+<h3 class="anchored" data-anchor-id="projectile">Projectile</h3>
+<p>This is something different: no probability at all.</p>
+<p>Instead, it’s physics: a numerical simulation of projectile motion.</p>
+<p>This is very unsophisticated, using the bare minimum Euler’s method kind of calculation. No Runge-Kutta! Not even Simpson’s Rule! But it still looks interesting, and we can explore, among other things, how accurate this simple-minded calculation can be.</p>
+<p><a href="https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FiULaKyZtzZxCAYU4OoHW%2Ffile.json"><img src="art/codap-logo-48.png">  Click this to open a new tab with the projectile simulation!</a></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

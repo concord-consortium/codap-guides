@@ -1,6 +1,5 @@
-```{r}
-#| echo: false
-source("awash-functions.r")
+```{=html}
+    <script src="src/awash-functions.js"></script>
 ```
 
 ## Two dice
@@ -29,15 +28,12 @@ to make the variables `die1` and `die2`.
 you can use the menu in that variable block to change which variable it refers to. 
 You can also use that menu to change the variable's name.
 
-```{r}
-#| echo: false
-#| results: asis
-#| column: page-right
-
-theURL <- "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/"
-
-iFrameLink(theURL)
-```
+::: {column-page-right}
+<script>
+    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/";
+    awash.liveDemoAt(theURL);
+</script>
+:::
 
 When you run your program, `simmer` will create a column in your CODAP table
 for every variable in your program.

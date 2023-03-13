@@ -1,1 +1,11 @@
 /* css styles */
+
+a {
+    color : blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a: :hover {
+    color : green;
+}

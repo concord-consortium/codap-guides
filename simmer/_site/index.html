@@ -118,7 +118,19 @@ ul.task-list li input[type="checkbox"] {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">Advanced</span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Advanced</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examples.html" class="sidebar-item-text sidebar-link">examples</a>
+  </div>
+</li>
+      </ul>
   </li>
     </ul>
     </div>
@@ -156,9 +168,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="cell">
-
-</div>
+    <script src="src/awash-functions.js"></script>
 <section id="simmer" class="level2">
 <h2 class="anchored" data-anchor-id="simmer">Simmer</h2>
 <p>With <code>simmer</code>, you can use block programming to simulate probability experiments, among other things.</p>
@@ -172,7 +182,10 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="simmer-in-a-new-tab">Simmer in a new tab</h3>
 <p>If you want to experiment outside of this guide, click the link below to open a <code>simmer</code> document in a new tab. You’ll have more space.</p>
 <p>Bookmark it so you can <code>simmer</code> again whenever you want.</p>
-<p><a href="https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/" target="_blank"> <img src="art/codap_logo_48.png" width="24"> a fresh simmer document</a></p>
+<script>
+    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/";
+    awash.codapInNewTab(theURL, "Click this to open a fresh simmer document" );
+</script>
 
 
 </section>

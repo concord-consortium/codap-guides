@@ -1,0 +1,71 @@
+```{=html}
+    <script src="src/awash-functions.js"></script>
+```
+
+## Examples
+
+Here are links to a number of more sophisticated examples of `simmer` 
+programming and the data that they can generate.
+
+These all have a particular form, which you might find useful:
+
+* They begin by defining a bunch of variables and giving then initial values.
+* Then there is a loop that produces data.
+
+One way to use the program is to change one or more of the initial values and then run it again. 
+What effect did changing those values have on the results? 
+Why is that?
+
+Of course, you should make a graph---or two or three---to display your results,
+and change those graphs as necessary as you learn more.
+
+
+### Simulated Fbola test results
+
+We often use "Fbola" as the name of a fake disease (like Ebola but Fake). 
+In this simulation, we have a test for the disease, but it's not perfect.
+
+You will see parameters for the accuracy of the test in the program. 
+You might even change the program so that these parameters are variables that get output with the other data.
+
+The key Bayesian question you should answer right away is,
+"If I test positive, what's the probability that I have the disease?"
+
+
+<script>
+    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FOMQspDSoJzGmDty6RdNN%2Ffile.json";
+    awash.codapInNewTab(theURL, "Click this to open a new tab with the Fbola test simulation" );
+</script>
+
+
+### The Game of Pig
+
+A text box in the document describes this important and venerable game. 
+
+One task is to create an optimal strategy for the game. 
+In this program,a parameter called `limit` governs when you stop rolling the die.
+What's the best value for `limit`?
+
+But there are other possible strategies that don;t involve a `limit`!
+Implementing those requires altering the program, or creating a new one altogether. 
+
+<a href="https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FxsYmnblFlhqFvKgsnAai%2Ffile.json"><img src="art/codap-logo-48.png">&emsp; Click this to open a new tab with the game of Pig!</a>
+
+
+### Projectile
+
+This is something different: no probability at all.
+
+Instead, it's physics: a numerical simulation of projectile motion. 
+
+This is very unsophisticated, using the bare minimum Euler's method kind of calculation.
+No Runge-Kutta! 
+Not even Simpson's Rule!
+But it still looks interesting, 
+and we can explore, among other things, 
+how accurate this simple-minded calculation can be.
+
+<a href="https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FiULaKyZtzZxCAYU4OoHW%2Ffile.json"><img src="art/codap-logo-48.png">&emsp; Click this to open a new tab with the projectile simulation!</a>
+
+
+

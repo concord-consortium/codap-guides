@@ -1,8 +1,6 @@
-```{r}
-#| echo: false
-source("awash-functions.r")
+```{=html}
+    <script src="src/awash-functions.js"></script>
 ```
-
 
 ## Repeating many times
 
@@ -16,15 +14,13 @@ Improve the example below.
 -   Change the number of repeats to a few hundred and run it again.
 -   See if the graph shows that `item` has a more even distribution.
 
-```{r}
-#| echo: false
-#| results: asis
-#| column: page-right
+::: {column-page-right}
+<script>
+    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/#shared=https%3A%2F%2Fcfm-shared.concord.org%2Fs94cqTewcfuowyxzxg0b%2Ffile.json";
+    awash.liveDemoAt(theURL);
+</script>
+:::
 
-theURL <- "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/#shared=https%3A%2F%2Fcfm-shared.concord.org%2Fs94cqTewcfuowyxzxg0b%2Ffile.json"
-
-iFrameLink(theURL)
-```
 
 The screen is getting crowded.
 It's hard to work with the program, the graph, and the table at the same time. 
