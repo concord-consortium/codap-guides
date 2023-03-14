@@ -1,0 +1,95 @@
+---
+format : html
+title: "CODAP Workshop Test"
+editor: 
+  markdown: 
+    wrap: sentence
+---
+
+```{r}
+#| echo: false
+source("awash-functions.r")
+```
+
+Last updated 3/14/23
+
+### 1. Introduction/CODAP tutorials (10 min)
+
+Workshop participants start by breaking into pairs/small groups to run through the two getting started tutorials ([tutorial 1 link](https://codap.concord.org/app/static/dg/en/cert/index.html#file=examples:Getting%20started%20with%20CODAP); [tutorial 2 link](https://codap.concord.org/app/static/dg/en/cert/index.html?url=https://concord-consortium.github.io/codap-data/example-documents/src/documents/get_started_2.codap)---also embedded below).
+Participants work together in pairs/small groups to help one another if they get stuck.
+
+```{r}
+#| echo: false
+#| results: asis
+
+theURL <- "https://codap.concord.org/app/static/dg/en/cert/index.html#file=examples:Getting%20started%20with%20CODAP"
+
+iFrameLink(theURL)
+
+theURL <- "https://codap.concord.org/app/static/dg/en/cert/index.html?url=https://concord-consortium.github.io/codap-data/example-documents/src/documents/get_started_2.codap"
+
+iFrameLink(theURL)
+```
+
+### 2. Group discussion (10 min)
+
+-   What did you see in the tutorials that are things CODAP allows you to do with data?
+
+-   End with brief overview of background of CODAP, and showing the [CODAP website](https://codap.concord.org/)/help resources on it (point out [help system](https://codap.concord.org/help/), [forum](https://codap.concord.org/forums/), [launch CODAP](https://codap.concord.org/app/static/dg/en/cert/index.html) button, and [example CODAP documents](https://concord-consortium.github.io/codap-data/))
+
+### 3. Exploring CODAP example documents (10 min)
+
+-   [Link to CODAP example documents](https://concord-consortium.github.io/codap-data/) (also embedded below)
+
+-   Each group/pair of participants picks a dataset of interest to them (could be math, science, social science, language arts, or others)
+
+-   Participants experiment with what to do with the dataset in CODAP (creating graphs, maps, etc.)
+
+-   Goal is to get participants exploring data in CODAP, learn some things they can do, find some interesting patterns in the data, and start thinking about how they could use CODAP in their work (not to learn all the features of CODAP)
+
+-   Ask participants to capture questions and challenges that come up during their exploration
+
+```{r}
+#| echo: false
+#| results: asis
+
+theURL <- "https://concord-consortium.github.io/codap-data/"
+
+iFrameLink(theURL)
+```
+
+### 4. Group discussion (10 min)
+
+-   What did you learn from exploring the data in CODAP?
+
+-   How could you use what you have learned about CODAP/expand on it in your own work?
+
+    -   Immediate-term: Find a simple, quick/easy thing you could do with students aligned with your current curriculum tomorrow
+
+    -   Longer term: What are you doing in your work that CODAP could help illustrate?
+
+-   Emphasize that there is no need to learn everything CODAP can do all at once or completely reconfigure your curriculum for CODAP
+
+### 5. Conclusion (10 min)
+
+-   Emphasize useful resources for continued CODAP learning/work going forward
+
+-   Have participants use the [help system](https://codap.concord.org/help/) to seek an answer to one of the questions or challenges that came up during their exploration
+
+-   Point out the following resources:
+
+    -   [CODAP challenge cards](https://www.terc.edu/dataclubs/modules/) (incl. printable version)
+
+    -   [CODAP website](https://codap.concord.org/)
+
+    -   CODAP tutorials:
+
+        -   Getting started CODAP tutorials: [tutorial 1 link](https://codap.concord.org/app/static/dg/en/cert/index.html#file=examples:Getting%20started%20with%20CODAP); [tutorial 2 link](https://codap.concord.org/app/static/dg/en/cert/index.html?url=https://concord-consortium.github.io/codap-data/example-documents/src/documents/get_started_2.codap)
+
+        -   [CIDSEE project CODAP tutorial link](https://bit.ly/DDCodapTutorial)
+
+        -   NetApp project tutorials: [Mini-tutorial #1;](https://nam02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fcodap.concord.org%2Freleases%2Flatest%2Fstatic%2Fdg%2Fen%2Fcert%2Findex.html%3Furl%3Dhttps%3A%2F%2Fchaddorsey.github.io%2FCODAP-plugins%2FMini-tutorials%2Fonboarding-documents%2FMini-tutorial-1.codap&data=05%7C01%7Candee_rubin%40terc.edu%7Cd1c039f5b7654c68f8ba08db14ebb9f1%7C322d5924eb17485dad2e5078894cc39a%7C0%7C0%7C638126774916604339%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=zUVzAxl00cwqE%2B%2BU5sc415Er%2FawatDtZH25yEXUmyxc%3D&reserved=0) [Mini-tutorial #2;](https://nam02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fcodap.concord.org%2Freleases%2Flatest%2Fstatic%2Fdg%2Fen%2Fcert%2Findex.html%3Furl%3Dhttps%3A%2F%2Fchaddorsey.github.io%2FCODAP-plugins%2FMini-tutorials%2Fonboarding-documents%2FMini-tutorial-2.codap&data=05%7C01%7Candee_rubin%40terc.edu%7Cd1c039f5b7654c68f8ba08db14ebb9f1%7C322d5924eb17485dad2e5078894cc39a%7C0%7C0%7C638126774916604339%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=UCulAUeVCokl6hD7%2FzMuBKUUEsxWfUm6n5fMQ9H%2FXPU%3D&reserved=0) [Mini-tutorial #3;](https://nam02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fcodap.concord.org%2Freleases%2Flatest%2Fstatic%2Fdg%2Fen%2Fcert%2Findex.html%3Furl%3Dhttps%3A%2F%2Fchaddorsey.github.io%2FCODAP-plugins%2FMini-tutorials%2Fonboarding-documents%2FMini-tutorial-3.codap&data=05%7C01%7Candee_rubin%40terc.edu%7Cd1c039f5b7654c68f8ba08db14ebb9f1%7C322d5924eb17485dad2e5078894cc39a%7C0%7C0%7C638126774916604339%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=ST62kQzdA0QEw5%2BxFWIhUaK0TaAkKiJH1USP4VYnTOU%3D&reserved=0) [Mini-tutorial #4](https://nam02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fcodap.concord.org%2Freleases%2Flatest%2Fstatic%2Fdg%2Fen%2Fcert%2Findex.html%3Furl%3Dhttps%3A%2F%2Fchaddorsey.github.io%2FCODAP-plugins%2FMini-tutorials%2Fonboarding-documents%2FMini-tutorial-4.codap&data=05%7C01%7Candee_rubin%40terc.edu%7Cd1c039f5b7654c68f8ba08db14ebb9f1%7C322d5924eb17485dad2e5078894cc39a%7C0%7C0%7C638126774916604339%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=kTYMGadMfDCKUHLSKkGjTQXn4blN1NDojjacmcZGk64%3D&reserved=0)
+
+    -   Tim Erickson\'s [*Awash in Data*](https://codap.xyz/awash/) book and [codap.xyz](http://codap.xyz) website
+
+    -   [Pip Arnold\'s CODAP resources](https://karekareeducation.co.nz/category/codap/), etc.
