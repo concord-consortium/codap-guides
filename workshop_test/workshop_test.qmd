@@ -41,9 +41,9 @@ iFrameLink(theURL)
 
 ## Group discussion *(10 min)*
 
--   What did you see in the tutorials that are things CODAP allows you to do with data?
+-   What does CODAP allow you to do with data?
 
--   End with brief overview of background of CODAP, and showing the [CODAP website](https://codap.concord.org/)/help resources on it (point out [help system](https://codap.concord.org/help/), [forum](https://codap.concord.org/forums/), [launch CODAP](https://codap.concord.org/app/static/dg/en/cert/index.html) button, and [example CODAP documents](https://concord-consortium.github.io/codap-data/))
+-   End with brief overview of background of CODAP and showing the [CODAP website](https://codap.concord.org/)/help resources on it (point out [help system](https://codap.concord.org/help/), [forum](https://codap.concord.org/forums/), [launch CODAP](https://codap.concord.org/app/static/dg/en/cert/index.html) button, and [example CODAP documents](https://concord-consortium.github.io/codap-data/))
 
 ## Exploring CODAP example documents *(10 min)*
 
