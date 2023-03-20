@@ -18,7 +18,7 @@ editor:
 source("awash-functions.r")
 ```
 
-Last updated 3/16/23
+Last updated `r format(Sys.Date(), format="%B %d, %Y")`
 
 ## Introduction/CODAP tutorials *(10 min)*
 
@@ -79,13 +79,10 @@ iFrameLink(theURL)
 
 -   Emphasize that there is no need to learn everything CODAP can do all at once or completely reconfigure your curriculum for CODAP
 
-## Conclusion *(10 min)*
-
--   Emphasize useful resources for continued CODAP learning/work going forward
-
+## Conclusion & additional resources *(10 min)*
 -   Have participants use the [help system](https://codap.concord.org/help/) to seek an answer to one of the questions or challenges that came up during their exploration
 
--   Point out the following resources:
+-   Emphasize useful resources for continued CODAP learning/work going forward (you may also wish to share these by email with attendees):
 
     -   [CODAP challenge cards](https://www.terc.edu/dataclubs/modules/) (incl. printable version)
 
