@@ -1,5 +1,5 @@
 ---
-title: "CODAP Workshop Test"
+title: "CODAP Workshop Test (test)"
 format: 
   html:
     toc: true
