@@ -28,7 +28,7 @@ to make the variables `die1` and `die2`.
 you can use the menu in that variable block to change which variable it refers to. 
 You can also use that menu to change the variable's name.
 
-::: {column-page-right}
+::: {.column-page-right}
 <script>
     const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/";
     awash.liveDemoAt(theURL);

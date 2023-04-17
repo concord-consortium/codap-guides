@@ -2,7 +2,6 @@
     <script src="src/awash-functions.js"></script>
 ```
 
-
 ## One die
 
 We will begin by rolling one die
@@ -21,14 +20,16 @@ In the live example below, try to build that program. Some hints:
 
 See how you do: 
 
-::: {column-page-right}
+::: {.column-page-right}
 <script>
     const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/";
     awash.liveDemoAt(theURL);
 </script>
 :::
 
-When you have it the way you want, press the *run* button (the green circle). A CODAP table appears with your data in it. Run the program a few more times and see how the value of `item` changes.
+When you have it the way you want, press the *run* button (the green circle). 
+A CODAP table appears with your data in it. 
+Run the program a few more times and see how the value of `item` changes.
 
 Because it's in CODAP, you can make a graph the usual way.
 
