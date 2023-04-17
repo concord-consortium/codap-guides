@@ -1,0 +1,20 @@
+project:
+  type: website
+
+website:
+  title: "arbor"
+  sidebar:
+    style: "floating"
+    search: true
+    contents: 
+       - href: index.qmd
+         text: "Arbor"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

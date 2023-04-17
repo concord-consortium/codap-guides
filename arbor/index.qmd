@@ -1,0 +1,15 @@
+---
+title: "arbor"
+---
+
+```{=html}
+    <script src="src/awash-functions.js"></script>
+```
+
+## How to drive Arbor
+
+_Arbor_ is a CODAP plugin that helps you make classification trees.
+These pages will teach you how to "drive" the plugin:
+what to drop where, and where the commands are.
+To learn _why_ you would want to use this plugin, see xxx.
+
