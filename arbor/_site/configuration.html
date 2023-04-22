@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>arbor - Classification trees in CODAP using Arbor</title>
+<title>arbor - Configuring a node: the details</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -63,13 +63,13 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Classification trees in CODAP using <em>Arbor</em></h1>
+      <h1 class="quarto-secondary-nav-title">Configuring a node: the details</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -129,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./configuration.html" class="sidebar-item-text sidebar-link">The configuration box</a>
+  <a href="./configuration.html" class="sidebar-item-text sidebar-link active">The configuration box</a>
   </div>
 </li>
     </ul>
@@ -141,16 +141,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#left-and-right" id="toc-left-and-right" class="nav-link active" data-scroll-target="#left-and-right">Left and right</a></li>
+  <li><a href="#break-points" id="toc-break-points" class="nav-link" data-scroll-target="#break-points">Break points</a></li>
+  <li><a href="#more-than-two-categorical-values" id="toc-more-than-two-categorical-values" class="nav-link" data-scroll-target="#more-than-two-categorical-values">More than two categorical values</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Classification trees in CODAP using <em>Arbor</em></h1>
+<h1 class="title d-none d-lg-block">Configuring a node: the details</h1>
 </div>
 
 
@@ -166,44 +168,50 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
     <script src="src/awash-functions.js"></script>
-<p><em>Arbor</em> is a CODAP plugin that helps you make classification trees. If you are in a workshop or a class, your teacher will probably tell you a lot of what’s here. You can use this site as a reference, to remember what you’ve forgotten, or as a stand-alone self-paced course, in which case you can just work through the headings you see at left.</p>
-<section id="overview" class="level3">
-<h3 class="anchored" data-anchor-id="overview">Overview</h3>
-<dl>
-<dt>Anatomy of a tree</dt>
-<dd>
-Learn how to read a tree, using data from the <em>Titanic</em> disaster.
-</dd>
-<dt>First driving lesson</dt>
-<dd>
-The basics of how to make a tree using <em>Arbor</em>.
-</dd>
-<dt>Trees and graphs</dt>
-<dd>
-Trees and graphs are both ways of looking at the data. And they are intimately connected. Learn how to use graphs to help you make th ebest trees.
-</dd>
-<dt>Fbola example</dt>
-<dd>
-Another example dataset, this time in a medical context. Use the tree to decide who probably has the virus.
-</dd>
-<dt>Tree quality</dt>
-<dd>
-What makes a tree a <em>good</em> tree? <em>Arbor</em> can help you calculate tree quality.
-</dd>
-<dt>Breast cancer example</dt>
-<dd>
-With a numerical predictor, we create our own measure of tree quality, and use it with graphs to make the best tree.
-</dd>
-<dt>Machine learning connection</dt>
-<dd>
-Classification is an important topic in machine learning. This explains the connection and how work with <em>Arbor</em> might fit in.
-</dd>
-<dt>The configuration box</dt>
-<dd>
-When you “configure” a node in a tree, there is a dialog box. This explains all of its controls.
-</dd>
-</dl>
-<p>To learn <em>why</em> you would want to use this plugin, see xxx.</p>
+<p>When you press the “gear” that appears when you hover over a node, the configuration box appears. That’s where you can set the break point for a numeric attribute.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/gear-illus.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">The gear appears when you hover over a node.</figcaption><p></p>
+</figure>
+</div>
+</div></div><p>You can do other useful things as well.</p>
+<p>You will be able to figure this box out pretty well on your own, but just in case, this page explains all the gory details.</p>
+<section id="left-and-right" class="level3">
+<h3 class="anchored" data-anchor-id="left-and-right">Left and right</h3>
+<p>The double-headed arrow diamond near the lower right is a button that reverses the node. With that control, you can (for example) set up every branching so that the more “positive” result flows to the left. A tree is less confusing if the results are less mixed up.</p>
+</section>
+<section id="break-points" class="level3">
+<h3 class="anchored" data-anchor-id="break-points">Break points</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/sample-configuration-box.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Sample configuration box for <code>age</code></figcaption><p></p>
+</figure>
+</div>
+<p>If the attribute is numeric, you have to decide what value separates the positive from the negative values.</p>
+<p>Enter the value you want for the break point and use the menu to choose the operator that governs which value(s) go on the left.</p>
+<p>Notice that you <em>can</em> use equality. This is useful when you want to isolate a single value for some reason.</p>
+</section>
+<section id="more-than-two-categorical-values" class="level3">
+<h3 class="anchored" data-anchor-id="more-than-two-categorical-values">More than two categorical values</h3>
+<p>Suppose you have four values in the columns, such as <code>Freshman</code>, <code>Sophomore</code>, <code>Junior</code>, and <code>Senior</code>. By default, <em>Arbor</em> picks one value for the left side, and puts the rest on the right:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/configure-categorical-before.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">“Before.” Frosh are alone on the left.</figcaption><p></p>
+</figure>
+</div>
+<p>Now suppose you want to split a node by whether the cases are upper or lower class.</p>
+<p>Just click on a <em>values</em> to move it to the other side. For example, clicking on the <strong>Soph</strong> button will move it to the left side. It will look like this, although you have to edit the labels as we did:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/configure-categorical-after.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">“After.” Frosh and sophomores are together on the left.</figcaption><p></p>
+</figure>
+</div>
 
 
 </section>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>arbor - Classification trees in CODAP using Arbor</title>
+<title>arbor - Fbola example</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -63,13 +63,13 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Classification trees in CODAP using <em>Arbor</em></h1>
+      <h1 class="quarto-secondary-nav-title">Fbola example</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -109,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./fbola.html" class="sidebar-item-text sidebar-link">Fbola example</a>
+  <a href="./fbola.html" class="sidebar-item-text sidebar-link active">Fbola example</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -141,16 +141,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#the-same-tree-with-data" id="toc-the-same-tree-with-data" class="nav-link active" data-scroll-target="#the-same-tree-with-data">The same tree, with data</a></li>
+  <li><a href="#tree-as-model" id="toc-tree-as-model" class="nav-link" data-scroll-target="#tree-as-model">Tree as model</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Classification trees in CODAP using <em>Arbor</em></h1>
+<h1 class="title d-none d-lg-block">Fbola example</h1>
 </div>
 
 
@@ -166,47 +167,61 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
     <script src="src/awash-functions.js"></script>
-<p><em>Arbor</em> is a CODAP plugin that helps you make classification trees. If you are in a workshop or a class, your teacher will probably tell you a lot of what’s here. You can use this site as a reference, to remember what you’ve forgotten, or as a stand-alone self-paced course, in which case you can just work through the headings you see at left.</p>
-<section id="overview" class="level3">
-<h3 class="anchored" data-anchor-id="overview">Overview</h3>
-<dl>
-<dt>Anatomy of a tree</dt>
-<dd>
-Learn how to read a tree, using data from the <em>Titanic</em> disaster.
-</dd>
-<dt>First driving lesson</dt>
-<dd>
-The basics of how to make a tree using <em>Arbor</em>.
-</dd>
-<dt>Trees and graphs</dt>
-<dd>
-Trees and graphs are both ways of looking at the data. And they are intimately connected. Learn how to use graphs to help you make th ebest trees.
-</dd>
-<dt>Fbola example</dt>
-<dd>
-Another example dataset, this time in a medical context. Use the tree to decide who probably has the virus.
-</dd>
-<dt>Tree quality</dt>
-<dd>
-What makes a tree a <em>good</em> tree? <em>Arbor</em> can help you calculate tree quality.
-</dd>
-<dt>Breast cancer example</dt>
-<dd>
-With a numerical predictor, we create our own measure of tree quality, and use it with graphs to make the best tree.
-</dd>
-<dt>Machine learning connection</dt>
-<dd>
-Classification is an important topic in machine learning. This explains the connection and how work with <em>Arbor</em> might fit in.
-</dd>
-<dt>The configuration box</dt>
-<dd>
-When you “configure” a node in a tree, there is a dialog box. This explains all of its controls.
-</dd>
-</dl>
-<p>To learn <em>why</em> you would want to use this plugin, see xxx.</p>
+<p>A medical context can be good for learning about trees because (a) this kind of thinking is actually used in medical contexts; and (b) the thinking and terminology of trees make sense here.</p>
+<div class="page-columns page-full"><p>Our goal is going to be to make a <em>diagnosis</em>. Traditionally, “positive” means that you have the disease, and “negative” means that you do not.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Yes, this is backwards from what makes sense logically. But it’s a tradition!</p></li></div></div>
+<p>The tree represents a <em>procedure</em> for making a diagnosis. Every node represents a question or a test, and every branch an answer. When you get to the end of the tree, when you arrive at a terminal node, that node must have a diagnosis assigned to it, either positive or negative.</p>
+<p>Clearly it’s time for an example.</p>
+<div class="page-columns page-full"><p>Suppose we’re at a school and there is an epidemic of the Fbola<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> virus. The sympoms include a face rash and a fever. We want to evaluate students as they arrive and send them home if they are sick. Here is a tree we might use:</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;Like Ebola, but not as serious.</p></li></div></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/fbola-intuitive-rash-fever-tree.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<p></p><figcaption class="figure-caption">A tree we might use to diagnose students coming to school.</figcaption><p></p>
+</figure>
+</div>
+<p>The tree makes what you’re supposed to do totally clear.</p>
+<section id="the-same-tree-with-data" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="the-same-tree-with-data">The same tree, with data</h3>
+<p>That tree was made from intuition. We can also make it with data, using <em>Arbor</em>. Suppose that we take 100 students and give them an expensive, time-consuming test for Fbola; those test results appear in the <code>Fbola</code> column. We also record whether they have a <code>rash</code> or a <code>fever</code>.</p>
+<p>Use the live example below to make the tree. Don’t hesitate to make graphs to see relationships between the attributes.</p>
+<p>You can even consider making a different tree to accomplish the same task—by asking about the fever first.</p>
+<p>Don’t forget to include diagnoses at the ends of all your branches!</p>
+<div class="column-page-right">
+<script>
+    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FvlRab6JuNnpgrY8NBvis%2Ffile.json";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+</section>
+<section id="tree-as-model" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="tree-as-model">Tree as model</h3>
+<p>Notice this very very important fact: <em>our diagnosis might be wrong</em>. A positive diagnosis using the tree might be a <em>true positive</em> (TP), that is, it’s correct and you have the disease; or it might be a <em>false positive</em> (FP), that is, we send you home even though you are well.</p>
+<p>Similarly, you can get false negatives (FN) and true negatives (TN).</p>
+<p>You can see all four possibilities by looking at the <strong>table</strong> tab in <em>Arbor</em>. (Do that!) A typical tree, with its corresponding table, look like this:</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 42.1%;justify-content: center;">
+<p><img src="art/fbola-tree-complete.png" class="img-fluid"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 57.9%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/fbola-table.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">The 14 false positives combine seven from the leftmost leaf and seven from the middle one.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>This leads us to an issue we have to emphasize: <em>how do we know whether our diagnosis is right or wrong</em>? The answer to that is, sometimes we don’t. In this case, though, we assume that the time-consuming and expensive test is perfectly accurate. In our practical situation at school, however, we hope our rash-and-fever tree does a good enough job.</p>
+<div class="page-columns page-full"><p>In general, when we have a classification problem like this, there is some underlying Truth that we cannot see. We can only see the shadow<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> of this Truth, in the form of data. We see the <em>symptoms</em>, not the actual disease. We use the data to make our best guess about the Truth.</p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;So Platonic!</p></li></div></div>
+<p>And in fact, look at at the tree in <em>Arbor</em>. We are trying to predict <code>Fbola</code>—the results of the expensive test—using the data about <code>rash</code> and <code>fever</code>.</p>
+<p>Taken together, this all means that a tree is a <em>model</em>. It’s an approximation of the truth that we will make as useful as possible. But it’s <em>not</em> the Truth; it’s a human construct.</p>
+<p>Also, math nerds, notice that in this model, the tree’s procedure is a <em>function</em>. Its inputs are the data (<code>fever</code> and <code>rash</code>) and the inevitable output is either <code>positive</code> or <code>negative</code>. Notice how this is parallel to the situation when you use a line as an approximation to data in a scatter plot. The line is a function, and it’s not completely correct even though it can be useful.</p>
+<p>In that situation, we can even try to find the <em>best</em> line using a criterion such as least squares. And that’s whats coming next with our lessons on trees.</p>
 
 
 </section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

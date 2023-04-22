@@ -7,8 +7,23 @@ website:
     style: "floating"
     search: true
     contents: 
-       - href: index.qmd
-         text: "Arbor"
+       - href: index.html 
+       - href: anatomy.qmd
+         text: "Anatomy of a tree"
+       - href: begin.qmd
+         text: "First driving lesson"
+       - href: with-graphs.qmd
+         text: "Trees and graphs"
+       - href: fbola.qmd
+         text: "Fbola example"
+       - href: measures.qmd
+         text: "Tree quality"
+       - href: breast-cancer.qmd
+         text: "Breast cancer example"
+       - href: ml-connection.qmd
+         text: "Trees and machine learning"
+       - href: configuration.qmd
+         text: "The configuration box"
 
 format:
   html:

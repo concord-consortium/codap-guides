@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>arbor - Classification trees in CODAP using Arbor</title>
+<title>arbor - Trees and machine learning</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,17 +59,18 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Classification trees in CODAP using <em>Arbor</em></h1>
+      <h1 class="quarto-secondary-nav-title">Trees and machine learning</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -124,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ml-connection.html" class="sidebar-item-text sidebar-link">Trees and machine learning</a>
+  <a href="./ml-connection.html" class="sidebar-item-text sidebar-link active">Trees and machine learning</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -141,16 +142,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#linear-regression-metaphor" id="toc-linear-regression-metaphor" class="nav-link active" data-scroll-target="#linear-regression-metaphor">Linear regression metaphor</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Classification trees in CODAP using <em>Arbor</em></h1>
+<h1 class="title d-none d-lg-block">Trees and machine learning</h1>
 </div>
 
 
@@ -166,47 +167,25 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
     <script src="src/awash-functions.js"></script>
-<p><em>Arbor</em> is a CODAP plugin that helps you make classification trees. If you are in a workshop or a class, your teacher will probably tell you a lot of what’s here. You can use this site as a reference, to remember what you’ve forgotten, or as a stand-alone self-paced course, in which case you can just work through the headings you see at left.</p>
-<section id="overview" class="level3">
-<h3 class="anchored" data-anchor-id="overview">Overview</h3>
-<dl>
-<dt>Anatomy of a tree</dt>
-<dd>
-Learn how to read a tree, using data from the <em>Titanic</em> disaster.
-</dd>
-<dt>First driving lesson</dt>
-<dd>
-The basics of how to make a tree using <em>Arbor</em>.
-</dd>
-<dt>Trees and graphs</dt>
-<dd>
-Trees and graphs are both ways of looking at the data. And they are intimately connected. Learn how to use graphs to help you make th ebest trees.
-</dd>
-<dt>Fbola example</dt>
-<dd>
-Another example dataset, this time in a medical context. Use the tree to decide who probably has the virus.
-</dd>
-<dt>Tree quality</dt>
-<dd>
-What makes a tree a <em>good</em> tree? <em>Arbor</em> can help you calculate tree quality.
-</dd>
-<dt>Breast cancer example</dt>
-<dd>
-With a numerical predictor, we create our own measure of tree quality, and use it with graphs to make the best tree.
-</dd>
-<dt>Machine learning connection</dt>
-<dd>
-Classification is an important topic in machine learning. This explains the connection and how work with <em>Arbor</em> might fit in.
-</dd>
-<dt>The configuration box</dt>
-<dd>
-When you “configure” a node in a tree, there is a dialog box. This explains all of its controls.
-</dd>
-</dl>
-<p>To learn <em>why</em> you would want to use this plugin, see xxx.</p>
+<p>One reason to learn about trees is that they are a topic in Machine Learning (ML), and that topic is a hot one right now. So thinking deeply about trees helps you understand what ML is all about.</p>
+<p>This is not the place for a treatise on machine learning. But I will natter on for a bit describing some of the connections I see. If ML is new to you, it should give you an idea of at least one part of ML and where this fits.</p>
+<p>So: what’s the connection between classification trees and machine learning?</p>
+<p>If you have worked through all of the pages before this one, you’ve seen that, although you can make pretty good trees just using your intuition, there are ways to assign numbers to the quality of the trees you make, and informally optimize a tree. That is, you can make a plausible tree, and then alter it—add another branch, change a break point—and gradually find the best one.</p>
+<p>If you do that enough, it probably will occur to you that this is tedious, and wonder if we could have a computer do it.</p>
+<p>This business of looking at a set of trees, then finding the best one, and maybe then using that to make another, generally better set of trees, and repeating that process, well, that’s an example of machine learning. It’s creating an <em>algorithm</em> to find the best—or at least a pretty good—version of something.</p>
+<section id="linear-regression-metaphor" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="linear-regression-metaphor">Linear regression metaphor</h3>
+<div class="page-columns page-full"><p>Let’s assume we all understand about least-squares linear regression, a process by which, given a set of data points, we find a line that minimizes the sum of the squares of the residuals. We compute the parameters of that line—the slope and intercept, <span class="math inline">\(m\)</span> and <span class="math inline">\(b\)</span>—using some formulas. And those formulas get derived using calculus.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;This is not surprising, because this is an optimization problem with quadratic functions (sum of <em>squares</em>) so it involves setting a derivative equal to zero…and so forth.</p></li></div></div>
+<p>Now let’s imagine that we don’t have calculus.</p>
+<p>We can still solve the problem using an iterative process. Maybe we begin using the function <span class="math inline">\(m=0\)</span> and <span class="math inline">\(b=0\)</span>, that is, <span class="math inline">\(y=0x+0\)</span>. We can compute the sum of squares of the residuals. Then, at every step, we look at new values of <span class="math inline">\(m\)</span> and <span class="math inline">\(b\)</span>, offset a little from their current values, and calculate the sum of squares from new lines defined by the new values. We pick the line with the lowest sum of squares and then do it all over again. Gradually, when we get close, we can reduce the offsets, and thereby find an optimum line to as great a precision as you like.</p>
+<p>You can even imagine this as walking on a <em>surface</em>. The <span class="math inline">\(m\)</span> and <span class="math inline">\(b\)</span> axes define a horizontal plane, and the height (<span class="math inline">\(z\)</span>) of the surface is the sum of squares for each location <span class="math inline">\((m, b)\)</span>. Our task is to find the lowest point on the surface.</p>
+<p>Calculus does it immediately, but we have the computing power to do the “walk” very efficiently and quickly. And of course, this procedure—which is called <em>gradient descent</em> in ML-speak—works even when calculus does not.</p>
+<p>cost: entropy, gini instead of SSR</p>
+<p>training and test sets</p>
 
 
 </section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>arbor - Classification trees in CODAP using Arbor</title>
+<title>arbor - Anatomy of a tree</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,7 +69,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Classification trees in CODAP using <em>Arbor</em></h1>
+      <h1 class="quarto-secondary-nav-title">Anatomy of a tree</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -94,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./anatomy.html" class="sidebar-item-text sidebar-link">Anatomy of a tree</a>
+  <a href="./anatomy.html" class="sidebar-item-text sidebar-link active">Anatomy of a tree</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -141,7 +141,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#the-root-node" id="toc-the-root-node" class="nav-link active" data-scroll-target="#the-root-node">The root node</a></li>
+  <li><a href="#the-trunk-node" id="toc-the-trunk-node" class="nav-link" data-scroll-target="#the-trunk-node">The trunk node</a></li>
+  <li><a href="#other-nodes" id="toc-other-nodes" class="nav-link" data-scroll-target="#other-nodes">Other nodes</a></li>
+  <li><a href="#terminal-nodes-the-leaves" id="toc-terminal-nodes-the-leaves" class="nav-link" data-scroll-target="#terminal-nodes-the-leaves">Terminal nodes: the leaves</a></li>
+  <li><a href="#the-links" id="toc-the-links" class="nav-link" data-scroll-target="#the-links">The links</a></li>
   </ul>
 </nav>
     </div>
@@ -150,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Classification trees in CODAP using <em>Arbor</em></h1>
+<h1 class="title d-none d-lg-block">Anatomy of a tree</h1>
 </div>
 
 
@@ -166,44 +170,57 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
     <script src="src/awash-functions.js"></script>
-<p><em>Arbor</em> is a CODAP plugin that helps you make classification trees. If you are in a workshop or a class, your teacher will probably tell you a lot of what’s here. You can use this site as a reference, to remember what you’ve forgotten, or as a stand-alone self-paced course, in which case you can just work through the headings you see at left.</p>
-<section id="overview" class="level3">
-<h3 class="anchored" data-anchor-id="overview">Overview</h3>
-<dl>
-<dt>Anatomy of a tree</dt>
-<dd>
-Learn how to read a tree, using data from the <em>Titanic</em> disaster.
-</dd>
-<dt>First driving lesson</dt>
-<dd>
-The basics of how to make a tree using <em>Arbor</em>.
-</dd>
-<dt>Trees and graphs</dt>
-<dd>
-Trees and graphs are both ways of looking at the data. And they are intimately connected. Learn how to use graphs to help you make th ebest trees.
-</dd>
-<dt>Fbola example</dt>
-<dd>
-Another example dataset, this time in a medical context. Use the tree to decide who probably has the virus.
-</dd>
-<dt>Tree quality</dt>
-<dd>
-What makes a tree a <em>good</em> tree? <em>Arbor</em> can help you calculate tree quality.
-</dd>
-<dt>Breast cancer example</dt>
-<dd>
-With a numerical predictor, we create our own measure of tree quality, and use it with graphs to make the best tree.
-</dd>
-<dt>Machine learning connection</dt>
-<dd>
-Classification is an important topic in machine learning. This explains the connection and how work with <em>Arbor</em> might fit in.
-</dd>
-<dt>The configuration box</dt>
-<dd>
-When you “configure” a node in a tree, there is a dialog box. This explains all of its controls.
-</dd>
-</dl>
-<p>To learn <em>why</em> you would want to use this plugin, see xxx.</p>
+<p>What does an <em>Arbor</em> tree look like? How do you read it? Let’s look at an example. This tree shows data from a famous dataset about the 1309 passengers aboard the <em>Titanic</em>. We will explore what seems to affect whether the passengers survived.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/titanic-3-leaves.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Later, you will make this tree!</figcaption><p></p>
+</figure>
+</div>
+<p>First of all, this tree—like most trees in data analysis—is upside-down. The root and trunk are at the top, and the leaves are at the bottom.</p>
+<section id="the-root-node" class="level3">
+<h3 class="anchored" data-anchor-id="the-root-node">The root node</h3>
+<p>So: way up at the top, the “root” block, the root <em>node</em>, looks like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/anatomy-root.png" class="img-fluid figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+<p>The first horizontal “stripe” tells us what <em>attribute</em> we are trying to predict. In this dataset, it’s called <code>fate</code>. (The value of <code>fate</code> is either <code>survived</code> or <code>died</code>.)</p>
+<p>The second stripe tells us that we will consider <code>survived</code> to be the “positive” result. That seems obvious, but in many medical contexts, a “positive” test means that you have the disease.</p>
+</section>
+<section id="the-trunk-node" class="level3">
+<h3 class="anchored" data-anchor-id="the-trunk-node">The trunk node</h3>
+<p>Just below the root is the trunk. That block, that node, also has two stripes.</p>
+<p>The top one tells you that 500 of the 1309 people—38.2% of them—survived. You know it’s survived because of what it says in the root. But if you forget, or get confused, you can always hover over that node to see details:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/anatomy-trunk-hover.png" class="img-fluid figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+<p>The bottom stripe sets up a branching. In this case, we ask about <code>gender</code>, and branch one way if the person is female and the other way if they are male.</p>
+</section>
+<section id="other-nodes" class="level3">
+<h3 class="anchored" data-anchor-id="other-nodes">Other nodes</h3>
+<p>Every other node is structured more or less the same as the trunk node: the first stripe shows how many people are positive, that is, how many survived, and the second shows the branching if there is one.</p>
+<p>The key thing about the number stripe is that it only considers the people who get to that point in the tree. So although 38% of all people survived, the tree shows us that there is a big gender difference: 73% of the females survived, but only 19% of the males.</p>
+<p>And then, among the males, the <em>young</em> males—under 15 years old—had a 50% survival rate compared to about 18% for males 15 or older.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/anatomy-other-nodes.png" class="img-fluid figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</section>
+<section id="terminal-nodes-the-leaves" class="level3">
+<h3 class="anchored" data-anchor-id="terminal-nodes-the-leaves">Terminal nodes: the leaves</h3>
+<p>If a node has no branches coming out of it, it is a <em>terminal</em> node. Every terminal node has a “leaf” below it that is rounded instead of rectangular. The leaf shows a prediction for the <code>fate</code> of the people in that category.</p>
+<p>So for the females, our best guess is that they will survive. For older males, our best guess is that they will die.</p>
+<p>For the young males, under 15, with a 50% survival rate, we’re predicting survival, although you can make a case that at 50% we shouldn’t predict. The other side of that argument is that they have a better chance than people in general (38%).</p>
+</section>
+<section id="the-links" class="level3">
+<h3 class="anchored" data-anchor-id="the-links">The links</h3>
+<p>Slanted white stripes, called <em>links</em>, connect nodes to their “children.” Every link has a label such as <code>female</code> or <code>&gt;= 15</code> so you can tell who that link applies to.</p>
+<p>So: that’s how you read a tree! To learn how to make a tree, see <a href="./begin.html">the page about learning to drive</a>.</p>
 
 
 </section>

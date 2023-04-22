@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>arbor - Classification trees in CODAP using Arbor</title>
+<title>arbor - More about tree quality with breast cancer data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -63,13 +63,13 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Classification trees in CODAP using <em>Arbor</em></h1>
+      <h1 class="quarto-secondary-nav-title">More about tree quality with breast cancer data</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -119,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./breast-cancer.html" class="sidebar-item-text sidebar-link">Breast cancer example</a>
+  <a href="./breast-cancer.html" class="sidebar-item-text sidebar-link active">Breast cancer example</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -141,16 +141,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#looking-at-the-data" id="toc-looking-at-the-data" class="nav-link active" data-scroll-target="#looking-at-the-data">Looking at the data</a></li>
+  <li><a href="#some-tasks" id="toc-some-tasks" class="nav-link" data-scroll-target="#some-tasks">Some tasks</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Classification trees in CODAP using <em>Arbor</em></h1>
+<h1 class="title d-none d-lg-block">More about tree quality with breast cancer data</h1>
 </div>
 
 
@@ -166,47 +167,101 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
     <script src="src/awash-functions.js"></script>
-<p><em>Arbor</em> is a CODAP plugin that helps you make classification trees. If you are in a workshop or a class, your teacher will probably tell you a lot of what’s here. You can use this site as a reference, to remember what you’ve forgotten, or as a stand-alone self-paced course, in which case you can just work through the headings you see at left.</p>
-<section id="overview" class="level3">
-<h3 class="anchored" data-anchor-id="overview">Overview</h3>
-<dl>
-<dt>Anatomy of a tree</dt>
-<dd>
-Learn how to read a tree, using data from the <em>Titanic</em> disaster.
-</dd>
-<dt>First driving lesson</dt>
-<dd>
-The basics of how to make a tree using <em>Arbor</em>.
-</dd>
-<dt>Trees and graphs</dt>
-<dd>
-Trees and graphs are both ways of looking at the data. And they are intimately connected. Learn how to use graphs to help you make th ebest trees.
-</dd>
-<dt>Fbola example</dt>
-<dd>
-Another example dataset, this time in a medical context. Use the tree to decide who probably has the virus.
-</dd>
-<dt>Tree quality</dt>
-<dd>
-What makes a tree a <em>good</em> tree? <em>Arbor</em> can help you calculate tree quality.
-</dd>
-<dt>Breast cancer example</dt>
-<dd>
-With a numerical predictor, we create our own measure of tree quality, and use it with graphs to make the best tree.
-</dd>
-<dt>Machine learning connection</dt>
-<dd>
-Classification is an important topic in machine learning. This explains the connection and how work with <em>Arbor</em> might fit in.
-</dd>
-<dt>The configuration box</dt>
-<dd>
-When you “configure” a node in a tree, there is a dialog box. This explains all of its controls.
-</dd>
-</dl>
-<p>To learn <em>why</em> you would want to use this plugin, see xxx.</p>
+<p>In this section, we will further our understanding of the quality of trees, remind ourselves about what happens with numerical data, and learn a brutal truth about false negatives and false positives.</p>
+<p>Let us begin by saying that the two sways you can be wrong—FN and FP—are usually not equally bad. The misclassification rate (MCR) makes no distinction: for the MCR, wrong is wrong.</p>
+<p>But let us look at some breast cancer data.</p>
+<p>We have a number of numerical measurements of tumors that were calculated by image processing software, using digital images. We will focus here on <code>radius</code>, which is in millimeters. There are other measurements too such <code>perimeter</code>, which is obvious, and <code>concavity</code>, which would demand some clear explanation. And as before, we have a version of the Truth: the result from a <code>biopsy</code>, which in this case is either <code>benign</code> or <code>malignant</code>. The goal is to predict malignancy without the expense and wait-time of a biopsy: just take an image and let the computer figure it out.</p>
+<p>Now, which would you rather have as your mistake—a false negative or a false positive?</p>
+<p>Most of us would say that a false negative is worse. (Never mind for a moment that you can make the opposite case.)</p>
+<section id="looking-at-the-data" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="looking-at-the-data">Looking at the data</h3>
+<p>The live illustration below is already set to predict <code>biopsy</code>. Notice:</p>
+<ul>
+<li><p>Look at the tree: among these 569 tumors, 37.3% were malignant.</p></li>
+<li><p>Look at the graph: apparently (and unsurprisingly) benign tumors are generally smaller.</p></li>
+<li><p>Also in the graph: we have a “movable value” currently set to 16.6 millimeters. Almost all of the tumors bigger than 16.5 mm are malignant.</p></li>
+</ul>
+<p>Do the following:</p>
+<ol class="example" type="1">
+<li>Drop <code>radius</code> into the trunk of the tree to make a branch.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+</ol>
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;The table—collapsed into “case card view”—may be hiding behind the tree. Make the tree narrower.</p></li></div><p><em>Arbor</em> will pick a cut point that determines which values of <code>radius</code> go to the larger branch and which go to the smaller. When I did this, that cut point was 26 mm. You need to change that to be 16.5.</p>
+<ol start="2" class="example" type="1">
+<li>Hover over the <code>radius</code> node and click the gear that appears. The configuration box appears.</li>
+</ol>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/breastCancer-configuration.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<p></p><figcaption class="figure-caption"><a href="./configuration.html">Learn more about the configuration box</a>.</figcaption><p></p>
+</figure>
+</div>
+</div></div><ol start="3" class="example" type="1">
+<li><p>Change the value in the box from 26 to 16.5 and press <strong>Done</strong>.</p></li>
+<li><p>Specify diagnoses for your leaves: make the “large” tumors <code>Malignant</code>.</p></li>
+</ol>
+<div class="column-page-right">
+<script>
+    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FxFEaTegEzc16RLt4vnWD%2Ffile.json";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+<p>If your setup is like mine, that will give you 125 amlignant diagnoses, of which 122 were correct. So that leaves three false positives. On the otehr hand, there are 90 false negatives. Thats’ a lot!</p>
+<p>Let’s alter the graph to see this more clearly.</p>
+<ol start="5" class="example" type="1">
+<li>Drop <code>biopsy</code> onto the <em>vertical</em> axis of the graph.</li>
+</ol>
+<p>The graph splits to make two parallel dot plots, each with its own movable value. There are now four counts (and percentages); one for TP, one for FP, etc. See if you can clearly identify which is which, and why. Your graph should look like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/breast-Cancer-parallel-graphs-16.5.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<p></p><figcaption class="figure-caption">If everything is working correctly, your graph should look like this.</figcaption><p></p>
+</figure>
+</div>
+<p>We want to figure out what a good cut point would be. You can explore changing the movable values from 16.5 (you have to change both of them) and see how that affects the numbers of FP (upper right) and FN (lower left). And you should notice two sad truths:</p>
+<ul>
+<li><p>Because the two distributions overlap, there is no way to get both <code>FP = 0</code> and <code>FN = 0</code>.</p></li>
+<li><p>False negatives are the worst. We want to lower that number. But if you lower the cutpoint value to decrease <code>FN</code>, <code>FP</code> <em>has to increase</em>.</p></li>
+</ul>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">Suppose we wanted to eliminate FN’s altogether. We would set the cutpoint to some small number (like zero)…but then all tumors would be diagnosed as malignant. No false negatives, because there would be no negatives at all!</span></div></div>
+<p>This means that every cutpoint is a balancing act. We can use a measure of goodness of a tree to help us achieve that balance.</p>
+<p>We could make a measure of our tree’s effectiveness <a href="./measures.html">just like we did in the previous section</a>. Suppose we decide that a false negative is five times as bad as a false positive. Then our formula might be</p>
+<p><code>FN * 5 + FP</code></p>
+<p>and we would want to <em>minimize</em> that value.</p>
+<p>Remember that to get <em>Arbor</em> to calculate the values,</p>
+<ul>
+<li><p>Open up the <strong>in order to export</strong> section below the tree.</p></li>
+<li><p>Press <strong>emit data</strong>.</p></li>
+</ul>
+<p>That will give you a new table with values for <code>FP</code> etc. Then,</p>
+<ul>
+<li><p>Make a new attribute and give it that formula, <code>FN * 5 + FP</code>. The value you’ve calculated appears in the table.</p></li>
+<li><p>Make another new attribute and enter the value for the cut point (otherwise you might forget).</p></li>
+</ul>
+</section>
+<section id="some-tasks" class="level3">
+<h3 class="anchored" data-anchor-id="some-tasks">Some tasks</h3>
+<p>Here are some tasks you might do to extend your understanding.</p>
+<section id="find-the-minimum" class="level4">
+<h4 class="anchored" data-anchor-id="find-the-minimum">Find the minimum</h4>
+<p>Try various cutpoints and see which one gives the lowest value for the measure.</p>
+<ul>
+<li><p>Change the value of the cutpoint using the configuration box</p></li>
+<li><p>Repeat the instructions above: <strong>emit data</strong> and enter the value of the cutpoint. The <code>FN * 5 + FP</code> will be calculated automatically.</p></li>
+<li><p>Make a graph of that value as a function of the cutpoint. Is there a minimum? (Yes!)</p></li>
+</ul>
+<p>Note: the movable values in the graph are <em>not</em> connected to the cut point!</p>
+</section>
+<section id="try-other-attributes" class="level4">
+<h4 class="anchored" data-anchor-id="try-other-attributes">Try other attributes</h4>
+<p>See how you can do putting other attributes besides <code>radius</code> in the tree.</p>
+<p>Don’t forget to help yourself out by making graphs!</p>
 
 
 </section>
+</section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

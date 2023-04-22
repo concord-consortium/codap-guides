@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>arbor - Classification trees in CODAP using Arbor</title>
+<title>arbor - Driving Arbor: the very basics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -63,13 +63,13 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Classification trees in CODAP using <em>Arbor</em></h1>
+      <h1 class="quarto-secondary-nav-title">Driving Arbor: the very basics</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -99,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./begin.html" class="sidebar-item-text sidebar-link">First driving lesson</a>
+  <a href="./begin.html" class="sidebar-item-text sidebar-link active">First driving lesson</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -141,16 +141,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#the-target-attribute" id="toc-the-target-attribute" class="nav-link active" data-scroll-target="#the-target-attribute">The target attribute</a></li>
+  <li><a href="#making-a-branch-drag-and-drop" id="toc-making-a-branch-drag-and-drop" class="nav-link" data-scroll-target="#making-a-branch-drag-and-drop">Making a branch: drag and drop</a></li>
+  <li><a href="#adding-a-numeric-attribute" id="toc-adding-a-numeric-attribute" class="nav-link" data-scroll-target="#adding-a-numeric-attribute">Adding a numeric attribute</a></li>
+  <li><a href="#assigning-results-to-terminal-nodes" id="toc-assigning-results-to-terminal-nodes" class="nav-link" data-scroll-target="#assigning-results-to-terminal-nodes">Assigning results to terminal nodes</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Classification trees in CODAP using <em>Arbor</em></h1>
+<h1 class="title d-none d-lg-block">Driving Arbor: the very basics</h1>
 </div>
 
 
@@ -166,44 +169,82 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
     <script src="src/awash-functions.js"></script>
-<p><em>Arbor</em> is a CODAP plugin that helps you make classification trees. If you are in a workshop or a class, your teacher will probably tell you a lot of what’s here. You can use this site as a reference, to remember what you’ve forgotten, or as a stand-alone self-paced course, in which case you can just work through the headings you see at left.</p>
-<section id="overview" class="level3">
-<h3 class="anchored" data-anchor-id="overview">Overview</h3>
-<dl>
-<dt>Anatomy of a tree</dt>
-<dd>
-Learn how to read a tree, using data from the <em>Titanic</em> disaster.
-</dd>
-<dt>First driving lesson</dt>
-<dd>
-The basics of how to make a tree using <em>Arbor</em>.
-</dd>
-<dt>Trees and graphs</dt>
-<dd>
-Trees and graphs are both ways of looking at the data. And they are intimately connected. Learn how to use graphs to help you make th ebest trees.
-</dd>
-<dt>Fbola example</dt>
-<dd>
-Another example dataset, this time in a medical context. Use the tree to decide who probably has the virus.
-</dd>
-<dt>Tree quality</dt>
-<dd>
-What makes a tree a <em>good</em> tree? <em>Arbor</em> can help you calculate tree quality.
-</dd>
-<dt>Breast cancer example</dt>
-<dd>
-With a numerical predictor, we create our own measure of tree quality, and use it with graphs to make the best tree.
-</dd>
-<dt>Machine learning connection</dt>
-<dd>
-Classification is an important topic in machine learning. This explains the connection and how work with <em>Arbor</em> might fit in.
-</dd>
-<dt>The configuration box</dt>
-<dd>
-When you “configure” a node in a tree, there is a dialog box. This explains all of its controls.
-</dd>
-</dl>
-<p>To learn <em>why</em> you would want to use this plugin, see xxx.</p>
+<p>Let’s learn to drive! We will begin by exploring a dataset about the passengers aboard the <em>Titanic</em>. This is the goal:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/titanic-3-leaves.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption class="figure-caption">You will make this tree showing data about passengers on the Titanic. Notice the huge gender difference in survival rates.</figcaption><p></p>
+</figure>
+</div>
+<section id="the-target-attribute" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="the-target-attribute">The target attribute</h3>
+<p>To make a tree, you first have to identify your <em>target attribute</em>. The target attribute might also be called</p>
+<ul>
+<li>the dependent variable</li>
+<li>the outcome variable</li>
+<li>the effect</li>
+</ul>
+<p>It’s the thing you are trying to predict. In the case of the Titanic data, it’s <code>fate</code>: we want to know what makes it more likely to have survived the disaster.</p>
+<p>In the live example below, start your tree by dragging <code>fate</code> from the table at the right and dropping it into the middle of the blank, gray tree panel. You should see that 500 of the 1309 people survived.</p>
+<div class="column-page-right">
+<script>
+    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2F3yRWcBkixaw5u5Pq4jSY%2Ffile.json";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+</section>
+<section id="making-a-branch-drag-and-drop" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="making-a-branch-drag-and-drop">Making a branch: drag and drop</h3>
+<p>Next, drop <code>sex</code> onto the white box with “500 of 1309” in it.<br>
+The tree will branch. You can see how the survival rate was different for males and females.</p>
+<p>Notice that the tree is composed of boxes (called <em>nodes</em>) and lines (<em>links</em>).</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Lost in the Node?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It’s easy to lose track of what’s going on in a node. When that happens, just point at the node. Don’t click, just hover for a moment, and text will pop up describing that node in more detail.</p>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/titanic-node-info.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">The pop-up information for the “male” node</figcaption><p></p>
+</figure>
+</div>
+</div></div></section>
+<section id="adding-a-numeric-attribute" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="adding-a-numeric-attribute">Adding a numeric attribute</h3>
+<p>Now drop <code>age</code> onto the “male” node. It will split, but probably using age 30 as a break point. Click the gear on the <code>age</code> stripe and change that 30 to 15.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/age-config.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Configuring <code>age</code>: setting the cutpoint to 15.</figcaption><p></p>
+</figure>
+</div>
+</div></div><p>When you make a tree with <em>Arbor</em>, every node has a maximum of two branches. An attribute like <code>age</code> has so many values, you generally have to tell <em>Arbor</em> where that break point is using that configuration box.</p>
+<p>You can configure any attribute, but it’s more common for numerical ones.</p>
+</section>
+<section id="assigning-results-to-terminal-nodes" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="assigning-results-to-terminal-nodes">Assigning results to terminal nodes</h3>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/titanic-3-leaves.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Your tree should look like this after you have assigned its leaf nodes to be <code>survived</code> or <code>died</code>.</figcaption><p></p>
+</figure>
+</div>
+</div></div><p>Now your tree should look like the one up at the top of the page… except that you still have to assign the <em>terminal nodes</em> — the leaves of the tree — to an outcome. Do that by clicking on the leaf nodes repeatedly until you see what you want.</p>
 
 
 </section>

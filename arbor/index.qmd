@@ -1,15 +1,52 @@
 ---
-title: "arbor"
+title: "Classification trees in CODAP using *Arbor*"
+reference-location: margin
+citation-location: margin
+
 ---
 
 ```{=html}
     <script src="src/awash-functions.js"></script>
 ```
 
-## How to drive Arbor
 
 _Arbor_ is a CODAP plugin that helps you make classification trees.
-These pages will teach you how to "drive" the plugin:
-what to drop where, and where the commands are.
+If you are in a workshop or a class, your teacher will probably tell you a lot of what's here.
+You can use this site as a reference, to remember what you've forgotten,
+or as a stand-alone self-paced course, in which case you can just work through the headings you see at left.
+
+### Overview
+
+Anatomy of a tree
+: Learn how to read a tree, using data from the *Titanic* disaster.
+
+First driving lesson
+: The basics of how to make a tree using *Arbor*.
+
+Trees and graphs
+: Trees and graphs are both ways of looking at the data. 
+And they are intimately connected.
+Learn how to use graphs to help you make th ebest trees.
+
+Fbola example
+: Another example dataset, this time in a medical context.
+Use the tree to decide who probably has the virus.
+
+Tree quality
+: What makes a tree a *good* tree?
+*Arbor* can help you calculate tree quality.
+
+Breast cancer example
+: With a numerical predictor, we create our own measure of tree quality,
+and use it with graphs to make the best tree.
+
+Machine learning connection
+: Classification is an important topic in machine learning.
+This explains the connection and how work with *Arbor* might fit in. 
+
+The configuration box
+: When you "configure" a node in a tree, there is a dialog box.
+This explains all of its controls.
+
 To learn _why_ you would want to use this plugin, see xxx.
 
