@@ -137,13 +137,13 @@ and enter the value for the cut point (otherwise you might forget).
 
 Your summary table might look like this:
 
-![Our "emitted data" table, with two new columns at the far right.](art/arbor-rating-cutpoint-table.png)
+![Our "emitted data" table, with two new columns at the far right.](art/arbor-rating-cutpoint-table.png){width=80%}
 
 ## Some tasks
 
 Here are some tasks you might do to extend your understanding.
 
-### Find the minimum
+### Find the minimum {-}
 
 Try various cutpoints and see which one gives the lowest value for the measure.
 
@@ -156,7 +156,7 @@ The `FN * 5 + FP` will be calculated automatically.
 
 Note: the movable values in the graph are *not* connected to the cut point!
 
-### Try other attributes
+### Try other attributes {-}
 
 See how you can do putting other attributes besides `radius` in the tree.
 

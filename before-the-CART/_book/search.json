@@ -109,7 +109,7 @@
     "href": "60-arbor-breast-cancer.html#some-tasks",
     "title": "7  More about tree quality: an example with breast cancer data",
     "section": "7.2 Some tasks",
-    "text": "7.2 Some tasks\nHere are some tasks you might do to extend your understanding.\n\n7.2.1 Find the minimum\nTry various cutpoints and see which one gives the lowest value for the measure.\n\nChange the value of the cutpoint using the configuration box\nRepeat the instructions above: emit data and enter the value of the cutpoint. The FN * 5 + FP will be calculated automatically.\nMake a graph of that value as a function of the cutpoint. Is there a minimum? (Yes!)\n\nNote: the movable values in the graph are not connected to the cut point!\n\n\n7.2.2 Try other attributes\nSee how you can do putting other attributes besides radius in the tree.\nDon’t forget to help yourself out by making graphs!"
+    "text": "7.2 Some tasks\nHere are some tasks you might do to extend your understanding.\n\nFind the minimum\nTry various cutpoints and see which one gives the lowest value for the measure.\n\nChange the value of the cutpoint using the configuration box\nRepeat the instructions above: emit data and enter the value of the cutpoint. The FN * 5 + FP will be calculated automatically.\nMake a graph of that value as a function of the cutpoint. Is there a minimum? (Yes!)\n\nNote: the movable values in the graph are not connected to the cut point!\n\n\nTry other attributes\nSee how you can do putting other attributes besides radius in the tree.\nDon’t forget to help yourself out by making graphs!"
   },
   {
     "objectID": "90-arbor-configuration.html#left-and-right",

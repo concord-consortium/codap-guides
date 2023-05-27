@@ -2,3 +2,12 @@
 
 ## Fair and unfair coins
 
+We have been rolling dice; what about flipping coins?
+
+In the **Random** section of the toolbox, you will see this block:
+
+![](art/coins-block.png)
+
+This will "emit" either `heads` or `tails` with a probability of 1/2. 
+So if you want to flip a coin 20 times and get the results, 
+you might write this program:
