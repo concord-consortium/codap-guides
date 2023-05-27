@@ -142,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#left-and-right" id="toc-left-and-right" class="nav-link active" data-scroll-target="#left-and-right">Left and right</a></li>
-  <li><a href="#break-points" id="toc-break-points" class="nav-link" data-scroll-target="#break-points">Break points</a></li>
+  <li><a href="#cutpoints" id="toc-cutpoints" class="nav-link" data-scroll-target="#cutpoints">Cutpoints</a></li>
   <li><a href="#more-than-two-categorical-values" id="toc-more-than-two-categorical-values" class="nav-link" data-scroll-target="#more-than-two-categorical-values">More than two categorical values</a></li>
   </ul>
 </nav>
@@ -168,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
     <script src="src/awash-functions.js"></script>
-<p>When you press the “gear” that appears when you hover over a node, the configuration box appears. That’s where you can set the break point for a numeric attribute.</p>
+<p>When you press the “gear” that appears when you hover over a node, the configuration box appears. That’s where you can set the cutpoint for a numeric attribute.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
@@ -183,8 +183,8 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="left-and-right">Left and right</h3>
 <p>The double-headed arrow diamond near the lower right is a button that reverses the node. With that control, you can (for example) set up every branching so that the more “positive” result flows to the left. A tree is less confusing if the results are less mixed up.</p>
 </section>
-<section id="break-points" class="level3">
-<h3 class="anchored" data-anchor-id="break-points">Break points</h3>
+<section id="cutpoints" class="level3">
+<h3 class="anchored" data-anchor-id="cutpoints">Cutpoints</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="art/sample-configuration-box.png" class="img-fluid figure-img"></p>
@@ -192,7 +192,7 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <p>If the attribute is numeric, you have to decide what value separates the positive from the negative values.</p>
-<p>Enter the value you want for the break point and use the menu to choose the operator that governs which value(s) go on the left.</p>
+<p>Enter the value you want for the cutpoint and use the menu to choose the operator that governs which value(s) go on the left.</p>
 <p>Notice that you <em>can</em> use equality. This is useful when you want to isolate a single value for some reason.</p>
 </section>
 <section id="more-than-two-categorical-values" class="level3">
@@ -205,7 +205,7 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <p>Now suppose you want to split a node by whether the cases are upper or lower class.</p>
-<p>Just click on a <em>values</em> to move it to the other side. For example, clicking on the <strong>Soph</strong> button will move it to the left side. It will look like this, although you have to edit the labels as we did:</p>
+<p>Just click on a <em>value</em> to move it to the other side. For example, clicking on the <strong>Soph</strong> button will move it to the left side. It will look like this, although you have to edit the labels as we did:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="art/configure-categorical-after.png" class="img-fluid figure-img"></p>

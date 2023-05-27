@@ -1,0 +1,27 @@
+---
+title: "Before the CART"
+---
+
+{{< include _awash-setup.qmd  >}}
+
+These pages are an online supplement for a paper
+in _Teaching Statistics_ called 
+_What goes before the CART? 
+Introducing classification trees with Arbor and CODAP_
+by Joachim Engel and Tim Erickson.
+
+These pages give you, the reader, 
+a chance to build trees using the _Arbor_ tool 
+and get a feel for using CODAP.
+We have also incorporated this material into a 
+much larger online book, 
+[Awash in Data](https://concord.org/awashindata).
+
+[CODAP](https://codap.concord.org) is a free, web-based data analysis platform.
+_Arbor_ is a CODAP plugin that helps you make classification trees.
+
+To learn CODAP basics, here are two strategies:
+
+* Work through the [getting started lesson](https://codap.xyz/awash/lessons-overview.html#the-getting-started-lesson) in the "Awash" book.
+* Open CODAP, choose to get a sample document, and choose **Getting started with CODAP**.
+

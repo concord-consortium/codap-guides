@@ -1,0 +1,30 @@
+project:
+  type: book
+
+book:
+  title: "Before the CART"
+  author: "Tim Erickson"
+  date: "5/27/2023"
+  search: true
+  chapters:
+      - href: index.qmd
+        text: Introduction
+      - href: 00-overview.qmd
+        text: Overview
+      - href: 10-arbor-anatomy.qmd
+      - href: 20-arbor-begin.qmd
+#      - href: 30-arbor-with-graphs.qmd
+      - href: 40-arbor-fbola.qmd
+      - href: 50-arbor-measures.qmd
+      - href: 60-arbor-breast-cancer.qmd
+        text: Breast cancer data
+      - href: 90-arbor-configuration.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

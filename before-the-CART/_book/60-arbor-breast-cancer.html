@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Before the CART - 7&nbsp; More about tree quality: an example with breast cancer data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./90-arbor-configuration.html" rel="next">
+<link href="./50-arbor-measures.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">More about tree quality: an example with breast cancer data</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Before the CART</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-overview.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-arbor-anatomy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anatomy of a tree</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-arbor-begin.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Your first tree</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./40-arbor-fbola.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Fbola example</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./50-arbor-measures.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">How good is your tree?</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./60-arbor-breast-cancer.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Breast cancer data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./90-arbor-configuration.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Configuring a node: the details</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#looking-at-the-data" id="toc-looking-at-the-data" class="nav-link active" data-scroll-target="#looking-at-the-data"><span class="toc-section-number">7.1</span>  Looking at the data</a></li>
+  <li><a href="#some-tasks" id="toc-some-tasks" class="nav-link" data-scroll-target="#some-tasks"><span class="toc-section-number">7.2</span>  Some tasks</a>
+  <ul class="collapse">
+  <li><a href="#find-the-minimum" id="toc-find-the-minimum" class="nav-link" data-scroll-target="#find-the-minimum"><span class="toc-section-number">7.2.1</span>  Find the minimum</a></li>
+  <li><a href="#try-other-attributes" id="toc-try-other-attributes" class="nav-link" data-scroll-target="#try-other-attributes"><span class="toc-section-number">7.2.2</span>  Try other attributes</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="breast-cancer-chapter" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">More about tree quality: an example with breast cancer data</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+    <script src="src/awash-functions.js"></script>
+<p>In this section, we will further our understanding of the quality of trees, remind ourselves about what happens with numerical data, and learn a brutal truth about false negatives and false positives.</p>
+<p>Let us begin by saying that the two ways you can be wrong—<code>FN</code> and <code>FP</code>—are usually not equally bad. The misclassification rate (MCR) makes no distinction: for the MCR, wrong is wrong.</p>
+<p>But let us look at some breast cancer data.</p>
+<p>We have a number of numerical measurements of tumors that were calculated by image processing software, using digital images. We will focus here on <code>radius</code>, which is in millimeters. There are other measurements too, such as <code>perimeter</code>, which is obvious, and <code>concavity</code>, which would demand some clear explanation. And as before, we have a version of the Truth: the result from a <code>biopsy</code>, which in this case is either <code>benign</code> or <code>malignant</code>. The goal is to predict malignancy without the expense and wait-time of a biopsy: just take an image and let the computer figure it out.</p>
+<p>Now, which would you rather have as your mistake—a false negative or a false positive?</p>
+<p>Most of us would say that a false negative is worse. (Never mind for a moment that you can make the opposite case.)</p>
+<script>
+    theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FxFEaTegEzc16RLt4vnWD%2Ffile.json";
+    awash.codapInNewTab(theURL, "Use this link to do this exercise in a new tab if you want more space!" );
+</script>
+<section id="looking-at-the-data" class="level2 page-columns page-full" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="looking-at-the-data"><span class="header-section-number">7.1</span> Looking at the data</h2>
+<p>In the live illustration below, you already have a tree set to predict <code>biopsy</code>.</p>
+<ul>
+<li><p>Look at the tree: among these 569 tumors, 37.3% were malignant.</p></li>
+<li><p>Look at the graph: apparently (and unsurprisingly) benign tumors are generally smaller.</p></li>
+<li><p>Also in the graph: we have a “movable value” currently set to 16.6 millimeters. Almost all of the tumors bigger than 16.5 mm are malignant.</p></li>
+</ul>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Can’t see the table?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The table—collapsed into “case card view”—may be hiding behind the tree. Make the tree narrower.</p>
+</div>
+</div>
+<p>Do the following:</p>
+<ol class="example" type="1">
+<li>Drop <code>radius</code> into the trunk of the tree to make a branch.</li>
+</ol>
+<p><em>Arbor</em> will pick a cut point that determines which values of <code>radius</code> go to the larger branch and which go to the smaller. When I did this, that cut point was 26 mm. You need to change that to be 16.5:</p>
+<ol start="2" class="example" type="1">
+<li>Hover over the <code>radius</code> node and click the gear that appears. The configuration box appears. (<a href="./90-arbor-configuration.html">Learn more about the configuration box</a>.)</li>
+</ol>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><img src="art/breastCancer-configuration.png" class="img-fluid" style="width:60.0%"></p>
+</div></div><ol start="3" class="example" type="1">
+<li><p>Change the value in the lower box from 26 to 16.5 and press <strong>Done</strong>.</p></li>
+<li><p>Specify diagnoses for your leaves: make the “large” tumors <code>Malignant</code>.</p></li>
+</ol>
+<div class="column-page-right">
+<script>
+    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FxFEaTegEzc16RLt4vnWD%2Ffile.json";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+<p>If your setup is like mine, that will give you 125 malignant diagnoses, of which 122 were correct. So that leaves three false positives. On the other hand, there are 90 false negatives. That’s a lot!</p>
+<p>Let’s alter the graph to see this more clearly.</p>
+<ol start="5" class="example" type="1">
+<li>Drop <code>biopsy</code> onto the <em>vertical</em> axis of the graph.</li>
+</ol>
+<p>The graph splits to make two parallel dot plots, each with its own movable value. There are now four counts (and percentages); one for TP, one for FP, etc. See if you can clearly identify which is which, and why. Your graph should look like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/breast-Cancer-parallel-graphs-16.5.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<p></p><figcaption class="figure-caption">If everything is working correctly, your graph should look like this.</figcaption><p></p>
+</figure>
+</div>
+<p>We want to figure out what a good cut point would be. You can explore changing the movable values from 16.5 (you have to change both of them) and see how that affects the numbers of FP (upper right) and FN (lower left). And you should notice two sad truths:</p>
+<ul>
+<li><p>Because the two distributions overlap, there is no way to get both <code>FP = 0</code> and <code>FN = 0</code>.</p></li>
+<li><p>False negatives are the worst. We want to lower that number. But if you lower the cutpoint value to decrease <code>FN</code>, <code>FP</code> <em>has to increase</em>.</p></li>
+</ul>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">Suppose we wanted to eliminate FN’s altogether. We would set the cutpoint to some small number (like zero)…but then all tumors would be diagnosed as malignant. No false negatives, because there would be no negatives at all!</span></div></div>
+<p>This means that every cutpoint is a balancing act. We can use a measure of goodness of a tree to help us achieve that balance.</p>
+<p>We could make a measure of our tree’s effectiveness <a href="./50-arbor-measures.html">just like we did in the previous section</a>. Suppose we decide that a false negative is five times as bad as a false positive. Then our formula might be</p>
+<p><code>FN * 5 + FP</code></p>
+<p>and we would want to <em>minimize</em> that value.</p>
+<p>Remember that to get <em>Arbor</em> to calculate the values,</p>
+<ul>
+<li><p>Open up the <strong>in order to export</strong> section below the tree.</p></li>
+<li><p>Press <strong>emit data</strong>.</p></li>
+</ul>
+<p>That will give you a new table with values for <code>FP</code> etc. Then,</p>
+<ul>
+<li><p>Make a new attribute (perhaps <code>rating</code>) and give it that formula, <code>FN * 5 + FP</code>. The value you’ve calculated appears in the table.</p></li>
+<li><p>Make another new attribute (perhaps <code>cutpoint</code>) and enter the value for the cut point (otherwise you might forget).</p></li>
+</ul>
+<p>Your summary table might look like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/arbor-rating-cutpoint-table.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Our “emitted data” table, with two new columns at the far right.</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="some-tasks" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="some-tasks"><span class="header-section-number">7.2</span> Some tasks</h2>
+<p>Here are some tasks you might do to extend your understanding.</p>
+<section id="find-the-minimum" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="find-the-minimum"><span class="header-section-number">7.2.1</span> Find the minimum</h3>
+<p>Try various cutpoints and see which one gives the lowest value for the measure.</p>
+<ul>
+<li><p>Change the value of the cutpoint using the configuration box</p></li>
+<li><p>Repeat the instructions above: <strong>emit data</strong> and enter the value of the cutpoint. The <code>FN * 5 + FP</code> will be calculated automatically.</p></li>
+<li><p>Make a graph of that value as a function of the cutpoint. Is there a minimum? (Yes!)</p></li>
+</ul>
+<p>Note: the movable values in the graph are <em>not</em> connected to the cut point!</p>
+</section>
+<section id="try-other-attributes" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="try-other-attributes"><span class="header-section-number">7.2.2</span> Try other attributes</h3>
+<p>See how you can do putting other attributes besides <code>radius</code> in the tree.</p>
+<p>Don’t forget to help yourself out by making graphs!</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./50-arbor-measures.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">How good is your tree?</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./90-arbor-configuration.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Configuring a node: the details</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

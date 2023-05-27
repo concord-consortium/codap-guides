@@ -17,6 +17,10 @@ website:
             text: "3) two dice"
       - section: "Advanced"
         contents:
+          - href: loaded.qmd
+            text: "Loaded dice"
+          - href: coins.qmd
+            text: "Coins"
           - href: examples.qmd
             text: "examples"
 

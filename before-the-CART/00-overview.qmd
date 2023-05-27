@@ -1,0 +1,42 @@
+
+
+# Overview
+
+Each of the headings below corresponds to a section in the
+table of contents on the left.
+
+[Anatomy of a tree](10-arbor-anatomy.qmd)
+: Learn how to read a tree, using data from the *Titanic* disaster.
+
+[Your first tree](20-arbor-begin.qmd)
+: The basics of how to make a tree using *Arbor*.
+
+<!--
+Trees and graphs
+: Trees and graphs are both ways of looking at the data. 
+And they are intimately connected.
+Learn how to use graphs to help you make the best trees.
+-->
+
+[Fbola example](40-arbor-fbola.qmd)
+: Another example dataset, this time in a medical context.
+Use the tree to decide who probably has the virus.
+
+[How good is your tree?](50-arbor-measures.qmd)
+: What makes a tree a *good* tree?
+*Arbor* can help you calculate tree quality.
+
+[Breast cancer data](60-arbor-breast-cancer.qmd)
+: With a numerical predictor, we create our own measure of tree quality,
+and use it with graphs to make the best tree.
+
+<!--
+Machine learning connection
+: Classification is an important topic in machine learning.
+This explains the connection and how work with *Arbor* might fit in. 
+-->
+
+[The configuration box](90-arbor-configuration.qmd)
+: When you "configure" a node in a tree, there is a dialog box.
+This explains all of its controls.
+

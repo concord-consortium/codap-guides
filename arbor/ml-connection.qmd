@@ -35,6 +35,76 @@ and repeating that process,
 well, that's an example of machine learning. 
 It's creating an *algorithm* to find the best---or at least a pretty good---version of something. 
 
+### Imagining automating tree-building
+
+It's one thing to say, we'll have the computer do the boring part. 
+It's another to specify exactly what to have the computer do. 
+We will not do that here completely, but we will talk about what's required for that task.
+
+#### The branch-*everything* strategy
+
+First, let's imagine a brute-force procedure: 
+make the biggest tree possible.
+To do that, take the first "predictor" attribute that you see,
+and branch the tree using that attribute.
+Now you have two terminal nodes.
+Then take the next attribute, and branch both terminal nodes;
+now you have four.
+Continue until you're out of attributes.
+(If you start with $n$ attributes, 
+you will wind up with $2^n$ terminal nodes...which can be a lot!)
+
+To do that, you still need three things:
+
+* At the beginning, you need a target attribute 
+and you need to know what value(s) of that attribute are "positive."
+
+* You need to know, for each attribute, if it has more than two values, how to split it: You need a splitting rule---perhaps a cut point.
+
+* At the end, you need to know, for each terminal node,
+what diagnosis you will assign. 
+
+Your algorithm will have to address those issues.
+Then, if you're about to make the *last* branch, 
+you will notice situations where it makes no sense 
+to branch the tree, for example:
+
+* when the split makes almost no difference 
+in the percentage of cases that are positive. 
+
+* when the number of cases in a branch is small 
+
+So to make a "trimmer" tree, your algorithm will need
+to specify what "almost no difference" or "small" mean.
+
+You might also look at your completed tree and decide
+to "prune" it---to eliminate additional branches
+that yield little difference or have too few cases. 
+
+#### A more prudent and frugal strategy
+
+An alternative to branching everything is to be more
+careful about what branches you make. 
+Imagine these steps:
+
+1. Take all the attributes and make a tree for each one,
+with just that first split.
+
+2. For each tree, calculate how good the tree is
+using some measure such as the MCR (misclassification rate).
+
+3. Take the best tree as measured by that MCR,
+returning to step 1 using only the remaining 
+attributes. 
+
+4. If you ever get a split that's too little difference or 
+too small, stop branching that part of the tree.
+
+You still need to define many things, 
+but this will generally yield smaller, 
+more wieldy trees. 
+
+
 ### Linear regression metaphor
 
 Let's assume we all understand about least-squares linear regression,

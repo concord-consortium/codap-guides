@@ -1,6 +1,4 @@
-```{=html}
-    <script src="src/awash-functions.js"></script>
-```
+{{< include _simmer-header.qmd  >}}
 
 ## Repeating many times
 

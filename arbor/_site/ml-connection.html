@@ -142,7 +142,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#linear-regression-metaphor" id="toc-linear-regression-metaphor" class="nav-link active" data-scroll-target="#linear-regression-metaphor">Linear regression metaphor</a></li>
+  <li><a href="#imagining-automating-tree-building" id="toc-imagining-automating-tree-building" class="nav-link active" data-scroll-target="#imagining-automating-tree-building">Imagining automating tree-building</a></li>
+  <li><a href="#linear-regression-metaphor" id="toc-linear-regression-metaphor" class="nav-link" data-scroll-target="#linear-regression-metaphor">Linear regression metaphor</a></li>
   </ul>
 </nav>
     </div>
@@ -173,6 +174,38 @@ ul.task-list li input[type="checkbox"] {
 <p>If you have worked through all of the pages before this one, you’ve seen that, although you can make pretty good trees just using your intuition, there are ways to assign numbers to the quality of the trees you make, and informally optimize a tree. That is, you can make a plausible tree, and then alter it—add another branch, change a break point—and gradually find the best one.</p>
 <p>If you do that enough, it probably will occur to you that this is tedious, and wonder if we could have a computer do it.</p>
 <p>This business of looking at a set of trees, then finding the best one, and maybe then using that to make another, generally better set of trees, and repeating that process, well, that’s an example of machine learning. It’s creating an <em>algorithm</em> to find the best—or at least a pretty good—version of something.</p>
+<section id="imagining-automating-tree-building" class="level3">
+<h3 class="anchored" data-anchor-id="imagining-automating-tree-building">Imagining automating tree-building</h3>
+<p>It’s one thing to say, we’ll have the computer do the boring part. It’s another to specify exactly what to have the computer do. We will not do that here completely, but we will talk about what’s required for that task.</p>
+<section id="the-branch-everything-strategy" class="level4">
+<h4 class="anchored" data-anchor-id="the-branch-everything-strategy">The branch-<em>everything</em> strategy</h4>
+<p>First, let’s imagine a brute-force procedure: make the biggest tree possible. To do that, take the first “predictor” attribute that you see, and branch the tree using that attribute. Now you have two terminal nodes. Then take the next attribute, and branch both terminal nodes; now you have four. Continue until you’re out of attributes. (If you start with <span class="math inline">\(n\)</span> attributes, you will wind up with <span class="math inline">\(2^n\)</span> terminal nodes…which can be a lot!)</p>
+<p>To do that, you still need three things:</p>
+<ul>
+<li><p>At the beginning, you need a target attribute and you need to know what value(s) of that attribute are “positive.”</p></li>
+<li><p>You need to know, for each attribute, if it has more than two values, how to split it: You need a splitting rule—perhaps a cut point.</p></li>
+<li><p>At the end, you need to know, for each terminal node, what diagnosis you will assign.</p></li>
+</ul>
+<p>Your algorithm will have to address those issues. Then, if you’re about to make the <em>last</em> branch, you will notice situations where it makes no sense to branch the tree, for example:</p>
+<ul>
+<li><p>when the split makes almost no difference in the percentage of cases that are positive.</p></li>
+<li><p>when the number of cases in a branch is small</p></li>
+</ul>
+<p>So to make a “trimmer” tree, your algorithm will need to specify what “almost no difference” or “small” mean.</p>
+<p>You might also look at your completed tree and decide to “prune” it—to eliminate additional branches that yield little difference or have too few cases.</p>
+</section>
+<section id="a-more-prudent-and-frugal-strategy" class="level4">
+<h4 class="anchored" data-anchor-id="a-more-prudent-and-frugal-strategy">A more prudent and frugal strategy</h4>
+<p>An alternative to branching everything is to be more careful about what branches you make. Imagine these steps:</p>
+<ol type="1">
+<li><p>Take all the attributes and make a tree for each one, with just that first split.</p></li>
+<li><p>For each tree, calculate how good the tree is using some measure such as the MCR (misclassification rate).</p></li>
+<li><p>Take the best tree as measured by that MCR, returning to step 1 using only the remaining attributes.</p></li>
+<li><p>If you ever get a split that’s too little difference or too small, stop branching that part of the tree.</p></li>
+</ol>
+<p>You still need to define many things, but this will generally yield smaller, more wieldy trees.</p>
+</section>
+</section>
 <section id="linear-regression-metaphor" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="linear-regression-metaphor">Linear regression metaphor</h3>
 <div class="page-columns page-full"><p>Let’s assume we all understand about least-squares linear regression, a process by which, given a set of data points, we find a line that minimizes the sum of the squares of the residuals. We compute the parameters of that line—the slope and intercept, <span class="math inline">\(m\)</span> and <span class="math inline">\(b\)</span>—using some formulas. And those formulas get derived using calculus.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;This is not surprising, because this is an optimization problem with quadratic functions (sum of <em>squares</em>) so it involves setting a derivative equal to zero…and so forth.</p></li></div></div>
@@ -182,6 +215,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Calculus does it immediately, but we have the computing power to do the “walk” very efficiently and quickly. And of course, this procedure—which is called <em>gradient descent</em> in ML-speak—works even when calculus does not.</p>
 <p>cost: entropy, gini instead of SSR</p>
 <p>training and test sets</p>
+<p>overfitting</p>
 
 
 </section>
