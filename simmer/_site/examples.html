@@ -59,6 +59,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -115,16 +116,31 @@ ul.task-list li input[type="checkbox"] {
   <a href="./two-dice.html" class="sidebar-item-text sidebar-link">3) two dice</a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./basics-commentary.html" class="sidebar-item-text sidebar-link">Commentary</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Advanced</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Not as basic</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ten-dice.html" class="sidebar-item-text sidebar-link">Ten dice!</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./n-dice.html" class="sidebar-item-text sidebar-link"><span class="math inline">\(n\)</span> dice</a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./loaded.html" class="sidebar-item-text sidebar-link">Loaded dice</a>
@@ -197,8 +213,8 @@ ul.task-list li input[type="checkbox"] {
 <p>You will see parameters for the accuracy of the test in the program. You might even change the program so that these parameters are variables that get output with the other data.</p>
 <p>The key Bayesian question you should answer right away is, “If I test positive, what’s the probability that I have the disease?”</p>
 <script>
-    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FOMQspDSoJzGmDty6RdNN%2Ffile.json";
-    awash.codapInNewTab(theURL, "Click this to open a new tab with the Fbola test simulation" );
+    const fbolaURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FOtCaPL3FxMZmKwgrDWYE%2Ffile.json";
+    awash.codapInNewTab(fbolaURL, "Click this to open a new tab with the Fbola test simulation" );
 </script>
 </section>
 <section id="the-game-of-pig" class="level3">
@@ -206,14 +222,21 @@ ul.task-list li input[type="checkbox"] {
 <p>A text box in the document describes this important and venerable game.</p>
 <p>One task is to create an optimal strategy for the game. In this program,a parameter called <code>limit</code> governs when you stop rolling the die. What’s the best value for <code>limit</code>?</p>
 <p>But there are other possible strategies that don;t involve a <code>limit</code>! Implementing those requires altering the program, or creating a new one altogether.</p>
-<p><a href="https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FxsYmnblFlhqFvKgsnAai%2Ffile.json"><img src="art/codap-logo-48.png">  Click this to open a new tab with the game of Pig!</a></p>
+<script>
+    const pigURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/#shared=https%3A%2F%2Fcfm-shared.concord.org%2FQrTe4IdiBIJNcuWdrel2%2Ffile.json";
+    awash.codapInNewTab(pigURL, "Click this to open a new tab with the game of Pig!" );
+</script>
+<!-- <a href="https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FxsYmnblFlhqFvKgsnAai%2Ffile.json"><img src="art/codap-logo-48.png">&emsp; Click this to open a new tab with the game of Pig!</a> -->
 </section>
 <section id="projectile" class="level3">
 <h3 class="anchored" data-anchor-id="projectile">Projectile</h3>
 <p>This is something different: no probability at all.</p>
 <p>Instead, it’s physics: a numerical simulation of projectile motion.</p>
 <p>This is very unsophisticated, using the bare minimum Euler’s method kind of calculation. No Runge-Kutta! Not even Simpson’s Rule! But it still looks interesting, and we can explore, among other things, how accurate this simple-minded calculation can be.</p>
-<p><a href="https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FiULaKyZtzZxCAYU4OoHW%2Ffile.json"><img src="art/codap-logo-48.png">  Click this to open a new tab with the projectile simulation!</a></p>
+<script>
+    const projectileURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FiULaKyZtzZxCAYU4OoHW%2Ffile.json";
+    awash.codapInNewTab(projectileURL, "Click this to open a new tab with the projectile simulation!" );
+</script>
 
 
 </section>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>simmer – repeating</title>
+<title>simmer – basics-commentary</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -108,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./repeating.html" class="sidebar-item-text sidebar-link active">2) repeated actions</a>
+  <a href="./repeating.html" class="sidebar-item-text sidebar-link">2) repeated actions</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -118,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./basics-commentary.html" class="sidebar-item-text sidebar-link">Commentary</a>
+  <a href="./basics-commentary.html" class="sidebar-item-text sidebar-link active">Commentary</a>
   </div>
 </li>
       </ul>
@@ -131,6 +131,11 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./wait-time.html" class="sidebar-item-text sidebar-link">wait-time.html</a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ten-dice.html" class="sidebar-item-text sidebar-link">Ten dice!</a>
@@ -167,12 +172,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#repeating-many-times" id="toc-repeating-many-times" class="nav-link active" data-scroll-target="#repeating-many-times">Repeating many times</a></li>
+  <li><a href="#commentary-on-the-basics" id="toc-commentary-on-the-basics" class="nav-link active" data-scroll-target="#commentary-on-the-basics">Commentary on the basics</a>
+  <ul class="collapse">
+  <li><a href="#beyond-these-basics" id="toc-beyond-these-basics" class="nav-link" data-scroll-target="#beyond-these-basics">Beyond these basics</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -192,40 +200,25 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
     <script src="src/awash-functions.js"></script>
-<section id="repeating-many-times" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="repeating-many-times">Repeating many times</h2>
-<p>Let’s change the program so that it repeats that process on its own, so that we don’t have to press the button so many times.</p>
-<p>Improve the example below.</p>
+<section id="commentary-on-the-basics" class="level2">
+<h2 class="anchored" data-anchor-id="commentary-on-the-basics">Commentary on the basics</h2>
+<p>The three brief lessons you just did are a great start to learning <code>simmer</code> and learning to simulate probability situations.</p>
+<p>As a teacher, you can now imagine a variety of questions and tasks for students that use only those skills—and CODAP basics. For example:</p>
 <ul>
-<li>Find a “repeat” block in one of the categories that will run those blocks 10 times.</li>
-<li>Drag it into the workspace and make it enclose the blocks you want to repeat.</li>
-<li>Run it and see what happens. (It’s probably still not very evenly distributed.)</li>
-<li>Change the number of repeats to a few hundred and run it again.</li>
-<li>See if the graph shows that <code>item</code> has a more even distribution.</li>
+<li>What is the average value of a single die roll? How do you know?</li>
+<li>What is the probability that you roll a 10 with two regular dice? Give an <em>empirical</em> value you find through simulation and, if you can, a <em>theoretical</em> value you figure out through logic.</li>
+<li>Write a program for a special die whose average value is zero, but where the spread of possible values is more than 5.</li>
+<li>What is the most likely number to come up if you roll two 8-sided dice and add? Why?</li>
+<li>Write a program for rolling two dice, where the average value for the sum is zero, but the average value for eitehr of the dice is not zero.</li>
 </ul>
-<div class="column-page-right">
-<script>
-    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FzjVGZCiPAfvESNS355jb%2Ffile.json";
-    awash.liveDemoAt(theURL);
-</script>
-</div>
-<p>The screen is getting crowded. It’s hard to work with the program, the graph, and the table at the same time.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-pro tip: collapsing the code
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In the <code>simmer</code> top bar you’ll see a [currently brown] square showing four arrows pointing inward. Press it to collapse the program so you have more space for data analysis.</p>
-<p>Then, when you want to program again, press the button to give yourself room to code.</p>
-</div>
-</div>
+<section id="beyond-these-basics" class="level3">
+<h3 class="anchored" data-anchor-id="beyond-these-basics">Beyond these basics</h3>
+<p>You can do even more with <code>simmer</code>, using new blocks and techniques to create more types of simulations.</p>
+<p>You can figure these out for yourself by shopping around in the various catgories of blocks and trying them out. You can also read about some of them in the next few pages.</p>
+<p>Then, at the end, we give you some examples of more elaborate simulations.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

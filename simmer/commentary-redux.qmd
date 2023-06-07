@@ -1,0 +1,81 @@
+{{< include _simmer-header.qmd  >}}
+
+## More commentary
+
+
+### Pre-thinking the program {#pre-thinking-code}
+
+Let's look back at the "wait-time" program,
+where we wanted to know how many die rolls it would take to get a six.
+Here is an example of how to think about the program:
+imagine what you would do 
+if you were collecting data with an actual die. 
+
+::: {.column-margin}
+We will not always demonstrate this business of thinking about the program
+in English instead of in code.
+But it's a good habit-of-mind
+for you and for your students. 
+:::
+
+(@) Roll the die and see what number it is.
+(@) If it's a six, you're done.
+(@) Otherwise, go back to step 1. 
+
+::: {.column-margin}
+People often say that a program written this way is in "pseudocode". 
+:::
+
+Wait---that's not enough! 
+We need to *count* the number of rolls. 
+We'll use a tally to count them:
+
+1. Roll the die and see what number it is.
+1. If it's a six, you're done.
+1. Otherwise, make a tally mark. 
+1. Go back to step 1.
+
+No, wait: 
+If I roll a five and then a six, that's two rolls, 
+but I'll only make one tally mark. (Make sure you see why!)
+We'll fix that by switching steps 2 and 3, 
+with an appropriate change in logic:
+
+1. Roll the die
+1. Make a tally mark. 
+1. If the die *does not* show a six, go back to step 1.
+1. Otherwise, you're done.
+
+That's better, but to get a distribution, 
+we'll need to do this many times. 
+Like 100. 
+And when we've done that, we'll need the numbers of how many rolls it took each time,
+so we had better write them down.
+
+* Do the following 100 times:
+    1. Roll the die
+    1. Make a tally mark. 
+    1. If the die *does not* show a six, go back to step 1.
+    1. Otherwise, 
+        * write down the number of tallies
+        * erase the tallies
+        * start over
+
+Notice how each version gets better as we figure out what went wrong.
+Try to think through what will happen before you go to the computer,
+but don't overdo it:
+the computer will execute your instructions faithfully,
+and when it gives you a wrong answer, you will see what 
+you have to do to fix it.
+
+Now, recall that this is the Bockly code. 
+See if you can tell exactly what blocks correspond to which
+parts of our "pseudocode":
+
+![](art/wait-program.png)
+
+Interestingly, the `set aDie to 0` block has 
+no corresponding pseudocode.
+And yet it's essential! 
+I think this is a good example of how doing simulations
+on a computer is different from real life. 

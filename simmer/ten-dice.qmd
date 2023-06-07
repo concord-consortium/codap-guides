@@ -1,0 +1,110 @@
+{{< include _simmer-header.qmd  >}}
+
+## Ten dice!
+
+We did one die and two dice. 
+How about three dice?
+Then, what about *ten* dice?
+
+It's easy to see how to do three:
+start with two and make a new variable, `die3`, and slip it into the program:
+
+![](art/ten-dice-three.png)
+
+### Ten dice
+
+But when you get up to maybe 10 dice, that's impractical. 
+You would have to create ten variables,
+and besides all the trouble that entails,
+it's easy to imagine a screwup. 
+Something will go wrong. 
+
+Look at this program and see if you can figure out how it works.
+It rolls ten dice and adds them, and then emits the sum (rather than the ten individual values):
+
+![](art/ten-dice-program.png)
+
+*After* you think you see how it works, build it in the live example below. 
+Along the way, you should discover that:
+
+::: {.column-margin}
+![](art/ten-dice-plus-menu.png)
+:::
+* The "zero" block is in the **Math** category.
+* So is the "addition" block. 
+Note that the "+" is also a menu; if you need subtraction or whatever,
+make an addition block and change it.
+* You will be using that **Create variable....** button a lot!
+
+::: {.column-page-right}
+<script>
+    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/";
+    awash.liveDemoAt(theURL);
+</script>
+:::
+
+When you run your program once, you should see something like this:
+
+![](art/ten-dice-one-result.png){width="60%" fig-align="center"}
+
+This tells us that the sum of the ten dice was 31.
+Of course, you can graph `theSum` and run it many times.
+
+But what about `aDie`? What is that? 
+Look carefully at the program so that you understand that it is the 
+*last* single die in each set of 10. 
+The program uses that same variable, `aDie`, ten times every time you run it.
+And its value when the program hits the **send variables to CODAP** block
+is the last of those ten values. 
+
+::: {.callout-tip}
+## Extra fun...
+
+What happens when you put the **send variables to CODAP** block
+*inside* the loop?
+Predict what will happen; then try it and explain what you see!
+:::
+
+Suppose you're tired of pressing the run button so many times. 
+If you want to roll 10 dice, and get their sum, 100 times,
+make your program look like this:
+
+![](art/ten-dice-100x.png)
+
+The key takeaway is this: *you can put loops inside loops*!
+
+Here, the two loops have different meanings:
+
+* The inner loop (10 times) is how many dice you roll (and add).
+* The outer loop (100 times) is how many times you roll 10 dice.
+
+Try it up above! Just alter your existing program by wrapping it in a loop!
+The result should be 100 cases---because the **send variables to CODAP** block
+is inside the "100" loop but not inside the "10" loop.
+
+We got these graphs. 
+Don't forget to collapse the Blockly box so you have room to work!
+
+::: {layout-ncol=2}
+![One run of 100 reps of adding 10 dice.](art/ten-dice-100x-results.png)
+
+![Ten runs, that is, 1000 rolls of 10 dice.](art/ten-dice-1000x.png){width=110%}
+:::
+
+If you think that the graph of 1000 sets of rolls
+looks a lot like a *Normal* distribution, you're right!
+It's not exactly Normal, but it's really close.
+
+::: {.callout-caution}
+## Ridiculously far too advanced. Do not attempt this.
+
+Know about grouping? Know your data moves?
+
+Do 1000 repetitions of 10 dice, summing, as described above.
+Your table will have a column for `aDie`, the last die roll from each set of ten. 
+
+Group the table by `aDie` and compute the mean value of `theSum` for each group.
+
+Then plot that mean against `aDie`. Explain the result. 
+:::
+

@@ -1,0 +1,27 @@
+{{< include _simmer-header.qmd  >}}
+
+## $n$ dice
+
+You've just done 10 dice. 
+Clearly, you could add any number of dice by changing the 
+number `10` in that loop block.
+Here is a different way to do this:
+
+![](art/n-dice-program-1.png)
+
+The difference is, instead of a number in the loop ("repeat 10 times")
+we have a variable ("repeat $n$ times").
+Make sure you understand why this program
+will roll 42 dice and add the results.
+
+A single run looks like this; your results will vary:
+
+![](art/n-dice-42-one-result.png)
+
+Why would you want to write it this way?
+
+* If you want to change how many dice get rolled, 
+you can change the number up at the top;
+you don't have to search through the code to find the number.
+* Since `n` is a variable in the program, it gets output to CODAP.
+That is, we know the sum of `140` comes from a roll of 42 dice.

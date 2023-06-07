@@ -59,6 +59,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -115,16 +116,31 @@ ul.task-list li input[type="checkbox"] {
   <a href="./two-dice.html" class="sidebar-item-text sidebar-link">3) two dice</a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./basics-commentary.html" class="sidebar-item-text sidebar-link">Commentary</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Advanced</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Not as basic</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ten-dice.html" class="sidebar-item-text sidebar-link">Ten dice!</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./n-dice.html" class="sidebar-item-text sidebar-link"><span class="math inline">\(n\)</span> dice</a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./loaded.html" class="sidebar-item-text sidebar-link">Loaded dice</a>
@@ -151,12 +167,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#fair-and-unfair-coins" id="toc-fair-and-unfair-coins" class="nav-link active" data-scroll-target="#fair-and-unfair-coins">Fair and unfair coins</a></li>
+  <li><a href="#fair-and-unfair-coins" id="toc-fair-and-unfair-coins" class="nav-link active" data-scroll-target="#fair-and-unfair-coins">Fair and unfair coins</a>
+  <ul class="collapse">
+  <li><a href="#understanding-the-program" id="toc-understanding-the-program" class="nav-link" data-scroll-target="#understanding-the-program">Understanding the program</a></li>
+  <li><a href="#extending-your-mighty-coin-powers" id="toc-extending-your-mighty-coin-powers" class="nav-link" data-scroll-target="#extending-your-mighty-coin-powers">Extending your mighty coin powers</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -176,10 +196,79 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
     <script src="src/awash-functions.js"></script>
-<section id="fair-and-unfair-coins" class="level2">
+<section id="fair-and-unfair-coins" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="fair-and-unfair-coins">Fair and unfair coins</h2>
+<p>We have been rolling dice; what about flipping coins?</p>
+<p>In the <strong>Random</strong> section of the toolbox, you will see this block:</p>
+<p><img src="art/coins-block.png" class="img-fluid"></p>
+<p>This will “emit” either <code>heads</code> or <code>tails</code> with a probability of 1/2. So if you want to flip a coin 20 times and count the number of heads, you might write this program:</p>
+<p><img src="art/coins-20-flip-program.png" class="img-fluid"></p>
+<p>Make this program and run it. You can use the live example below; we have littered it with some of the ingredients you will need. Go to the <strong>Variables</strong> section of the toolbox to make any additional variables.</p>
+<script>
+    const brokenProgramURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FAJD7UrOv16Lwo2XBdxsA%2Ffile.json";
+    awash.codapInNewTab(brokenProgramURL, "Or you can use this link to open a new tab and have more space." );
+</script>
+<p><br></p>
+<div class="column-page-right">
+<script>
+    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FAJD7UrOv16Lwo2XBdxsA%2Ffile.json";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+<p>Your data table should look something like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/coins-20-flip-one-result-table.png" class="img-fluid figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+<p>In this particular run, there were 8 heads in the 20 tosses of the coin. You can run it repeatedly to see more data.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+How do you disconnect blocks? How do you delete?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It’s obvious how to connect blocks in our “Blockly” window. But it can be a challenge, at first, to disconnect blocks, or generally fix things that go wrong.</p>
+<ul>
+<li>If you drag a block, all of its connected “children” come along…</li>
+<li>…but it gets separated from its parents.</li>
+</ul>
+<p>Therefore, if B is under (or to the right of) A, drag B to disconnect them.</p>
+<ul>
+<li>To delete a block, drag it to the trash—or just select it and press the <strong>delete</strong> key.</li>
+</ul>
+</div>
+</div>
+<section id="understanding-the-program" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="understanding-the-program">Understanding the program</h3>
+<p>See if you can understand the program to do this. How does it work? Here are things to think about and do to make sure you understand it:</p>
+<ul>
+<li>There is a “loop” that runs 20 times. It’s green. What is it for?</li>
+<li>There is a variable called <code>nHeads</code>. We set its value (<code>0</code>) <em>outside</em> the loop. What would happen if you moved that statement (<code>set nHeads to 0</code>) inside the loop? Try it and see.</li>
+<li>There is an “<code>if</code>” statement in blue. What does that do?</li>
+<li>What would be different if you changed the string in the <code>if</code> statement from <code>"heads"</code> to <code>"tails"</code>?</li>
+<li>There is a spot where <code>nHeads</code> gets <em>incremented</em>. What does that mean?</li>
+<li>What happens if you eliminate that “increment” statement from the program?</li>
+<li>Where can you find the <code>if</code> statement in the toolbox?</li>
+<li>The statement to <code>send variables to CODAP</code> is outside the loop. What would happen if you put it inside the loop? As usual, try it and see!</li>
+</ul>
+<p>Try to make it your goal to be able to construct this program (or one like it) without any help. Will you always get it right the first time? No! Of course not! None of us do! But you can run it and see what goes wrong, and fix it. Blockly and CODAP do not care how many tries it takes. They do not judge.</p>
+</section>
+<section id="extending-your-mighty-coin-powers" class="level3">
+<h3 class="anchored" data-anchor-id="extending-your-mighty-coin-powers">Extending your mighty coin powers</h3>
+<p>The current program flips a fair coin 20 times and records the number of heads. Here are some things to try:</p>
+<ul>
+<li><p>Change the program so that it does those 20 flips … 100 times. That is, a total of 2000 flips, but in sets of 20, counting the number of heads each time. You should wind up with 100 cases in your table, and you can plot a distribution. You can ask, how unusual is it to get 16 heads in 20 tosses?</p></li>
+<li><p>Change that program so that the probability of heads is 3/4. Now how unusual is 16 heads?</p></li>
+<li><p>Make the probability a variable instead of a constant. Make a simulation that flips a fair coin 400 times and then flips a loaded coin 400 times. Compare the number of heads from the fair coin to the number of heads from the loaded coin. Do a randomization test to see if it’s plausible that the difference you see could arise by chance.</p></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

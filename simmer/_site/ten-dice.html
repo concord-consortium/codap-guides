@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>simmer – repeating</title>
+<title>simmer – ten-dice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -108,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./repeating.html" class="sidebar-item-text sidebar-link active">2) repeated actions</a>
+  <a href="./repeating.html" class="sidebar-item-text sidebar-link">2) repeated actions</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -133,12 +133,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ten-dice.html" class="sidebar-item-text sidebar-link">Ten dice!</a>
+  <a href="./ten-dice.html" class="sidebar-item-text sidebar-link active">Ten dice!</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./n-dice.html" class="sidebar-item-text sidebar-link"><span class="math inline">\(n\)</span> dice</a>
+  <a href="./wait-time.html" class="sidebar-item-text sidebar-link">The wait-time distribution</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -149,6 +149,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./coins.html" class="sidebar-item-text sidebar-link">Coins</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./n-dice.html" class="sidebar-item-text sidebar-link"><span class="math inline">\(n\)</span> dice</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -167,7 +172,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#repeating-many-times" id="toc-repeating-many-times" class="nav-link active" data-scroll-target="#repeating-many-times">Repeating many times</a></li>
+  <li><a href="#ten-dice" id="toc-ten-dice" class="nav-link active" data-scroll-target="#ten-dice">Ten dice!</a>
+  <ul class="collapse">
+  <li><a href="#ten-dice-1" id="toc-ten-dice-1" class="nav-link" data-scroll-target="#ten-dice-1">Ten dice</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -192,40 +200,102 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
     <script src="src/awash-functions.js"></script>
-<section id="repeating-many-times" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="repeating-many-times">Repeating many times</h2>
-<p>Let’s change the program so that it repeats that process on its own, so that we don’t have to press the button so many times.</p>
-<p>Improve the example below.</p>
-<ul>
-<li>Find a “repeat” block in one of the categories that will run those blocks 10 times.</li>
-<li>Drag it into the workspace and make it enclose the blocks you want to repeat.</li>
-<li>Run it and see what happens. (It’s probably still not very evenly distributed.)</li>
-<li>Change the number of repeats to a few hundred and run it again.</li>
-<li>See if the graph shows that <code>item</code> has a more even distribution.</li>
+<section id="ten-dice" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="ten-dice">Ten dice!</h2>
+<p>We did one die and two dice. How about three dice? Then, what about <em>ten</em> dice?</p>
+<p>It’s easy to see how to do three: start with two and make a new variable, <code>die3</code>, and slip it into the program:</p>
+<p><img src="art/ten-dice-three.png" class="img-fluid"></p>
+<section id="ten-dice-1" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="ten-dice-1">Ten dice</h3>
+<p>But when you get up to maybe 10 dice, that’s impractical. You would have to create ten variables, and besides all the trouble that entails, it’s easy to imagine a screwup. Something will go wrong.</p>
+<p>Look at this program and see if you can figure out how it works. It rolls ten dice and adds them, and then emits the sum (rather than the ten individual values):</p>
+<p><img src="art/ten-dice-program.png" class="img-fluid"></p>
+<p><em>After</em> you think you see how it works, build it in the live example below. Along the way, you should discover that:</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><img src="art/ten-dice-plus-menu.png" class="img-fluid"></p>
+</div></div><ul>
+<li>The “zero” block is in the <strong>Math</strong> category.</li>
+<li>So is the “addition” block. Note that the “+” is also a menu; if you need subtraction or whatever, make an addition block and change it.</li>
+<li>You will be using that <strong>Create variable….</strong> button a lot!</li>
 </ul>
 <div class="column-page-right">
 <script>
-    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FzjVGZCiPAfvESNS355jb%2Ffile.json";
+    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/";
     awash.liveDemoAt(theURL);
 </script>
 </div>
-<p>The screen is getting crowded. It’s hard to work with the program, the graph, and the table at the same time.</p>
+<p>When you run your program once, you should see something like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/ten-dice-one-result.png" class="img-fluid figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+<p>This tells us that the sum of the ten dice was 31. Of course, you can graph <code>theSum</code> and run it many times.</p>
+<p>But what about <code>aDie</code>? What is that? Look carefully at the program so that you understand that it is the <em>last</em> single die in each set of 10. The program uses that same variable, <code>aDie</code>, ten times every time you run it. And its value when the program hits the <strong>send variables to CODAP</strong> block is the last of those ten values.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-pro tip: collapsing the code
+Extra fun…
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In the <code>simmer</code> top bar you’ll see a [currently brown] square showing four arrows pointing inward. Press it to collapse the program so you have more space for data analysis.</p>
-<p>Then, when you want to program again, press the button to give yourself room to code.</p>
+<p>What happens when you put the <strong>send variables to CODAP</strong> block <em>inside</em> the loop? Predict what will happen; then try it and explain what you see!</p>
+</div>
+</div>
+<p>Suppose you’re tired of pressing the run button so many times. If you want to roll 10 dice, and get their sum, 100 times, make your program look like this:</p>
+<p><img src="art/ten-dice-100x.png" class="img-fluid"></p>
+<p>The key takeaway is this: <em>you can put loops inside loops</em>!</p>
+<p>Here, the two loops have different meanings:</p>
+<ul>
+<li>The inner loop (10 times) is how many dice you roll (and add).</li>
+<li>The outer loop (100 times) is how many times you roll 10 dice.</li>
+</ul>
+<p>Try it up above! Just alter your existing program by wrapping it in a loop! The result should be 100 cases—because the <strong>send variables to CODAP</strong> block is inside the “100” loop but not inside the “10” loop.</p>
+<p>We got these graphs:</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/ten-dice-100x-results.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">One run of 100 reps of adding 10 dice.</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/ten-dice-1000x.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Ten runs, that is, 1000 rolls of 10 dice.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>If you think that the graph of 1000 sets of rolls looks a lot like a <em>Normal</em> distribution, you’re right! It’s not exactly Normal, but it’s really close.</p>
+<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Ridiculously far too advanced. Do not attempt this.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Know about grouping? Know your data moves?</p>
+<p>Do 1000 repetitions of 10 dice, summing, as described above. Your table will have a column for <code>aDie</code>, the last die roll of each set of ten.</p>
+<p>Group the table by <code>aDie</code> and compute the mean value of <code>theSum</code> for each group.</p>
+<p>Then plot that mean against <code>aDie</code>. Explain the result.</p>
 </div>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

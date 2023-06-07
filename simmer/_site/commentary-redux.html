@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>simmer – repeating</title>
+<title>simmer – commentary-redux</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,12 +59,11 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -108,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./repeating.html" class="sidebar-item-text sidebar-link active">2) repeated actions</a>
+  <a href="./repeating.html" class="sidebar-item-text sidebar-link">2) repeated actions</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -138,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./n-dice.html" class="sidebar-item-text sidebar-link"><span class="math inline">\(n\)</span> dice</a>
+  <a href="./wait-time.html" class="sidebar-item-text sidebar-link">The wait-time distribution</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -149,6 +148,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./coins.html" class="sidebar-item-text sidebar-link">Coins</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./commentary-redux.html" class="sidebar-item-text sidebar-link active">More commentary</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -167,7 +171,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#repeating-many-times" id="toc-repeating-many-times" class="nav-link active" data-scroll-target="#repeating-many-times">Repeating many times</a></li>
+  <li><a href="#more-commentary" id="toc-more-commentary" class="nav-link active" data-scroll-target="#more-commentary">More commentary</a>
+  <ul class="collapse">
+  <li><a href="#pre-thinking-code" id="toc-pre-thinking-code" class="nav-link" data-scroll-target="#pre-thinking-code">Pre-thinking the program</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -192,40 +199,58 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
     <script src="src/awash-functions.js"></script>
-<section id="repeating-many-times" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="repeating-many-times">Repeating many times</h2>
-<p>Let’s change the program so that it repeats that process on its own, so that we don’t have to press the button so many times.</p>
-<p>Improve the example below.</p>
+<section id="more-commentary" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="more-commentary">More commentary</h2>
+<section id="pre-thinking-code" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="pre-thinking-code">Pre-thinking the program</h3>
+<p>Let’s look back at the “wait-time” program, where we wanted to know how many die rolls it would take to get a six. Here is an example of how to think about the program: imagine what you would do if you were collecting data with an actual die.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>We will not always demonstrate this business of thinking about the program in English instead of in code. But it’s a good habit-of-mind for you and for your students.</p>
+</div></div><ol class="example" type="1">
+<li>Roll the die and see what number it is.</li>
+<li>If it’s a six, you’re done.</li>
+<li>Otherwise, go back to step 1.</li>
+</ol>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>People often say that a program written this way is in “pseudocode”.</p>
+</div></div><p>Wait—that’s not enough! We need to <em>count</em> the number of rolls. We’ll use a tally to count them:</p>
+<ol type="1">
+<li>Roll the die and see what number it is.</li>
+<li>If it’s a six, you’re done.</li>
+<li>Otherwise, make a tally mark.</li>
+<li>Go back to step 1.</li>
+</ol>
+<p>No, wait: If I roll a five and then a six, that’s two rolls, but I’ll only make one tally mark. (Make sure you see why!) We’ll fix that by switching steps 2 and 3, with an appropriate change in logic:</p>
+<ol type="1">
+<li>Roll the die</li>
+<li>Make a tally mark.</li>
+<li>If the die <em>does not</em> show a six, go back to step 1.</li>
+<li>Otherwise, you’re done.</li>
+</ol>
+<p>That’s better, but to get a distribution, we’ll need to do this many times. Like 100. And when we’ve done that, we’ll need the numbers of how many rolls it took each time, so we had better write them down.</p>
 <ul>
-<li>Find a “repeat” block in one of the categories that will run those blocks 10 times.</li>
-<li>Drag it into the workspace and make it enclose the blocks you want to repeat.</li>
-<li>Run it and see what happens. (It’s probably still not very evenly distributed.)</li>
-<li>Change the number of repeats to a few hundred and run it again.</li>
-<li>See if the graph shows that <code>item</code> has a more even distribution.</li>
+<li>Do the following 100 times:
+<ol type="1">
+<li>Roll the die</li>
+<li>Make a tally mark.</li>
+<li>If the die <em>does not</em> show a six, go back to step 1.</li>
+<li>Otherwise,
+<ul>
+<li>write down the number of tallies</li>
+<li>erase the tallies</li>
+<li>start over</li>
+</ul></li>
+</ol></li>
 </ul>
-<div class="column-page-right">
-<script>
-    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FzjVGZCiPAfvESNS355jb%2Ffile.json";
-    awash.liveDemoAt(theURL);
-</script>
-</div>
-<p>The screen is getting crowded. It’s hard to work with the program, the graph, and the table at the same time.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-pro tip: collapsing the code
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In the <code>simmer</code> top bar you’ll see a [currently brown] square showing four arrows pointing inward. Press it to collapse the program so you have more space for data analysis.</p>
-<p>Then, when you want to program again, press the button to give yourself room to code.</p>
-</div>
-</div>
+<p>Notice how each version gets better as we figure out what went wrong. Try to think through what will happen before you go to the computer, but don’t overdo it: the computer will execute your instructions faithfully, and when it gives you a wrong answer, you will see what you have to do to fix it.</p>
+<p>Now, recall that this is the Bockly code. See if you can tell exactly what blocks correspond to which parts of our “pseudocode”:</p>
+<p><img src="art/wait-program.png" class="img-fluid"></p>
+<p>Interestingly, the <code>set aDie to 0</code> block has no corresponding pseudocode. And yet it’s essential! I think this is a good example of how doing simulations on a computer is different from real life.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

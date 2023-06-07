@@ -59,11 +59,12 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -115,11 +116,16 @@ ul.task-list li input[type="checkbox"] {
   <a href="./two-dice.html" class="sidebar-item-text sidebar-link active">3) two dice</a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./basics-commentary.html" class="sidebar-item-text sidebar-link">Commentary</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Advanced</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Not as basic</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -127,7 +133,27 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./ten-dice.html" class="sidebar-item-text sidebar-link">Ten dice!</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./wait-time.html" class="sidebar-item-text sidebar-link">The wait-time distribution</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./loaded.html" class="sidebar-item-text sidebar-link">Loaded dice</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./coins.html" class="sidebar-item-text sidebar-link">Coins</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./n-dice.html" class="sidebar-item-text sidebar-link"><span class="math inline">\(n\)</span> dice</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -190,13 +216,15 @@ Names are important
 </div>
 <div class="callout-body-container callout-body">
 <p>Give your variables meaningful names. Names like <code>die1</code> and <code>die2</code> tell you what’s going on.</p>
-<p>When we were just getting started, we used the default name, <code>item</code>. That’s a terrible name for a variable!</p>
 </div>
 </div>
 <p>Here are some tips:</p>
-<ul>
-<li>Use the yellow “plus” button near the top-left of the <code>simmer</code> window to make the variables <code>die1</code> and <code>die2</code>.</li>
-<li>After you make a block that sets a variable, you can use the menu in that variable block to change which variable it refers to. You can also use that menu to change the variable’s name.</li>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><img src="art/two-dice-rename-diw1.png" class="img-fluid"></p>
+</div></div><ul>
+<li>Go to the <strong>Variables</strong> part of the toolbox and press <strong>Create variable…</strong> to make the variables <code>die1</code> and <code>die2</code>.</li>
+<li>See the illustration on the right? After you make a block that sets a variable, you can use the menu in that variable block to change which variable it refers to. You can also use that menu to change the variable’s name.</li>
 </ul>
 <div class="column-page-right">
 <script>
@@ -228,7 +256,7 @@ Names are important
 <section id="reflecting" class="level3">
 <h3 class="anchored" data-anchor-id="reflecting">Reflecting</h3>
 <p>You made a probability model using <code>simmer</code>, simulating throws of two dice.</p>
-<p>Using a “repeat” block—a loop structure— you could throw <em>lots</em> of dice, many more than would be practical in real life.</p>
+<p>Using a “repeat” block—a loop structure—you could throw <em>lots</em> of dice, many more than would be practical in real life.</p>
 <p>Finally, you used the results to learn more about how probability works.</p>
 
 

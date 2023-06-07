@@ -16,16 +16,22 @@ Try to make a program like this one:
 
 Give your variables meaningful names. Names like `die1` and `die2` tell you what's going on.
 
-When we were just getting started, we used the default name, `item`. That's a terrible name for a variable!
 :::
 
 Here are some tips:
 
--   Use the yellow "plus" button near the top-left of the `simmer` window 
-to make the variables `die1` and `die2`.
--   After you make a block that sets a variable, 
+::: {.column-margin}
+![](art/two-dice-rename-diw1.png)
+:::
+
+
+-   Go to the **Variables** part of the toolbox and press **Create variable...** 
+to make the variables `die1` and `die2`. 
+-   See the illustration on the right? 
+After you make a block that sets a variable, 
 you can use the menu in that variable block to change which variable it refers to. 
 You can also use that menu to change the variable's name.
+
 
 ::: {.column-page-right}
 <script>
@@ -66,6 +72,6 @@ Your screen might now look something like this:
 
 You made a probability model using `simmer`, simulating throws of two dice.
 
-Using a "repeat" block---a loop structure--- you could throw *lots* of dice, many more than would be practical in real life.
+Using a "repeat" block---a loop structure---you could throw *lots* of dice, many more than would be practical in real life.
 
 Finally, you used the results to learn more about how probability works.

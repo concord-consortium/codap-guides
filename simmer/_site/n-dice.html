@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>simmer – repeating</title>
+<title>simmer – n-dice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -108,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./repeating.html" class="sidebar-item-text sidebar-link active">2) repeated actions</a>
+  <a href="./repeating.html" class="sidebar-item-text sidebar-link">2) repeated actions</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -138,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./n-dice.html" class="sidebar-item-text sidebar-link"><span class="math inline">\(n\)</span> dice</a>
+  <a href="./n-dice.html" class="sidebar-item-text sidebar-link active"><span class="math inline">\(n\)</span> dice</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -167,12 +167,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#repeating-many-times" id="toc-repeating-many-times" class="nav-link active" data-scroll-target="#repeating-many-times">Repeating many times</a></li>
+  <li><a href="#n-dice" id="toc-n-dice" class="nav-link active" data-scroll-target="#n-dice"><span class="math inline">\(n\)</span> dice</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -192,38 +192,18 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
     <script src="src/awash-functions.js"></script>
-<section id="repeating-many-times" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="repeating-many-times">Repeating many times</h2>
-<p>Let’s change the program so that it repeats that process on its own, so that we don’t have to press the button so many times.</p>
-<p>Improve the example below.</p>
+<section id="n-dice" class="level2">
+<h2 class="anchored" data-anchor-id="n-dice"><span class="math inline">\(n\)</span> dice</h2>
+<p>You’ve just done 10 dice. Clearly, you could add any number of dice by changing the number <code>10</code> in that loop block. Here is a different way to do this:</p>
+<p><img src="art/n-dice-program-1.png" class="img-fluid"></p>
+<p>The difference is, instead of a number in the loop (“repeat 10 times”) we have a variable (“repeat <span class="math inline">\(n\)</span> times”). Make sure you understand why this program will roll 42 dice and add the results.</p>
+<p>A single run looks like this; your results will vary:</p>
+<p><img src="art/n-dice-42-one-result.png" class="img-fluid"></p>
+<p>Why would you want to write it this way?</p>
 <ul>
-<li>Find a “repeat” block in one of the categories that will run those blocks 10 times.</li>
-<li>Drag it into the workspace and make it enclose the blocks you want to repeat.</li>
-<li>Run it and see what happens. (It’s probably still not very evenly distributed.)</li>
-<li>Change the number of repeats to a few hundred and run it again.</li>
-<li>See if the graph shows that <code>item</code> has a more even distribution.</li>
+<li>If you want to change how many dice get rolled, you can change the number up at the top; you don’t have to search through the code to find the number.</li>
+<li>Since <code>n</code> is a variable in the program, it gets output to CODAP. That is, we know the sum of <code>140</code> comes from a roll of 42 dice.</li>
 </ul>
-<div class="column-page-right">
-<script>
-    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FzjVGZCiPAfvESNS355jb%2Ffile.json";
-    awash.liveDemoAt(theURL);
-</script>
-</div>
-<p>The screen is getting crowded. It’s hard to work with the program, the graph, and the table at the same time.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-pro tip: collapsing the code
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In the <code>simmer</code> top bar you’ll see a [currently brown] square showing four arrows pointing inward. Press it to collapse the program so you have more space for data analysis.</p>
-<p>Then, when you want to program again, press the button to give yourself room to code.</p>
-</div>
-</div>
 
 
 </section>

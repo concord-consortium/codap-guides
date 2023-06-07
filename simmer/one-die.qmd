@@ -9,12 +9,13 @@ Make the program you see below. Notice how the *blocks* fit together.
 We have a block that represents a variable (named `item`), and it "receives" a random number. 
 Then we send that data to CODAP.
 
-![](art/one-die-only.jpg)
+![](art/one-die-only.png){width="80%" fig-align="center"}
 
 In the live example below, try to build that program. Some hints:
 
 -   The gray stripe on the left is called the *toolbox*.
 -   The toolbox contains the names of *categories*. Click on a name to see the blocks in that category.
+-   In the **Variables** category, you will need to create a new variable called `die`.
 -   Find the blocks you need in three different categories.
 -   Drag blocks from the toolbox into the main workspace and hook them together.
 -   If you get one you don't want, you can drag it to the trash can in the lower right.

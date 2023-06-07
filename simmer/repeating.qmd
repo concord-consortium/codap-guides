@@ -18,7 +18,7 @@ and make it enclose the blocks you want to repeat.
 
 :::{.column-page-right}
 <script>
-    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/#shared=https%3A%2F%2Fcfm-shared.concord.org%2FAmusju5LJyfDic5Exy6N%2Ffile.json";
+    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FzjVGZCiPAfvESNS355jb%2Ffile.json";
     awash.liveDemoAt(theURL);
 </script>
 :::

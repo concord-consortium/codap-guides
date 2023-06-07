@@ -31,8 +31,8 @@ The key Bayesian question you should answer right away is,
 
 
 <script>
-    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FOMQspDSoJzGmDty6RdNN%2Ffile.json";
-    awash.codapInNewTab(theURL, "Click this to open a new tab with the Fbola test simulation" );
+    const fbolaURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FOtCaPL3FxMZmKwgrDWYE%2Ffile.json";
+    awash.codapInNewTab(fbolaURL, "Click this to open a new tab with the Fbola test simulation" );
 </script>
 
 
@@ -47,7 +47,12 @@ What's the best value for `limit`?
 But there are other possible strategies that don;t involve a `limit`!
 Implementing those requires altering the program, or creating a new one altogether. 
 
-<a href="https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FxsYmnblFlhqFvKgsnAai%2Ffile.json"><img src="art/codap-logo-48.png">&emsp; Click this to open a new tab with the game of Pig!</a>
+<script>
+    const pigURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/#shared=https%3A%2F%2Fcfm-shared.concord.org%2FQrTe4IdiBIJNcuWdrel2%2Ffile.json";
+    awash.codapInNewTab(pigURL, "Click this to open a new tab with the game of Pig!" );
+</script>
+
+<!-- <a href="https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FxsYmnblFlhqFvKgsnAai%2Ffile.json"><img src="art/codap-logo-48.png">&emsp; Click this to open a new tab with the game of Pig!</a> -->
 
 
 ### Projectile
@@ -63,7 +68,11 @@ But it still looks interesting,
 and we can explore, among other things, 
 how accurate this simple-minded calculation can be.
 
-<a href="https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FiULaKyZtzZxCAYU4OoHW%2Ffile.json"><img src="art/codap-logo-48.png">&emsp; Click this to open a new tab with the projectile simulation!</a>
+<script>
+    const projectileURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FiULaKyZtzZxCAYU4OoHW%2Ffile.json";
+    awash.codapInNewTab(projectileURL, "Click this to open a new tab with the projectile simulation!" );
+</script>
+
 
 
 

@@ -1,0 +1,94 @@
+{{< include _simmer-header.qmd  >}}
+
+## The wait-time distribution
+
+How many rolls does it take to get a six?
+
+Of course, it varies. 
+Sometimes you'll get a six on your first roll. 
+Sometimes, you will roll and roll until you get one.
+
+So we really want to know two things:
+
+* What is the *average* number of rolls? (and we suspect the answer is 6)
+* What is the *distribution* of the number of rolls?
+
+### The program in Blockly
+
+Here is a program that does what we want.
+Notice three new blocks: 
+
+* Instead of looping a fixed number of times, 
+we have a **repeat while** block.
+* The **repeat while**  needs a **Boolean** block (the `aDie ≠ 6` clause).
+* Inside the loop, we use a special **change `count` by** block 
+that adds one to our `count` variable.
+
+We also have an outer **repeat** loop that does this whole dance 100 times:
+
+![](art/wait-program.png)
+
+Construct that program in the live example below, and run it.
+Make the variables you need.
+Graph your results,
+probably collapsing the program so you have enough screen space.
+What does the distribution of "wait times" look like?
+Is its mean (about) 6, the way we expect?
+
+::: {.column-page-right}
+<script>
+    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/";
+    awash.liveDemoAt(theURL);
+</script>
+:::
+
+Continue to explore the program and its results. 
+
+### Reflecting on the wait-time program
+
+This program introduces a number of new and powerful ideas,
+such as the whole **repeat while** thing. 
+
+For a moment, though, let's look at something more prosaic: 
+the way we set `aDie` and `count` to zero:
+
+
+Be sure you understand why we do that,
+and what alternatives we might have. 
+
+And how should you come to that understanding?
+
+A great way is the change the program. 
+For example, take out the `set aDie to 0` statement and run it. 
+What happens? 
+Why?
+
+If you are only starting to learn to program, 
+and you try to write this on your own,
+you might not even think of including that statement!
+That's normal.
+But when your programs don't work, 
+you'll soon get used to looking for places where,
+for example, you didn't reset your variables.
+
+For another way to think about learning programming, see
+[this section about pre-thinking your code](#pre-thinking-code).
+
+### Discovering **repeat until**
+
+Try this: change the `repeat while aDie ≠ 6` statement
+to `repeat until aDie = 6`. 
+(Use the little menus in the blocks.)
+
+Do you still need to reset `aDie` every time? (yes)
+What's the difference between **repeat while** 
+and **repeat until**?
+
+### Keeping all the rolls
+
+Our program makes one CODAP case every time you finally roll a 6.
+Suppose we wanted to record all of the die rolls, 
+including the final 6.
+
+How could we change the program to make that work---and
+still be able to display that wait-time distribution?

@@ -1,0 +1,32 @@
+{{< include _simmer-header.qmd  >}}
+
+## Commentary on the basics
+
+The three brief lessons you just did are a great start to learning `simmer` 
+and learning to simulate probability situations. 
+
+As a teacher, you can now imagine a variety of questions and 
+tasks for students that use only those skills---and CODAP basics.
+For example:
+
+* What is the average value of a single die roll? How do you know?
+* What is the probability that you roll a 10 with two regular dice?
+Give an *empirical* value you find through simulation and, if you
+can, a *theoretical* value you figure out through logic.
+* Write a program for a special die whose average value is zero, 
+but where the spread of possible values is more than 5.
+* What is the most likely number to come up if you roll two 8-sided dice and add? Why?
+* Write a program for rolling two dice, where the average value for the sum is zero,
+but the average value for eitehr of the dice is not zero.
+
+### Beyond these basics
+
+You can do even more with `simmer`, using
+new blocks and techniques to create more types of simulations.
+
+You can figure these out for yourself by shopping around in the 
+various catgories of blocks and trying them out.
+You can also read about some of them in the next few pages.
+
+Then, at the end, we give you some examples of 
+more elaborate simulations.

@@ -15,12 +15,17 @@ website:
             text: "2) repeated actions"
           - href: two-dice.qmd
             text: "3) two dice"
-      - section: "Advanced"
+          - href: basics-commentary.qmd
+            text: Commentary
+      - section: "Not as basic"
         contents:
+          - href: ten-dice.qmd
+          - href: wait-time.qmd
           - href: loaded.qmd
             text: "Loaded dice"
           - href: coins.qmd
             text: "Coins"
+          - href: commentary-redux.qmd
           - href: examples.qmd
             text: "examples"
 
