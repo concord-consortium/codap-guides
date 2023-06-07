@@ -49,13 +49,13 @@ Does that look more like the prediction?
 
 ### Next steps
 
-* Think about what would happen of you rolled two loaded dice and added?
+* Think about what would happen of you rolled two loaded dice and added.
 What would the distribution of that sum look like? 
 (Think first, predict, even make a diagram, then try it.)
 
 * If you had a die, and you didn't know if it was loaded,
 how could you tell? 
-This is a job for _inference_, which we will talk about later.
+This might be a job for _inference_!
 
 * You can use the **Make list from text** block for more than just loaded dice!
 Imagine what you could do with this code:
@@ -93,9 +93,10 @@ you can use anything.
 So `theFaces` is that whole list. 
 Internally, it's an Array; it looks like this: `[1, 2, 3, 4, 5, 6, 6]`.
 
-Then, in the next line, we set `loadedDie` using a **pick from** block:
+Then, in the next line, we set `loadedDie` using a **pick from list** block, 
+which is in the middle of these three:
 
-![Three blocks; **pick from** is in the middle](art/loaded-pick-from-01.png)
+![](art/loaded-pick-from-01.png)
 
 You found this block under **Random**, 
 because its job is to pick a random item from the list you give it.
