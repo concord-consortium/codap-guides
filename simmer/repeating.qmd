@@ -27,15 +27,21 @@ and make it enclose the blocks you want to repeat.
 The screen is getting crowded.
 It's hard to work with the program, the graph, and the table at the same time. 
 
-::: callout-tip
+::::: {.callout-tip}
 ## pro tip: collapsing the code
 
 In the `simmer` top bar you'll see a \[currently brown\] square 
+![](art/collapse-button.png){width="5%"} 
 showing four arrows pointing inward. 
 Press it to collapse the program so you have more space for data analysis.
 
 Then, when you want to program again, 
 press the button to give yourself room to code.
+:::::
+
+::: {.callout-note collapse="true"}
+## The answer, in case you get lost
+
+![](art/repeated-solution.png)
+
 :::
-
-

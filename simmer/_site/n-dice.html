@@ -138,17 +138,32 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./n-dice.html" class="sidebar-item-text sidebar-link active"><span class="math inline">\(n\)</span> dice</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./loaded.html" class="sidebar-item-text sidebar-link">Loaded dice</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./coins.html" class="sidebar-item-text sidebar-link">Coins</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./wait-time.html" class="sidebar-item-text sidebar-link">The wait-time distribution</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./n-dice.html" class="sidebar-item-text sidebar-link active"><span class="math inline">\(n\)</span> dice</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./functions.html" class="sidebar-item-text sidebar-link">functions.html</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./commentary-redux.html" class="sidebar-item-text sidebar-link">More commentary</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -167,12 +182,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#n-dice" id="toc-n-dice" class="nav-link active" data-scroll-target="#n-dice"><span class="math inline">\(n\)</span> dice</a></li>
+  <li><a href="#n-dice" id="toc-n-dice" class="nav-link active" data-scroll-target="#n-dice"><span class="math inline">\(n\)</span> dice</a>
+  <ul class="collapse">
+  <li><a href="#what-can-you-do-with-this" id="toc-what-can-you-do-with-this" class="nav-link" data-scroll-target="#what-can-you-do-with-this">What can you do with this?</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -192,9 +210,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
     <script src="src/awash-functions.js"></script>
-<section id="n-dice" class="level2">
+<section id="n-dice" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="n-dice"><span class="math inline">\(n\)</span> dice</h2>
-<p>You’ve just done 10 dice. Clearly, you could add any number of dice by changing the number <code>10</code> in that loop block. Here is a different way to do this:</p>
+<p>You’ve just done 10 dice using this program:</p>
+<p><img src="art/ten-dice-program.png" class="img-fluid"></p>
+<p>Clearly, you could add any number of dice by changing the number <code>10</code> in that loop block. Here is a different way to do this:</p>
 <p><img src="art/n-dice-program-1.png" class="img-fluid"></p>
 <p>The difference is, instead of a number in the loop (“repeat 10 times”) we have a variable (“repeat <span class="math inline">\(n\)</span> times”). Make sure you understand why this program will roll 42 dice and add the results.</p>
 <p>A single run looks like this; your results will vary:</p>
@@ -204,8 +224,54 @@ ul.task-list li input[type="checkbox"] {
 <li>If you want to change how many dice get rolled, you can change the number up at the top; you don’t have to search through the code to find the number.</li>
 <li>Since <code>n</code> is a variable in the program, it gets output to CODAP. That is, we know the sum of <code>140</code> comes from a roll of 42 dice.</li>
 </ul>
+<section id="what-can-you-do-with-this" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="what-can-you-do-with-this">What can you do with this?</h3>
+<p>That means that you can set up interesting data collection scenarios. For example, suppose we take our program for getting the sum of 42 dice and run it 100 times. That only requires wrapping the program above in a loop to repeat it 100 times.</p>
+<p>But then suppose we want to do the same thing, but instead of rolling 42 six-sided dice, we roll 21 thirteen-sided dice—and then compare the two distributions.</p>
+<p>The live example below already has the program for 42 dice, above.</p>
+<ol class="example" type="1">
+<li>Wrap that in a loop to do that 100 times, as described above.</li>
+<li>Collect data so you have 100 cases.</li>
+<li>Change the program to roll 21 13-sided dice (100 times)</li>
+<li>Again, collect data. Now you have 200 cases—but half of them have <code>n=42</code> and half have <code>n=21</code>.</li>
+<li>Make a graph that lets you compare the distributions of sums.</li>
+</ol>
+<div class="column-page-right">
+<script>
+    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/#shared=https%3A%2F%2Fcfm-shared.concord.org%2FvFDKsaNCbmHS2mlZPYyA%2Ffile.json";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+<p>Here is our graph. Notice, we had to change <code>n</code> to categorical (Click on the <code>n</code> in the graph to get its menu, then choose <strong>Treat as Categorical</strong>). Yours will be different, but only because of chance.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/42D6 and 21D13 compared.png" class="img-fluid figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+<p>With this simulation we can ask at least two interesting questions:</p>
+<ul>
+<li>It looks as if the means are the same. Is that true? Why?</li>
+<li>It looks as if the standard deviation (the spread) of the “21” graph is larger. Is that really true? (Yes!) How do you know it isn’t just chance? <em>Why</em> is that SD bigger?</li>
+</ul>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+The importance of recording <code>n</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This bears emphasizing: we <em>could</em> have just put 42 and 21 in the space for how many times to go through the loop. Instead, we made a variable, <code>n</code>, and used that.</p>
+<p>As a result, every single case had that number in it, and we could use it to separate our two distributions. Without <code>n</code>, we couldn’t put it on that axis!</p>
+<p>Also: if you know about the “grouping” data move, where you drag an attribute to the left—you can do that with <code>n</code> and then calculate means and spreads.</p>
+<p>There is yet another reason to do it this way, and you will meet it in the next chapter.</p>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

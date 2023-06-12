@@ -59,7 +59,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -138,17 +137,22 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./n-dice.html" class="sidebar-item-text sidebar-link"><span class="math inline">\(n\)</span> dice</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./loaded.html" class="sidebar-item-text sidebar-link active">Loaded dice</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./coins.html" class="sidebar-item-text sidebar-link">Coins</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./wait-time.html" class="sidebar-item-text sidebar-link">The wait-time distribution</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./commentary-redux.html" class="sidebar-item-text sidebar-link">More commentary</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -234,8 +238,8 @@ Tip
 <section id="next-steps" class="level3">
 <h3 class="anchored" data-anchor-id="next-steps">Next steps</h3>
 <ul>
-<li><p>Think about what would happen of you rolled two loaded dice and added? What would the distribution of that sum look like? (Think first, predict, even make a diagram, then try it.)</p></li>
-<li><p>If you had a die, and you didn’t know if it was loaded, how could you tell? This is a job for <em>inference</em>, which we will talk about later.</p></li>
+<li><p>Think about what would happen of you rolled two loaded dice and added. What would the distribution of that sum look like? (Think first, predict, even make a diagram, then try it.)</p></li>
+<li><p>If you had a die, and you didn’t know if it was loaded, how could you tell? This might be a job for <em>inference</em>!</p></li>
 <li><p>You can use the <strong>Make list from text</strong> block for more than just loaded dice! Imagine what you could do with this code:</p></li>
 </ul>
 <p><img src="art/loaded-classes.png" class="img-fluid"></p>
@@ -264,13 +268,8 @@ Heading towards modeling
 </ul>
 <p>The delimiter is the character that separates list items. You could imagine using a dash or even a space as the delimiter…but you can use anything.</p>
 <p>So <code>theFaces</code> is that whole list. Internally, it’s an Array; it looks like this: <code>[1, 2, 3, 4, 5, 6, 6]</code>.</p>
-<p>Then, in the next line, we set <code>loadedDie</code> using a <strong>pick from</strong> block:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="art/loaded-pick-from-01.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Three blocks; <strong>pick from</strong> is in the middle</figcaption><p></p>
-</figure>
-</div>
+<p>Then, in the next line, we set <code>loadedDie</code> using a <strong>pick from list</strong> block, which is in the middle of these three:</p>
+<p><img src="art/loaded-pick-from-01.png" class="img-fluid"></p>
 <p>You found this block under <strong>Random</strong>, because its job is to pick a random item from the list you give it.</p>
 <p>Then you emit the variables into CODAP, 70 times.</p>
 <p>Probably, nothing will appear under <code>theFaces</code>. That’s normal.</p>

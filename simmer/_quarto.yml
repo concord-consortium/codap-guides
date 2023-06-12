@@ -20,11 +20,13 @@ website:
       - section: "Not as basic"
         contents:
           - href: ten-dice.qmd
-          - href: wait-time.qmd
           - href: loaded.qmd
             text: "Loaded dice"
           - href: coins.qmd
             text: "Coins"
+          - href: wait-time.qmd
+          - href: n-dice.qmd
+          - href: functions.qmd
           - href: commentary-redux.qmd
           - href: examples.qmd
             text: "examples"

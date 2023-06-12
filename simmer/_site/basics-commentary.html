@@ -133,17 +133,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./wait-time.html" class="sidebar-item-text sidebar-link">wait-time.html</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./ten-dice.html" class="sidebar-item-text sidebar-link">Ten dice!</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./n-dice.html" class="sidebar-item-text sidebar-link"><span class="math inline">\(n\)</span> dice</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -154,6 +144,21 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./coins.html" class="sidebar-item-text sidebar-link">Coins</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./n-dice.html" class="sidebar-item-text sidebar-link"><span class="math inline">\(n\)</span> dice</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./wait-time.html" class="sidebar-item-text sidebar-link">The wait-time distribution</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./commentary-redux.html" class="sidebar-item-text sidebar-link">More commentary</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -209,8 +214,12 @@ ul.task-list li input[type="checkbox"] {
 <li>What is the probability that you roll a 10 with two regular dice? Give an <em>empirical</em> value you find through simulation and, if you can, a <em>theoretical</em> value you figure out through logic.</li>
 <li>Write a program for a special die whose average value is zero, but where the spread of possible values is more than 5.</li>
 <li>What is the most likely number to come up if you roll two 8-sided dice and add? Why?</li>
-<li>Write a program for rolling two dice, where the average value for the sum is zero, but the average value for eitehr of the dice is not zero.</li>
+<li>Write a program for rolling two dice, where the average value for the sum is zero, but the average value for either of the individual dice is not zero.</li>
 </ul>
+<p>If you teach traditional statistics, you can also imagine assigning students to perform tests and estimates using data from these simulations. For example:</p>
+<blockquote class="blockquote">
+<p>Aloysius says, “The maximum value for one die is six. So therefore the mean value is three.” He rolls a die ten times and gets a mean value of 3.1, so he is satisfied that he is correct. He is wrong, of course. Try testing the hypothesis that <span class="math inline">\(\mu_0 = 3.0\)</span> with various sample sizes. How many rolls did you need to reject that hypothesis fairly consistently?</p>
+</blockquote>
 <section id="beyond-these-basics" class="level3">
 <h3 class="anchored" data-anchor-id="beyond-these-basics">Beyond these basics</h3>
 <p>You can do even more with <code>simmer</code>, using new blocks and techniques to create more types of simulations.</p>

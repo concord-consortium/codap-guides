@@ -17,7 +17,23 @@ can, a *theoretical* value you figure out through logic.
 but where the spread of possible values is more than 5.
 * What is the most likely number to come up if you roll two 8-sided dice and add? Why?
 * Write a program for rolling two dice, where the average value for the sum is zero,
-but the average value for eitehr of the dice is not zero.
+but the average value for either of the individual dice is not zero.
+
+If you teach traditional statistics, 
+you can also imagine assigning students
+to perform tests and estimates using
+data from these simulations.
+For example:
+
+> Aloysius says, "The maximum value for one die
+is six. So therefore the mean value is three." 
+He rolls a die ten times and gets a mean value of 3.1, so he is satisfied that he is correct.
+He is wrong, of course. 
+Try testing the hypothesis that $\mu_0 = 3.0$ with
+various sample sizes. 
+How many rolls did you need to reject that hypothesis fairly consistently?
+
+
 
 ### Beyond these basics
 

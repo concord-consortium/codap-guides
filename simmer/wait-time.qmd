@@ -58,7 +58,7 @@ and what alternatives we might have.
 
 And how should you come to that understanding?
 
-A great way is the change the program. 
+A great way is to change the program. 
 For example, take out the `set aDie to 0` statement and run it. 
 What happens? 
 Why?

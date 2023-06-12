@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>simmer – wait-time</title>
+<title>simmer – functions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,11 +59,12 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -147,7 +148,17 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./wait-time.html" class="sidebar-item-text sidebar-link active">The wait-time distribution</a>
+  <a href="./wait-time.html" class="sidebar-item-text sidebar-link">The wait-time distribution</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./n-dice.html" class="sidebar-item-text sidebar-link"><span class="math inline">\(n\)</span> dice</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./functions.html" class="sidebar-item-text sidebar-link active">Functions in simmer</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -171,12 +182,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-wait-time-distribution" id="toc-the-wait-time-distribution" class="nav-link active" data-scroll-target="#the-wait-time-distribution">The wait-time distribution</a>
+  <li><a href="#functions-in-simmer" id="toc-functions-in-simmer" class="nav-link active" data-scroll-target="#functions-in-simmer">Functions in simmer</a>
   <ul class="collapse">
-  <li><a href="#the-program-in-blockly" id="toc-the-program-in-blockly" class="nav-link" data-scroll-target="#the-program-in-blockly">The program in Blockly</a></li>
-  <li><a href="#reflecting-on-the-wait-time-program" id="toc-reflecting-on-the-wait-time-program" class="nav-link" data-scroll-target="#reflecting-on-the-wait-time-program">Reflecting on the wait-time program</a></li>
-  <li><a href="#discovering-repeat-until" id="toc-discovering-repeat-until" class="nav-link" data-scroll-target="#discovering-repeat-until">Discovering <strong>repeat until</strong></a></li>
-  <li><a href="#keeping-all-the-rolls" id="toc-keeping-all-the-rolls" class="nav-link" data-scroll-target="#keeping-all-the-rolls">Keeping all the rolls</a></li>
+  <li><a href="#advanced-functions-using-arguments" id="toc-advanced-functions-using-arguments" class="nav-link" data-scroll-target="#advanced-functions-using-arguments">Advanced functions: using arguments</a></li>
+  <li><a href="#setting-up-the-arguments" id="toc-setting-up-the-arguments" class="nav-link" data-scroll-target="#setting-up-the-arguments">Setting up the arguments</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -202,53 +211,116 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
     <script src="src/awash-functions.js"></script>
-<section id="the-wait-time-distribution" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="the-wait-time-distribution">The wait-time distribution</h2>
-<p>How many rolls does it take to get a six?</p>
-<p>Of course, it varies. Sometimes you’ll get a six on your first roll. Sometimes, you will roll and roll until you get one.</p>
-<p>So we really want to know two things:</p>
+<section id="functions-in-simmer" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="functions-in-simmer">Functions in simmer</h2>
+<p>This builds directly on the <a href="#n-dice-chapter">n-dice chapter</a>, so check that out if you haven’t read it.</p>
+<p>In that chapter, we used this program to roll 42 6-sided dice and add them—100 times:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/functions-42D6-program.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<p>Now we will learn how to “encapsulate” that program into a single statement. We’ll <em>define</em> a function to do that.</p>
 <ul>
-<li>What is the <em>average</em> number of rolls? (and we suspect the answer is 6)</li>
-<li>What is the <em>distribution</em> of the number of rolls?</li>
+<li>We’ll get a function definition from the <strong>Functions</strong> category in the toolbox. It’s the top item, labeled <strong>to do something</strong>. (See the illustration at right.)</li>
 </ul>
-<section id="the-program-in-blockly" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="the-program-in-blockly">The program in Blockly</h3>
-<p>Here is a program that does what we want. Notice three new blocks:</p>
-<ul>
-<li>Instead of looping a fixed number of times, we have a <strong>repeat while</strong> block.</li>
-<li>The <strong>repeat while</strong> needs a <strong>Boolean</strong> block (the <code>aDie ≠ 6</code> clause).</li>
-<li>Inside the loop, we use a special <strong>change <code>count</code> by</strong> block that adds one to our <code>count</code> variable.</li>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><img src="art/functions-function-in-toolbox.png" class="img-fluid"></p>
+</div></div><ul>
+<li>We’ll wrap that definition around the statements we want in the function (the same way we wrapped statements in loops).</li>
+<li>Finally, we’ll edit <strong>do something</strong> to give the function a dood name, such as “roll 6 x 42, 100 times.”</li>
 </ul>
-<p>We also have an outer <strong>repeat</strong> loop that does this whole dance 100 times:</p>
-<p><img src="art/wait-program.png" class="img-fluid"></p>
-<p>Construct that program in the live example below, and run it. Make the variables you need. Graph your results, probably collapsing the program so you have enough screen space. What does the distribution of “wait times” look like? Is its mean (about) 6, the way we expect?</p>
+<p>It will look like this when you’re done:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/functions-roll6x42x100 program.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<p>This function definition is not part of the program that <code>simmer</code> executes until you call it. But when you do, the actual program becomes amazingly simple and understandable.</p>
+<p>To get the call, go back to the <strong>Functions</strong> category. Drag out the function “call” block, which has only the function’s name. It looks like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/functions-6x42-call.png" class="img-fluid figure-img" style="width:30.0%"></p>
+</figure>
+</div>
+<p>And that is the entire program! So the block window will have two things in it: the function definition (which is long and details) and the program that call it (which is short and more general).</p>
+<p>In the last chapter, we also rolled 21 13-sided dice. you will put those instructions into a very similar function called <code>roll 13 x 21, 100 times</code>.</p>
+<p>Your turn. Using the live example below,</p>
+<ol class="example" type="1">
+<li>Wrap the code in a loop so you roll those 42 dice 100 times.</li>
+<li>Define the first (6-sided die) function as we did above</li>
+<li>Select the definition (just click on the “wrapper”) and copy it to the clipboard.</li>
+<li><strong>Paste</strong> the definition into your workspace (now there are two copies).</li>
+<li>Change its name and its instructions to roll 21 13-sided dice 100 times.</li>
+<li>Bring two blocks out of <strong>Functions</strong> to call those two functions and hook them together</li>
+<li>Run the program and make a graph of the data. It should look the way it did before!</li>
+</ol>
 <div class="column-page-right">
 <script>
-    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/";
+    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/#shared=https%3A%2F%2Fcfm-shared.concord.org%2FvFDKsaNCbmHS2mlZPYyA%2Ffile.json";
     awash.liveDemoAt(theURL);
 </script>
 </div>
-<p>Continue to explore the program and its results.</p>
+<section id="advanced-functions-using-arguments" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-functions-using-arguments">Advanced functions: using arguments</h3>
+<p>That was sweet, but as you can see, the two functions are almost identical. The loops and everything are structured the same. There are only two differences:</p>
+<ul>
+<li>The number of rolls (42 and 21) (we’ll call it <code>nRolls</code>)</li>
+<li>The number of sides of each die (6 and 13) (<code>nFaces</code>)</li>
+</ul>
+<p>Let’s write <em>one</em> function to take care of both situations. It will look like this. Notice that it is <em>exactly</em> like the original function except that two of the constants in the original function are now variables:</p>
+<p><img src="art/functions-addMultipleRolls-declaration.png" class="img-fluid"></p>
+<ul>
+<li>This function has two <em>arguments</em>, <code>nRolls</code> and <code>nFaces</code> (indicated by the <strong>with</strong> at the top).</li>
+<li>It uses those two arguments in the program,
+<ul>
+<li><code>nRolls</code> as the number of times through the inner loop.</li>
+<li><code>nFaces</code> as the number of faces on the dice.</li>
+</ul></li>
+<li>The function repeats the rolling-and-summing bit 100 times, sending data to CODAP every time through the outer loop.</li>
+</ul>
+<p>Now the actual program becomes amazingly simple and understandable. Here it is:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="art/function-multiple-calls.png" class="img-fluid figure-img" style="width:40.0%"></p>
+</figure>
+</div>
 </section>
-<section id="reflecting-on-the-wait-time-program" class="level3">
-<h3 class="anchored" data-anchor-id="reflecting-on-the-wait-time-program">Reflecting on the wait-time program</h3>
-<p>This program introduces a number of new and powerful ideas, such as the whole <strong>repeat while</strong> thing.</p>
-<p>For a moment, though, let’s look at something more prosaic: the way we set <code>aDie</code> and <code>count</code> to zero:</p>
-<p>Be sure you understand why we do that, and what alternatives we might have.</p>
-<p>And how should you come to that understanding?</p>
-<p>A great way is to change the program. For example, take out the <code>set aDie to 0</code> statement and run it. What happens? Why?</p>
-<p>If you are only starting to learn to program, and you try to write this on your own, you might not even think of including that statement! That’s normal. But when your programs don’t work, you’ll soon get used to looking for places where, for example, you didn’t reset your variables.</p>
-<p>For another way to think about learning programming, see <a href="#pre-thinking-code">this section about pre-thinking your code</a>.</p>
-</section>
-<section id="discovering-repeat-until" class="level3">
-<h3 class="anchored" data-anchor-id="discovering-repeat-until">Discovering <strong>repeat until</strong></h3>
-<p>Try this: change the <code>repeat while aDie ≠ 6</code> statement to <code>repeat until aDie = 6</code>. (Use the little menus in the blocks.)</p>
-<p>Do you still need to reset <code>aDie</code> every time? (yes) What’s the difference between <strong>repeat while</strong> and <strong>repeat until</strong>?</p>
-</section>
-<section id="keeping-all-the-rolls" class="level3">
-<h3 class="anchored" data-anchor-id="keeping-all-the-rolls">Keeping all the rolls</h3>
-<p>Our program makes one CODAP case every time you finally roll a 6. Suppose we wanted to record all of the die rolls, including the final 6.</p>
-<p>How could we change the program to make that work—and still be able to display that wait-time distribution?</p>
+<section id="setting-up-the-arguments" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="setting-up-the-arguments">Setting up the arguments</h3>
+<p>How did we get those arguments?</p>
+<ul>
+<li>Click on the little gear in the function definition block. A dialog will appear. <img src="art/functions-argument-dialog.png" class="img-fluid"></li>
+<li>Drag the <strong>input name: x</strong> to the inputs bracket on the right. Do this twice; two arguments. Edit the names there. Make them <code>nRolls</code> and <code>nFaces</code>.</li>
+<li>Click the gear again to make the box go away.</li>
+<li>Drag <code>nRolls</code> and <code>nFaces</code> out of <strong>Variables</strong> and substitite them in the appropriate places in the function definition.</li>
+</ul>
+<p>Try it in the live example below (be sure to give the function a name, and don’t forget the loop to repeat 100 times!):</p>
+<div class="column-page-right">
+<script>
+    const theURL2 = "https://codap.concord.org/releases/latest/static/dg/en/cert/#shared=https%3A%2F%2Fcfm-shared.concord.org%2FvFDKsaNCbmHS2mlZPYyA%2Ffile.json";
+    awash.liveDemoAt(theURL2);
+</script>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Super advanced….
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Once you have a function defined, it takes up a lot of space. If you’re confident it’s the way you want it:</p>
+<ul>
+<li>Right-click on the function definition.</li>
+<li>Choose <strong>Collapse block</strong>.</li>
+</ul>
+<p>This works with <em>any</em> block! Try it!</p>
+</div>
+</div>
 
 
 </section>

@@ -68,7 +68,7 @@ the computer will execute your instructions faithfully,
 and when it gives you a wrong answer, you will see what 
 you have to do to fix it.
 
-Now, recall that this is the Bockly code. 
+Now, recall the Blockly code (below). 
 See if you can tell exactly what blocks correspond to which
 parts of our "pseudocode":
 
