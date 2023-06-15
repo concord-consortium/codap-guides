@@ -1,6 +1,6 @@
 {{< include _simmer-header.qmd  >}}
 
-## $n$ dice {n-dice-chapter}
+## $n$ dice {#n-dice-chapter}
 
 You've just done 10 dice using this program:
 

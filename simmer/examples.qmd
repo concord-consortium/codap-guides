@@ -44,7 +44,7 @@ One task is to create an optimal strategy for the game.
 In this program,a parameter called `limit` governs when you stop rolling the die.
 What's the best value for `limit`?
 
-But there are other possible strategies that don;t involve a `limit`!
+But there are other possible strategies that don't involve a `limit`!
 Implementing those requires altering the program, or creating a new one altogether. 
 
 <script>

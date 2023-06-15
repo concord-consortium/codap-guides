@@ -102,5 +102,3 @@ You found this block under **Random**,
 because its job is to pick a random item from the list you give it.
 
 Then you emit the variables into CODAP, 70 times. 
-
-Probably, nothing will appear under `theFaces`. That's normal.

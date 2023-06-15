@@ -21,16 +21,14 @@ It's the top item, labeled **to do something**. (See the illustration at right.)
 :::
 * We'll wrap that definition around the statements we want in the function (the same way we wrapped statements in loops).
 * Finally, we'll edit **do something** to
-give the function a dood name, such as
+give the function a good name, such as
 "roll 6 x 42, 100 times."
 
 It will look like this when you're done:
 
 ![](art/functions-roll6x42x100%20program.png){width="80%" fig-align="center"}
 
-This function definition is not part of the program that `simmer` executes until you call it. 
-But when you do, the actual program becomes amazingly simple and understandable.
-
+This function definition is not part of the program that `simmer` executes until you call it.
 To get the call, go back to the **Functions** category.
 Drag out the function "call" block, which has only the function's name.
 It looks like this:
@@ -38,8 +36,8 @@ It looks like this:
 ![](art/functions-6x42-call.png){width="30%" fig-align="center"}
 
 And that is the entire program!
-So the block window will have two things in it: the function definition (which is long and details)
-and the program that call it (which is short and more general).
+So the block window will have two things in it: the function definition (which is long and detailed)
+and the program that calls it (which is short and more general).
 
 In the last chapter, we also rolled 21 13-sided dice. 
 you will put those instructions into a very similar function called `roll 13 x 21, 100 times`.
@@ -71,7 +69,7 @@ are almost identical.
 The loops and everything are structured the same.
 There are only two differences:
 
-* The number of rolls (42 and 21) (we'll call it `nRolls`)
+* The number of rolls (42 and 21) (we'll call those `nRolls`)
 * The number of sides of each die (6 and 13) (`nFaces`)
 
 Let's write *one* function to take care of both situations.
@@ -116,6 +114,17 @@ Try it in the live example below (be sure to give the function a name, and don't
 </script>
 :::
 
+::: {.callout-caution}
+## One function is better than two
+
+Why? 
+Because if you have to change it---or fix it---you
+only have to do so in one place.
+
+The idea of making code *easier to maintain*
+is a very important habit
+in computer programming.
+:::
 
 ::: {.callout-tip}
 ## Super advanced....
@@ -129,3 +138,4 @@ If you're confident it's the way you want it:
 This works with *any* block!
 Try it!
 :::
+

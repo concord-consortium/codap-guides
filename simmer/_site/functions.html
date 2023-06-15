@@ -229,7 +229,7 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="art/functions-function-in-toolbox.png" class="img-fluid"></p>
 </div></div><ul>
 <li>We’ll wrap that definition around the statements we want in the function (the same way we wrapped statements in loops).</li>
-<li>Finally, we’ll edit <strong>do something</strong> to give the function a dood name, such as “roll 6 x 42, 100 times.”</li>
+<li>Finally, we’ll edit <strong>do something</strong> to give the function a good name, such as “roll 6 x 42, 100 times.”</li>
 </ul>
 <p>It will look like this when you’re done:</p>
 <div class="quarto-figure quarto-figure-center">
@@ -237,14 +237,13 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="art/functions-roll6x42x100 program.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
-<p>This function definition is not part of the program that <code>simmer</code> executes until you call it. But when you do, the actual program becomes amazingly simple and understandable.</p>
-<p>To get the call, go back to the <strong>Functions</strong> category. Drag out the function “call” block, which has only the function’s name. It looks like this:</p>
+<p>This function definition is not part of the program that <code>simmer</code> executes until you call it. To get the call, go back to the <strong>Functions</strong> category. Drag out the function “call” block, which has only the function’s name. It looks like this:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="art/functions-6x42-call.png" class="img-fluid figure-img" style="width:30.0%"></p>
 </figure>
 </div>
-<p>And that is the entire program! So the block window will have two things in it: the function definition (which is long and details) and the program that call it (which is short and more general).</p>
+<p>And that is the entire program! So the block window will have two things in it: the function definition (which is long and detailed) and the program that calls it (which is short and more general).</p>
 <p>In the last chapter, we also rolled 21 13-sided dice. you will put those instructions into a very similar function called <code>roll 13 x 21, 100 times</code>.</p>
 <p>Your turn. Using the live example below,</p>
 <ol class="example" type="1">
@@ -266,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="advanced-functions-using-arguments">Advanced functions: using arguments</h3>
 <p>That was sweet, but as you can see, the two functions are almost identical. The loops and everything are structured the same. There are only two differences:</p>
 <ul>
-<li>The number of rolls (42 and 21) (we’ll call it <code>nRolls</code>)</li>
+<li>The number of rolls (42 and 21) (we’ll call those <code>nRolls</code>)</li>
 <li>The number of sides of each die (6 and 13) (<code>nFaces</code>)</li>
 </ul>
 <p>Let’s write <em>one</em> function to take care of both situations. It will look like this. Notice that it is <em>exactly</em> like the original function except that two of the constants in the original function are now variables:</p>
@@ -302,6 +301,20 @@ ul.task-list li input[type="checkbox"] {
     const theURL2 = "https://codap.concord.org/releases/latest/static/dg/en/cert/#shared=https%3A%2F%2Fcfm-shared.concord.org%2FvFDKsaNCbmHS2mlZPYyA%2Ffile.json";
     awash.liveDemoAt(theURL2);
 </script>
+</div>
+<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+One function is better than two
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Why? Because if you have to change it—or fix it—you only have to do so in one place.</p>
+<p>The idea of making code <em>easier to maintain</em> is a very important habit in computer programming</p>
+</div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
