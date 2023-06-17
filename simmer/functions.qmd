@@ -2,7 +2,7 @@
 
 ## Functions in simmer
 
-This builds directly on the [n-dice chapter](#n-dice-chapter),
+This builds directly on the [n-dice chapter](n-dice.qmd),
 so check that out if you haven't read it.
 
 In that chapter, we used this program to 

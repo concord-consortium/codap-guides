@@ -1,6 +1,6 @@
 {{< include _simmer-header.qmd  >}}
 
-## Simmer
+## Introduction
 
 With `simmer`, you can use block programming to simulate probability experiments, among other things.
 

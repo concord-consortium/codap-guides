@@ -1,6 +1,6 @@
 {{< include _simmer-header.qmd  >}}
 
-## Ten dice!
+## More dice
 
 We did one die and two dice. 
 How about three dice?
@@ -11,7 +11,7 @@ start with two and make a new variable, `die3`, and slip it into the program:
 
 ![](art/ten-dice-three.png)
 
-### Ten dice
+### Ten dice!
 
 But when you get up to maybe 10 dice, that's impractical. 
 You would have to create ten variables,

@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./loaded.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -93,6 +94,11 @@ ul.task-list li input[type="checkbox"] {
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Basics</a>
@@ -123,6 +129,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Not as basic</a>
@@ -133,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ten-dice.html" class="sidebar-item-text sidebar-link active">Ten dice!</a>
+  <a href="./ten-dice.html" class="sidebar-item-text sidebar-link active">Three dice</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -182,9 +189,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ten-dice" id="toc-ten-dice" class="nav-link active" data-scroll-target="#ten-dice">Ten dice!</a>
+  <li><a href="#three-dice" id="toc-three-dice" class="nav-link active" data-scroll-target="#three-dice">Three dice</a>
   <ul class="collapse">
-  <li><a href="#ten-dice-1" id="toc-ten-dice-1" class="nav-link" data-scroll-target="#ten-dice-1">Ten dice</a></li>
+  <li><a href="#ten-dice" id="toc-ten-dice" class="nav-link" data-scroll-target="#ten-dice">Ten dice!</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -210,13 +217,13 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
     <script src="src/awash-functions.js"></script>
-<section id="ten-dice" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="ten-dice">Ten dice!</h2>
+<section id="three-dice" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="three-dice">Three dice</h2>
 <p>We did one die and two dice. How about three dice? Then, what about <em>ten</em> dice?</p>
 <p>It’s easy to see how to do three: start with two and make a new variable, <code>die3</code>, and slip it into the program:</p>
 <p><img src="art/ten-dice-three.png" class="img-fluid"></p>
-<section id="ten-dice-1" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="ten-dice-1">Ten dice</h3>
+<section id="ten-dice" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="ten-dice">Ten dice!</h3>
 <p>But when you get up to maybe 10 dice, that’s impractical. You would have to create ten variables, and besides all the trouble that entails, it’s easy to imagine a screwup. Something will go wrong.</p>
 <p>Look at this program and see if you can figure out how it works. It rolls ten dice and adds them, and then emits the sum (rather than the ten individual values):</p>
 <p><img src="art/ten-dice-program.png" class="img-fluid"></p>
@@ -442,6 +449,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./loaded.html" class="pagination-link">
+        <span class="nav-page-text">Loaded dice</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

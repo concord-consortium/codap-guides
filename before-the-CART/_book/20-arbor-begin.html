@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Before the CART - 3&nbsp; Your first tree</title>
+<title>Before the CART - 4&nbsp; Your first tree</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./30-arbor-with-graphs.html" rel="next">
+<link href="./40-arbor-fbola.html" rel="next">
 <link href="./10-arbor-anatomy.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Your first tree</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Your first tree</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -101,22 +101,17 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./00-overview.html" class="sidebar-item-text sidebar-link">Overview</a>
+  <a href="./00-overview.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Overview</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10-arbor-anatomy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Anatomy of a tree</span></a>
+  <a href="./10-arbor-anatomy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anatomy of a tree</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./20-arbor-begin.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Your first tree</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./30-arbor-with-graphs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Trees and graphs</span></a>
+  <a href="./20-arbor-begin.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Your first tree</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -131,7 +126,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./60-arbor-breast-cancer.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Breast cancer example</span></a>
+  <a href="./60-arbor-breast-cancer.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Breast cancer data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -148,11 +143,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-target-attribute" id="toc-the-target-attribute" class="nav-link active" data-scroll-target="#the-target-attribute"><span class="toc-section-number">3.1</span>  The target attribute</a></li>
-  <li><a href="#making-a-branch-drag-and-drop" id="toc-making-a-branch-drag-and-drop" class="nav-link" data-scroll-target="#making-a-branch-drag-and-drop"><span class="toc-section-number">3.2</span>  Making a branch: drag and drop</a>
+  <li><a href="#the-target-attribute" id="toc-the-target-attribute" class="nav-link active" data-scroll-target="#the-target-attribute"><span class="toc-section-number">4.1</span>  The target attribute</a></li>
+  <li><a href="#making-a-branch-drag-and-drop" id="toc-making-a-branch-drag-and-drop" class="nav-link" data-scroll-target="#making-a-branch-drag-and-drop"><span class="toc-section-number">4.2</span>  Making a branch: drag and drop</a>
   <ul class="collapse">
-  <li><a href="#adding-a-numeric-attribute" id="toc-adding-a-numeric-attribute" class="nav-link" data-scroll-target="#adding-a-numeric-attribute"><span class="toc-section-number">3.2.1</span>  Adding a numeric attribute</a></li>
-  <li><a href="#assigning-results-to-terminal-nodes" id="toc-assigning-results-to-terminal-nodes" class="nav-link" data-scroll-target="#assigning-results-to-terminal-nodes"><span class="toc-section-number">3.2.2</span>  Assigning results to terminal nodes</a></li>
+  <li><a href="#adding-a-numeric-attribute" id="toc-adding-a-numeric-attribute" class="nav-link" data-scroll-target="#adding-a-numeric-attribute"><span class="toc-section-number">4.2.1</span>  Adding a numeric attribute</a></li>
+  <li><a href="#assigning-results-to-terminal-nodes" id="toc-assigning-results-to-terminal-nodes" class="nav-link" data-scroll-target="#assigning-results-to-terminal-nodes"><span class="toc-section-number">4.2.2</span>  Assigning results to terminal nodes</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -162,7 +157,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Your first tree</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Your first tree</span></h1>
 </div>
 
 
@@ -185,8 +180,8 @@ ul.task-list li input[type="checkbox"] {
 <p></p><figcaption class="figure-caption">You will make this tree showing data about passengers on the Titanic. Notice the huge gender difference in survival rates.</figcaption><p></p>
 </figure>
 </div>
-<section id="the-target-attribute" class="level2 page-columns page-full" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="the-target-attribute"><span class="header-section-number">3.1</span> The target attribute</h2>
+<section id="the-target-attribute" class="level2 page-columns page-full" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="the-target-attribute"><span class="header-section-number">4.1</span> The target attribute</h2>
 <p>To make a tree, you first have to identify your <em>target attribute</em>. The target attribute might also be called</p>
 <ul>
 <li>the dependent variable</li>
@@ -202,8 +197,8 @@ ul.task-list li input[type="checkbox"] {
 </script>
 </div>
 </section>
-<section id="making-a-branch-drag-and-drop" class="level2 page-columns page-full" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="making-a-branch-drag-and-drop"><span class="header-section-number">3.2</span> Making a branch: drag and drop</h2>
+<section id="making-a-branch-drag-and-drop" class="level2 page-columns page-full" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="making-a-branch-drag-and-drop"><span class="header-section-number">4.2</span> Making a branch: drag and drop</h2>
 <p>Next, drop <code>gender</code> onto the white box with “500 of 1309” in it.<br>
 The tree will branch. You can see how the survival rate was different for males and females.</p>
 <p>Notice that the tree is composed of boxes (called <em>nodes</em>) and lines (<em>links</em>).</p>
@@ -228,8 +223,8 @@ Lost in the Node?
 <p></p><figcaption class="figure-caption">The pop-up information for the “male” node</figcaption><p></p>
 </figure>
 </div>
-</div></div><section id="adding-a-numeric-attribute" class="level3 page-columns page-full" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="adding-a-numeric-attribute"><span class="header-section-number">3.2.1</span> Adding a numeric attribute</h3>
+</div></div><section id="adding-a-numeric-attribute" class="level3 page-columns page-full" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="adding-a-numeric-attribute"><span class="header-section-number">4.2.1</span> Adding a numeric attribute</h3>
 <p>Now drop <code>age</code> onto the “male” node. It will split, but probably using age 30 as a cutpoint. Click the gear on the <code>age</code> stripe and change that 30 to 15.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
@@ -242,8 +237,8 @@ Lost in the Node?
 </div></div><p>When you make a tree with <em>Arbor</em>, every node has a maximum of two branches. An attribute like <code>age</code> has so many values, you generally have to tell <em>Arbor</em> where that cutpoint is using that configuration box.</p>
 <p>You can configure any attribute, but it’s more common for numerical ones. <a href="./90-arbor-configuration.html">Click to learn more about the configuration box.</a></p>
 </section>
-<section id="assigning-results-to-terminal-nodes" class="level3 page-columns page-full" data-number="3.2.2">
-<h3 data-number="3.2.2" class="anchored" data-anchor-id="assigning-results-to-terminal-nodes"><span class="header-section-number">3.2.2</span> Assigning results to terminal nodes</h3>
+<section id="assigning-results-to-terminal-nodes" class="level3 page-columns page-full" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="assigning-results-to-terminal-nodes"><span class="header-section-number">4.2.2</span> Assigning results to terminal nodes</h3>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
@@ -395,12 +390,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./10-arbor-anatomy.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Anatomy of a tree</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anatomy of a tree</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./30-arbor-with-graphs.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Trees and graphs</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./40-arbor-fbola.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Fbola example</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

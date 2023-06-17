@@ -25,3 +25,15 @@ To learn CODAP basics, here are two strategies:
 * Work through the [getting started lesson](https://codap.xyz/awash/lessons-overview.html#the-getting-started-lesson) in the "Awash" book.
 * Open CODAP, choose to get a sample document, and choose **Getting started with CODAP**.
 
+### Would you like to play a game? {-}
+
+Of course you would.
+
+The paper mentions and references an online game called *Xeno*.
+In Xeno, you are trying to diagnose extraterrestrial creatures
+based on health data.
+Your creatures will face a sequence of maladies,
+getting harder and harder to diagnose.
+
+[Here is a link to a CODAP document](https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FnvYJ6ypFCVlssLUOyL88%2Ffile.json) that has the game,
+including some instructions about how to play.

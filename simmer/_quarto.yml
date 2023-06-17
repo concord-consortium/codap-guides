@@ -1,12 +1,19 @@
 project:
   type: website
+  resources:
+    - "/art/"
+
 
 website:
   title: "simmer"
+  page-navigation: true
+
   sidebar:
     style: "floating"
     search: true
     contents:
+      - href: index.html
+        text: Introduction
       - section: "Basics"
         contents:
           - href: one-die.qmd
@@ -17,6 +24,7 @@ website:
             text: "3) two dice"
           - href: basics-commentary.qmd
             text: Commentary
+      - text: "---"
       - section: "Not as basic"
         contents:
           - href: ten-dice.qmd
