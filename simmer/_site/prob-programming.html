@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>simmer – repeating</title>
+<title>simmer – prob-programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./two-dice.html" rel="next">
-<link href="./one-die.html" rel="prev">
+<link href="./prob-prediction.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -115,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./repeating.html" class="sidebar-item-text sidebar-link active">2) repeated actions</a>
+  <a href="./repeating.html" class="sidebar-item-text sidebar-link">2) repeated actions</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -202,7 +201,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prob-programming.html" class="sidebar-item-text sidebar-link">Programming</a>
+  <a href="./prob-programming.html" class="sidebar-item-text sidebar-link active">Programming</a>
   </div>
 </li>
       </ul>
@@ -216,7 +215,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#repeating-many-times" id="toc-repeating-many-times" class="nav-link active" data-scroll-target="#repeating-many-times">Repeating many times</a></li>
+  <li><a href="#programming" id="toc-programming" class="nav-link active" data-scroll-target="#programming">Programming</a>
+  <ul class="collapse">
+  <li><a href="#two-weird-dice" id="toc-two-weird-dice" class="nav-link" data-scroll-target="#two-weird-dice">Two weird dice</a></li>
+  <li><a href="#square-or-product" id="toc-square-or-product" class="nav-link" data-scroll-target="#square-or-product">Square or product?</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -241,56 +244,50 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
     <script src="src/awash-functions.js"></script>
-<section id="repeating-many-times" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="repeating-many-times">Repeating many times</h2>
-<p>Let’s change the program so that it repeats that process on its own, so that we don’t have to press the button so many times.</p>
-<p>Improve the example below.</p>
+<section id="programming" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="programming">Programming</h2>
+<p>Here are a few problems under development. These are all problems where you need to write a program using <code>simmer</code>.</p>
+<p>What makes a good programming problem in this context? Let us know!</p>
+<section id="two-weird-dice" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="two-weird-dice">Two weird dice</h3>
+<p>Suppose you had two dice: one has 12 faces numbered 1 to 12; the other has 20 faces numbered 0 to 19.</p>
+<p>In the live example below, write a program that simulates rolling those two dice. Then you will add them. You can decide whether to add them in the program or CODAP.</p>
+<p>Before you run the program, however, predict:</p>
 <ul>
-<li>Find a “repeat” block in one of the categories that will run those blocks 10 times.</li>
-<li>Drag it into the workspace and make it enclose the blocks you want to repeat.</li>
-<li>Run it and see what happens. (It’s probably still not very evenly distributed.)</li>
-<li>Change the number of repeats to a few hundred and run it again.</li>
-<li>See if the graph shows that <code>item</code> has a more even distribution.</li>
+<li>What will be the range of the <code>sum</code>?</li>
+<li>What will the distribution of the <code>sum</code> look like? Sketch your predicted graph of the distribution of <code>sum</code>.</li>
 </ul>
+<p>Plot at least 400 rolls.</p>
 <div class="column-page-right">
 <script>
-    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FzjVGZCiPAfvESNS355jb%2Ffile.json";
+    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/";
     awash.liveDemoAt(theURL);
 </script>
 </div>
-<p>The screen is getting crowded. It’s hard to work with the program, the graph, and the table at the same time.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-pro tip: collapsing the code
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In the <code>simmer</code> top bar you’ll see a [currently brown] square <img src="art/collapse-button.png" class="img-fluid" style="width:5.0%"> showing four arrows pointing inward. Press it to collapse the program so you have more space for data analysis.</p>
-<p>Then, when you want to program again, press the button to give yourself room to code.</p>
-</div>
-</div>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-The answer, in case you get lost
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><img src="art/repeated-solution.png" class="img-fluid"></p>
-</div>
-</div>
+</section>
+<section id="square-or-product" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="square-or-product">Square or product?</h3>
+<p>Suppose you have two regular six-sided dice. Now imagine these two procedures:</p>
+<ul>
+<li>Roll one die and square the result. Call that number <code>square</code>.</li>
+<li>Roll both dice and multiply them together. Call that number <code>product</code>.</li>
+</ul>
+<p>In the live window below, write a program that rolls dice and gets 400 values of <code>square</code> and <code>product</code> by looping through a set of statements 400 times.</p>
+<p>Before you run it, predict what will happen:</p>
+<ul>
+<li>Predict the minimum and maximum values for <code>square</code> and <code>product</code>.</li>
+<li>Sketch your predictions for the distirbutions of <code>square</code> and <code>product</code>.</li>
+<li>Predict (roughly) the means of <code>square</code> and <code>product</code>.</li>
+</ul>
+<div class="column-page-right">
+<script>
+    const theURL2 = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/";
+    awash.liveDemoAt(theURL2);
+</script>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -429,14 +426,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./one-die.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">1) rolling one die</span>
+      <a href="./prob-prediction.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Prediction</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./two-dice.html" class="pagination-link">
-        <span class="nav-page-text">3) two dice</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

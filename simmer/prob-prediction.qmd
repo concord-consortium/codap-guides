@@ -1,0 +1,101 @@
+{{< include _simmer-header.qmd  >}}
+
+## Prediction
+
+Here are a few problems under development. 
+These are all problems where you look
+at a program and try to predict what its output will look like.
+
+What makes a good problem for this tool?
+Let us know!
+
+### Adding two dice...with negative numbers
+
+The live example below shows a program. 
+Before you run it, predict:
+
+* What will be the minimum and maximum values of `sum`?
+* What will the mean of `sum` be?
+
+Explain your two answers!
+
+::: {.column-page-right}
+<script>
+    theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FBochUxaMCVoBg68pyBxm%2Ffile.json";
+    awash.liveDemoAt(theURL);
+</script>
+:::
+
+### Adding two normals
+
+The live example below shows a program that adds two numbers:
+
+* `Norm1` is a random Normal variable with mean 0 and SD 1.
+* `Norm2` is a random Normal variable with mean 10 and SD 1.
+
+What do you know about the distribution of `sum`? 
+Before you run the program,
+
+1. Sketch what you think that distribution will look like.
+#. What do you think the mean of `sum` will be?
+#. Will the SD of `sum` be 
+   * a lot less than 1, 
+   * a bit less than 1, 
+   * close to 1, 
+   * a bit more than 1, or 
+   * a lot more than 1?
+
+Explain your responses to the tasks.
+
+::: {.column-page-right}
+<script>
+    theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FS4anhAvbQAg4yUgvyOno%2Ffile.json";
+    awash.liveDemoAt(theURL);
+</script>
+:::
+
+### Uniform squared
+
+The live example below shows a program. 
+The variable `uni` is _uniformly_ distributed between 0 and 1. 
+The illustration at right shows the distribution of `uni` from one run. 
+
+::: {.column-margin}
+![](art/uniform400.png)
+:::
+The variable `square` is `uni` squared. 
+
+Before your run the program, sketch what you think the distribution 
+of `square` will look like. 
+
+Explain your reasoning, then check your work!
+
+::: {.column-page-right}
+<script>
+    theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2Fh6BoGRVVuCn2LGC14QQM%2Ffile.json";
+    awash.liveDemoAt(theURL);
+</script>
+:::
+
+
+### Adding two dice...with a twist
+
+The live example below shows a program.
+Predict what the graph of `sum` will look like.
+
+::: {.callout-tip collapse="true"}
+## Hint
+It might help to imagine, first, the
+distributions of `die1` and `die2`.
+:::
+
+::: {.column-page-right}
+<script>
+    theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2F7NE3YQgOqIpz7cHRfhgE%2Ffile.json";
+    awash.liveDemoAt(theURL);
+</script>
+:::
+
+
+
+

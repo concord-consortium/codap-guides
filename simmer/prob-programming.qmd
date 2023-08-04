@@ -1,0 +1,64 @@
+{{< include _simmer-header.qmd  >}}
+
+## Programming
+
+Here are a few problems under development. 
+These are all problems where you 
+need to write a program using `simmer`.
+
+What makes a good programming problem in this context?
+Let us know!
+
+### Two weird dice
+
+Suppose you had two dice: one has 12 faces numbered 1 to 12; 
+the other has 20 faces numbered 0 to 19.
+
+In the live example below, write a program that simulates
+rolling those two dice.
+Then you will add them.
+You can decide whether to add them in the program or CODAP. 
+
+Before you run the program, however, predict:
+
+* What will be the range of the `sum`?
+* What will the distribution of the `sum` look like?
+Sketch your predicted graph of the distribution of `sum`.
+
+Plot at least 400 rolls.
+
+::: {.column-page-right}
+<script>
+    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/";
+    awash.liveDemoAt(theURL);
+</script>
+:::
+
+### Square or product?
+
+Suppose you have two regular six-sided dice.
+Now imagine these two procedures:
+
+* Roll one die and square the result. 
+Call that number `square`.
+* Roll both dice and multiply them together.
+Call that number `product`.
+
+In the live window below,
+write a program that rolls dice and gets 400 values
+of `square` and `product`
+by looping through a set of statements 400 times.
+
+Before you run it, predict what will happen:
+
+* Predict the minimum and maximum values for `square` and `product`.
+* Sketch your predictions for the distirbutions of `square` and `product`.
+* Predict (roughly) the means of `square` and `product`.
+
+::: {.column-page-right}
+<script>
+    const theURL2 = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/";
+    awash.liveDemoAt(theURL2);
+</script>
+:::
+

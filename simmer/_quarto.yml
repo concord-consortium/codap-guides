@@ -34,10 +34,17 @@ website:
             text: "Coins"
           - href: wait-time.qmd
           - href: n-dice.qmd
+          - href: conditional.qmd
+            text: "Conditional"
           - href: functions.qmd
           - href: commentary-redux.qmd
           - href: examples.qmd
             text: "examples"
+      - text: "---"
+      - section: "Problems"
+        contents:
+          - href: prob-prediction.qmd
+          - href: prob-programming.qmd
 
 format:
   html:

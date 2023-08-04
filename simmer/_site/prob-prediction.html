@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>simmer – repeating</title>
+<title>simmer – prob-prediction</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./two-dice.html" rel="next">
-<link href="./one-die.html" rel="prev">
+<link href="./prob-programming.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -66,7 +65,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -115,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./repeating.html" class="sidebar-item-text sidebar-link active">2) repeated actions</a>
+  <a href="./repeating.html" class="sidebar-item-text sidebar-link">2) repeated actions</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -197,7 +196,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prob-prediction.html" class="sidebar-item-text sidebar-link">Prediction</a>
+  <a href="./prob-prediction.html" class="sidebar-item-text sidebar-link active">Prediction</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -216,7 +215,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#repeating-many-times" id="toc-repeating-many-times" class="nav-link active" data-scroll-target="#repeating-many-times">Repeating many times</a></li>
+  <li><a href="#prediction" id="toc-prediction" class="nav-link active" data-scroll-target="#prediction">Prediction</a>
+  <ul class="collapse">
+  <li><a href="#adding-two-dicewith-negative-numbers" id="toc-adding-two-dicewith-negative-numbers" class="nav-link" data-scroll-target="#adding-two-dicewith-negative-numbers">Adding two dice…with negative numbers</a></li>
+  <li><a href="#adding-two-normals" id="toc-adding-two-normals" class="nav-link" data-scroll-target="#adding-two-normals">Adding two normals</a></li>
+  <li><a href="#uniform-squared" id="toc-uniform-squared" class="nav-link" data-scroll-target="#uniform-squared">Uniform squared</a></li>
+  <li><a href="#adding-two-dicewith-a-twist" id="toc-adding-two-dicewith-a-twist" class="nav-link" data-scroll-target="#adding-two-dicewith-a-twist">Adding two dice…with a twist</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -241,56 +246,97 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
     <script src="src/awash-functions.js"></script>
-<section id="repeating-many-times" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="repeating-many-times">Repeating many times</h2>
-<p>Let’s change the program so that it repeats that process on its own, so that we don’t have to press the button so many times.</p>
-<p>Improve the example below.</p>
+<section id="prediction" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="prediction">Prediction</h2>
+<p>Here are a few problems under development. These are all problems where you look at a program and try to predict what its output will look like.</p>
+<p>What makes a good problem for this tool? Let us know!</p>
+<section id="adding-two-dicewith-negative-numbers" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="adding-two-dicewith-negative-numbers">Adding two dice…with negative numbers</h3>
+<p>The live example below shows a program. Before you run it, predict:</p>
 <ul>
-<li>Find a “repeat” block in one of the categories that will run those blocks 10 times.</li>
-<li>Drag it into the workspace and make it enclose the blocks you want to repeat.</li>
-<li>Run it and see what happens. (It’s probably still not very evenly distributed.)</li>
-<li>Change the number of repeats to a few hundred and run it again.</li>
-<li>See if the graph shows that <code>item</code> has a more even distribution.</li>
+<li>What will be the minimum and maximum values of <code>sum</code>?</li>
+<li>What will the mean of <code>sum</code> be?</li>
 </ul>
+<p>Explain your two answers!</p>
 <div class="column-page-right">
 <script>
-    const theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FzjVGZCiPAfvESNS355jb%2Ffile.json";
+    theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FBochUxaMCVoBg68pyBxm%2Ffile.json";
     awash.liveDemoAt(theURL);
 </script>
 </div>
-<p>The screen is getting crowded. It’s hard to work with the program, the graph, and the table at the same time.</p>
+</section>
+<section id="adding-two-normals" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="adding-two-normals">Adding two normals</h3>
+<p>The live example below shows a program that adds two numbers:</p>
+<ul>
+<li><code>Norm1</code> is a random Normal variable with mean 0 and SD 1.</li>
+<li><code>Norm2</code> is a random Normal variable with mean 10 and SD 1.</li>
+</ul>
+<p>What do you know about the distribution of <code>sum</code>? Before you run the program,</p>
+<ol type="1">
+<li>Sketch what you think that distribution will look like.</li>
+<li>What do you think the mean of <code>sum</code> will be?</li>
+<li>Will the SD of <code>sum</code> be
+<ul>
+<li>a lot less than 1,</li>
+<li>a bit less than 1,</li>
+<li>close to 1,</li>
+<li>a bit more than 1, or</li>
+<li>a lot more than 1?</li>
+</ul></li>
+</ol>
+<p>Explain your responses to the tasks.</p>
+<div class="column-page-right">
+<script>
+    theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2FS4anhAvbQAg4yUgvyOno%2Ffile.json";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+</section>
+<section id="uniform-squared" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="uniform-squared">Uniform squared</h3>
+<p>The live example below shows a program. The variable <code>uni</code> is <em>uniformly</em> distributed between 0 and 1. The illustration at right shows the distribution of <code>uni</code> from one run.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><img src="art/uniform400.png" class="img-fluid"></p>
+</div></div><p>The variable <code>square</code> is <code>uni</code> squared.</p>
+<p>Before your run the program, sketch what you think the distribution of <code>square</code> will look like.</p>
+<p>Explain your reasoning, then check your work!</p>
+<div class="column-page-right">
+<script>
+    theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2Fh6BoGRVVuCn2LGC14QQM%2Ffile.json";
+    awash.liveDemoAt(theURL);
+</script>
+</div>
+</section>
+<section id="adding-two-dicewith-a-twist" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="adding-two-dicewith-a-twist">Adding two dice…with a twist</h3>
+<p>The live example below shows a program. Predict what the graph of <code>sum</code> will look like.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-pro tip: collapsing the code
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In the <code>simmer</code> top bar you’ll see a [currently brown] square <img src="art/collapse-button.png" class="img-fluid" style="width:5.0%"> showing four arrows pointing inward. Press it to collapse the program so you have more space for data analysis.</p>
-<p>Then, when you want to program again, press the button to give yourself room to code.</p>
-</div>
-</div>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-The answer, in case you get lost
+Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><img src="art/repeated-solution.png" class="img-fluid"></p>
+<p>It might help to imagine, first, the distributions of <code>die1</code> and <code>die2</code>.</p>
 </div>
 </div>
+</div>
+<div class="column-page-right">
+<script>
+    theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2F7NE3YQgOqIpz7cHRfhgE%2Ffile.json";
+    awash.liveDemoAt(theURL);
+</script>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -429,13 +475,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./one-die.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">1) rolling one die</span>
-      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./two-dice.html" class="pagination-link">
-        <span class="nav-page-text">3) two dice</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./prob-programming.html" class="pagination-link">
+        <span class="nav-page-text">Programming</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

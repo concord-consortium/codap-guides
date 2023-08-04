@@ -59,9 +59,11 @@ An additional "configuration" palette appears.
 
 ### Problem: Penelope shoots two
 
+Let's do a problem.
+
 Penelope is playing basketball and is shooting from the free-throw line. 
 If she doesn't make her first shot, she is done and gets zero points. 
-If makes her first shot, she gets one point ... and she gets a second shot.
+If she _does_ make her first shot, she gets one point ... and she gets a second shot.
 
 * Her chance of making the first shot is 65%.
 * Her chance of making the second shot is 80%.
