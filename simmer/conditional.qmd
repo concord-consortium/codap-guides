@@ -1,0 +1,81 @@
+{{< include _simmer-header.qmd  >}}
+
+## Conditionals (and conditional probability)
+
+Sometimes, in probability, the chance of some event depends on the outcome of some other (usually _previous_) event.
+
+For example, suppose you flip a coin. 
+If you get heads, you roll a six-sided die.
+But if you get tails, you roll an eight-sided die.
+What's the probability that you roll a three?
+
+Here is a program that does the simulation:
+
+![](art/condition-program.png){width="80%" fig-align="center"}
+
+This program includes a couple of new features.
+
+* the `"heads"` block is in the `Text` section.
+Bring the empty text into the workspace and edit it there.
+* the `if` statement lives in the `Control and Loops` section. 
+But how do you get the "else"?
+
+### Getting `else`
+The tricky part about is how you get the `else` clause. 
+
+1. Get an `if` block.
+
+#. Click the gear on the `if` block. 
+An additional "configuration" palette appears.
+
+#. Drag the little `else` blocklet from the left and attach it to the little `if`.
+
+#. (Crucial!) To make the palette go away, _click the gear again_.
+
+
+::: {.column-page-right  layout="[25,25,25,25]" layout-valign="top"}
+![The original `if` block](art/cond-else-01.png)
+
+![Click on the gear to get options](art/cond-else-02.png)
+
+![Drag the `else` option and attach it to the `if`](art/cond-else-03.png)
+
+![Click the gear again to get rid of that configuration palette](art/cond-else-04.png)
+:::
+
+### Your turn!
+
+* Make the program in the live illustration below.
+* Wrap it in a loop and run it a few hundred times.
+* Compute an empirical value for the probability of rolling a three.
+* See if you can solve the problem theoretically and compare!
+
+::: {.column-page-right}
+<script>
+    theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/";
+    awash.liveDemoAt(theURL);
+</script>
+:::
+
+### Problem: Penelope shoots two
+
+Penelope is playing basketball and is shooting from the free-throw line. 
+If she doesn't make her first shot, she is done and gets zero points. 
+If makes her first shot, she gets one point ... and she gets a second shot.
+
+* Her chance of making the first shot is 65%.
+* Her chance of making the second shot is 80%.
+
+What are the possible results for Penelope, 
+and what are their probabilities? 
+
+Make a simulation to model this situation in the live CODAP window below,
+and run it many times to figure out the probabiities. 
+If you can, solve the problem theoretically and compare.
+
+::: {.column-page-right}
+<script>
+    theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html?di=https://codap.xyz/plugins/simmer/";
+    awash.liveDemoAt(theURL);
+</script>
+:::
