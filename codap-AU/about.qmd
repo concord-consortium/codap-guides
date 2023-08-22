@@ -1,0 +1,7 @@
+---
+title: "About"
+---
+
+Draft! Prepared for Katie Makar and Barry Kissane by Tim Erickson.
+
+I used `quarto`.

@@ -1,0 +1,94 @@
+{{< include _awash-setup.qmd  >}}
+
+## Mathematical modelling {#modelling-page}
+
+Modelling is a vast topic.
+There are many forms of mathematical modelling:
+we make systems models, conceptual models, and probability models;
+we construct simulations to model phenomena. 
+The list goes on. 
+
+Right now, let's look at another kind of model 
+central to school mathematics:
+using a mathematical function to approximate data
+from some phenomenon.
+
+![](art/beads-photo.png)
+
+Here's what we do:
+
+* Reach into a container of glass beads and pull out a few, 
+up to about 20.
+* Count the beads and record the number.
+* Put the beads in a bowl and weigh them. ^[Note: do not "tare" the scale.
+The weight will be the bowl plus the beads.
+Do not alert the students to this!]
+* Enter the `count` and the `weight` into a CODAP table. 
+* Put the beads back, mix, and repeat.
+
+Then, of course, we will plot the data
+(what goes on the horizontal axis??) and try to 
+find a function that fits the data. 
+
+You already know how to make a graph.
+To make a line,
+go to the ruler palette of the graph and choose `Movable Line`.
+Drag its handles to approximate the data.
+Notice how the slope-intercept form of the line 
+appears _and updates_ as you drag. 
+
+::: {.column-page-right}
+<script>
+    theURL = "https://codap.concord.org/releases/latest/static/dg/en/cert/index.html#shared=https%3A%2F%2Fcfm-shared.concord.org%2Fc0WthQUBDM9AxUqbLNMT%2Ffile.json";
+    awash.liveDemoAt(theURL);
+</script>
+:::
+
+A situation like this leads to some great questions such as:
+
+* Suppose we put 100 beads in the bowl. How much would that weigh?
+* Suppose the bowl with the beads weighed 1 kg. 
+How many beads would that be?
+* In the formula you got, what number is the slope?
+* What does that slope _mean_?
+* Same for the intercept...
+
+These lead to more subtle and statistical questions...
+
+::: {.column-margin}
+![One possible line](art/beads-graph.png)
+:::
+
+
+* Why don't the points line up perfectly?
+* Remember that number you got for 1 kg of beads? How precise is that? What _range_ of numbers do you think you would typically get?
+* Looking at the formula in the figure, do you think
+it's possible that the true formula is `weight = 2 * count + 100`?
+
+### More commentary
+
+**Functional form**. 
+We deliberately used a linear example, but you can go deeper.
+That ruler palette has a `Plotted Function` option,
+and you can use sliders (from the toolbar)
+to make variable parameters.
+
+**Data sources**.  Here we used measurement data,
+which has built-in variability.
+That's great, but it's not the only way.
+Imagine one of those pattern problems where you count squares or triangles or dots.
+You could enter those numbers as data and plot them to find the (in this case, quadratic) function:
+
+![](art/dot-pattern.png)
+
+::: {.column-margin}
+![A quadratic model using the `Plotted Function` feature](art/modelling-layers-parabola.png)
+:::
+
+
+**Best fit**. 
+The ruler palette will let you make a least-squares line. 
+Before you do that, however consider: the least-squares line is not all that much better 
+than what students will come up with using the movable line.
+Furthermore, think of what students might gain by 
+moving those handles and seeing the formula change.

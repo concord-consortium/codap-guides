@@ -1,0 +1,31 @@
+project:
+  type: website
+  resources:
+    - "/art/"
+
+website:
+  title: "CODAP for Australians"
+  page-navigation: true
+
+  sidebar:
+    style: "floating"
+    search: true
+    contents:
+      - href: index.qmd
+        text: Introduction
+      - href: modelling.qmd
+        text: Modelling
+      - href: stats.qmd
+        text: Statistics
+      - href: probability.qmd
+        text: Probability
+      - about.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+
